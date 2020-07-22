@@ -8,4 +8,3 @@ class UserAuthModel(db.Model):
     provider = db.column(db.String(100))
     provider_id = db.Column(db.String(100))
     access_token = db.Column(db.String(300))
-
