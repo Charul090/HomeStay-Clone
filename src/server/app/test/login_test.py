@@ -13,14 +13,14 @@ class LoginTest(unittest.TestCase):
         self.assertTrue(guest_login(obj))
 
     def test_login_error(self):
-        obj={
+        obj = {
             "password": "A",
         }
 
         self.assertFalse(guest_login(obj))
-    
+
     def test_login_empty(self):
-        obj={
+        obj = {
             "email": "",
             "password": "A"
         }
@@ -28,7 +28,7 @@ class LoginTest(unittest.TestCase):
         self.assertFalse(guest_login(obj))
 
     def test_login_type(self):
-        obj={
+        obj = {
             "email": 24,
             "password": "A",
         }
