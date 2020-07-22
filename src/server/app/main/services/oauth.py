@@ -15,7 +15,7 @@ def google_auth(info):
 
     if status is None:
         user = UsersModel(firstname=user_details["givenName"], lastname=user_details["familyName"],
-                          email=user_details["email"], password="", phonenumber="")
+                          email=user_details["email"], password="")
         db.session.add(user)
         db.session.commit()
 
@@ -24,6 +24,44 @@ def google_auth(info):
 
     user_oauth = UserAuthModel(user_id=status.id, provider=provider,
                                provider_id=user_details["googleId"], access_token=access_token)
+    db.session.add(user_oauth)
+    db.session.commit()
+
+    data = {
+        "email": status.email,
+        "created_at": str(datetime.datetime.utcnow()),
+        "expiry_at": str(datetime.datetime.utcnow() + datetime.timedelta(days=1))
+    }
+
+    encoded_data = jwt.encode(data, SECRET_KEY)
+
+    return json.dumps({"error": False, "message": "Logged in successfully", "token": encoded_data.decode()})
+
+
+def facebook_auth(info):
+    name = info["name"].split(" ")
+
+    firstname = name[0]
+    lastname = name[1]
+    email = info["email"]
+    provider = info["graphDomain"]
+    provider_id = info["id"]
+    access_token = info["accessToken"]
+
+    status = UsersModel.query.filter(
+        UsersModel.email == email).first()
+
+    if status is None:
+        user = UsersModel(firstname=firstname, lastname=lastname,
+                          email = email, password = "")
+        db.session.add(user)
+        db.session.commit()
+
+        status=UsersModel.query.filter(
+            UsersModel.email == email).first()
+
+    user_oauth = UserAuthModel(user_id=status.id, provider=provider,
+                               provider_id=provider_id, access_token=access_token)
     db.session.add(user_oauth)
     db.session.commit()
 
