@@ -21,7 +21,7 @@ def guest_register(info):
         if "phonenumber" in info:
             phonenumber = info["phonenumber"]
         else:
-            phonenumber = ""
+            phonenumber = None
 
         status = UsersModel.query.filter(UsersModel.email == email).first()
 
