@@ -4,3 +4,4 @@ db = SQLAlchemy()
 
 from .UsersModel import UsersModel
 from .VerificationModel import VerificationModel
+from .UserAuthModel import UserAuthModel
