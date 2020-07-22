@@ -7,5 +7,5 @@ from ..services.host import host_login
 def Login():
     response = host_login(request.json)
 
-    return "response"
+    return response
 
