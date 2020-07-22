@@ -1,5 +1,6 @@
 from flask import Blueprint
 
 guest = Blueprint("guest", __name__)
+host = Blueprint("host", __name__)
 
-from . import Guest
+from . import Guest,Host
