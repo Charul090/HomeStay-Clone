@@ -9,4 +9,5 @@ __pycache__/
 nosetests.xml
 coverage.xml
 
-/instance
+**/instance/*
+**/migrations/*
