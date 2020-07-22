@@ -1,11 +1,13 @@
 from . import guest
 from flask import request
-from ..services.guest import guest_register
+from ..services.guest import guest_register, guest_login
 
 
-@guest.route("/login")
+@guest.route("/login", methods=["POST"])
 def Login():
-    return "Guest Login"
+    response = guest_login(request.json)
+
+    return response
 
 
 @guest.route("/register", methods=["POST"])
