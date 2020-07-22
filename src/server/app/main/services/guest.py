@@ -2,8 +2,6 @@ import json
 import jwt
 from ..models import db, UsersModel
 
-# {'firstname': 'A', 'lastname': 'A', 'email': 'baricharul9@gmail.com', 'password': 'A', 'phonenumber': 9999999}
-
 
 def guest_register(info):
     try:
@@ -38,3 +36,19 @@ def guest_register(info):
     except KeyError:
         return json.dumps({"error": True,
                            "message": "One or more fields are missing!"})
+
+
+def guest_login(info):
+    try:
+        email = info["email"]
+        password = info["password"]
+    except KeyError:
+        return False
+    
+    if email == "" or password == "":
+        return False
+    
+    if type(email) is not str or type(password) is not str:
+        return False
+    
+    return True
