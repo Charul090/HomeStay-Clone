@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from config import app_config
-from .routes import guest as guest_blueprint,host as host_blueprint,oauth as oauth_blueprint
+from .routes import guest as guest_blueprint,host as host_blueprint,oauth as oauth_blueprint,password as password_blueprint
 from .models import db
 from flask_migrate import Migrate
 
@@ -15,6 +15,7 @@ def create_app(config_name):
     app.register_blueprint(guest_blueprint, url_prefix="/guest")
     app.register_blueprint(host_blueprint, url_prefix="/host")
     app.register_blueprint(oauth_blueprint, url_prefix="/oauth")
+    app.register_blueprint(password_blueprint, url_prefix="/password")
     
     db .init_app(app)
     migrate = Migrate(app, db)
