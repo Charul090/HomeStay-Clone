@@ -1,7 +1,7 @@
 from . import db
 
 
-class HostProfileModdel(db.Model):
+class HostProfileModel(db.Model):
     __tablename__ = "hostprofile"
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
