@@ -1,0 +1,24 @@
+.navLinks {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  .navLinks > a {
+    list-style: none;
+    margin: 0px 10px;
+  }
+
+  .navbar{
+    margin:auto;
+  }
+  
+
+  .nav{
+    
+    color:white !important;
+  }
+  
+  :local(.navitem) {
+    color:white !important;
+  }
