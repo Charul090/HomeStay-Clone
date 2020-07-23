@@ -8,10 +8,12 @@ import Register from '../Register/Register'
 const NavBarHome = () => {
  
   return (
-      <>
+      <React.Fragment>
 
       <Navbar>
-        <div className="navbar-brand"><a href="/"><img className ="img img-fluid" src="https://www.homestay.com/assets/logo-homestay-36a9388d17da279b965e5b0dc5153eab12f98ceef3e29332a720df00b71fa2ac.svg"/></a></div>
+
+        <div className="navbar-brand"><a href="/"><img src="https://www.homestay.com/assets/logo-homestay-36a9388d17da279b965e5b0dc5153eab12f98ceef3e29332a720df00b71fa2ac.svg"/></a></div>
+        
           <Navbar.Collapse id="responsive-navbar-nav">
             <div className="ml-auto d-flex">
             <Nav>
@@ -24,16 +26,16 @@ const NavBarHome = () => {
               </NavDropdown>
             </Nav>
 
-            <Login />
-          
-            <Register />
-          
-          <Button variant="outline-dark">List a Room</Button>{' '}
+            <Login /> 
 
-        </div>
+            <Register />
+
+            <Button variant="outline-dark">List a Room</Button>{' '}
+
+            </div>
           </Navbar.Collapse>
     </Navbar>
-  </>
+  </React.Fragment>
   )
 };
 
