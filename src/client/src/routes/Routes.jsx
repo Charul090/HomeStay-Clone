@@ -1,23 +1,19 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Carosel from './Carosel.jsx'
-import ListingMain from './listing/ListingMain'
-import Slider from './listing/Slider.jsx'
-import ListCard from './listing/ListCard.jsx'
-import SearchBar from './listing/SearchBar.jsx'
+import Home from "../components/Home/Home";
+import Carosel from '../components/Carosel/Carosel.jsx'
+import ListingMain from '../components/listing/ListingMain'
+import Slider from '../components/listing/Slider.jsx'
+import ListCard from '../components/listing/ListCard.jsx'
+import SearchBar from '../components/listing/SearchBar.jsx'
+import { Carousel } from "react-bootstrap";
 
 const Routes = () => {
   return (
     <>
-     {/* <Carosel />
-    <Slider />
-    <ListCard/>
-    <SearchBar/> */}
       <Switch>
-        <Route path="/" exact render={() => <Home />} />
+        <Route path="/" exact render={() => <Carosel />} />
         <Route path="/destination" exact render={() => <ListingMain />} />
-        <Route path="/listing" render={() => <Slider />} />
       </Switch>
     </>
   );

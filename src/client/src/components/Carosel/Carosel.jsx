@@ -1,7 +1,7 @@
-import NavBarHome from "./NavBarHome";
+import NavBarHome from "../NavBarHome/NavBarHome.jsx";
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import {Carousel} from 'react-bootstrap'
+import {Carousel} from 'react-bootstrap';
 
 export class Carosel extends Component {
     render() {
