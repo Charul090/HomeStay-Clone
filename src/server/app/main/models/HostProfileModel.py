@@ -5,7 +5,6 @@ class HostProfileModel(db.Model):
     __tablename__ = "hostprofile"
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    apartment_id = db.Column(db.Integer, db.ForeignKey("apartment.id"))
     family_welcome = db.Column(db.JSON)
     friends_describe = db.Column(db.String(2000))
     host_guest = db.Column(db.String(2000))
