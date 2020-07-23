@@ -6,3 +6,4 @@ from .UsersModel import UsersModel
 from .VerificationModel import VerificationModel
 from .UserAuthModel import UserAuthModel
 from .ApartmentModel import ApartmentModel
+from .BedroomModel import BedroomModel
