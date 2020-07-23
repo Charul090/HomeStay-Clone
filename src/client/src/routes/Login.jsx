@@ -37,18 +37,6 @@ export class Login extends Component {
             </Modal.Header>
 
             <Modal.Body>
-              <p>Modal body text goes here.</p>
-              <InputGroup className="mb-3">
-                  <InputGroup.Prepend>
-                    <InputGroup.Text>$</InputGroup.Text>
-                    <InputGroup.Text>0.00</InputGroup.Text>
-                  </InputGroup.Prepend>
-                  <FormControl
-                    placeholder="Recipient's username"
-                    aria-label="Amount (to the nearest dollar)"
-                  />
-                </InputGroup>
-                
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Email:</label>
                   <input type="email" class="form-control" id="recipient-name"/>
@@ -62,7 +50,7 @@ export class Login extends Component {
 
             <Modal.Footer>
               <Button onClick={this.handleClick} variant="secondary">Close</Button>
-              <Button variant="primary">Submit</Button>
+              <Button variant="primary">Login</Button>
             </Modal.Footer>
           </Modal.Dialog>
           </Modal>

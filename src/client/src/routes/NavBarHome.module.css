@@ -19,6 +19,15 @@
     color:white !important;
   }
   
-  :local(.navitem) {
-    color:white !important;
+  .navbar-Brand img{
+    opacity: 1;
+    max-height: 33px;
+    height: initial;
+    padding: 0;
+    width:100%;
+  }
+
+  .imgset img{
+    width:100%;
+    height:20px;
   }

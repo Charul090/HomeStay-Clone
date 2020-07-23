@@ -9,9 +9,12 @@ const NavBarHome = () => {
  
   return (
       <>
-    
-      <Navbar className=" m-0">
-        <NavbarBrand><Link to="/"><img src="https://www.homestay.com/assets/logo-homestay-36a9388d17da279b965e5b0dc5153eab12f98ceef3e29332a720df00b71fa2ac.svg"/></Link></NavbarBrand>
+        
+
+
+
+      <Navbar>
+        <div className="Navbar-Brand"><a href="/"><img className ="img img-fluid" src="https://www.homestay.com/assets/logo-homestay-36a9388d17da279b965e5b0dc5153eab12f98ceef3e29332a720df00b71fa2ac.svg"/></a></div>
       <Navbar.Collapse id="responsive-navbar-nav">
         <div className="ml-auto d-flex">
         <Nav variant="light">

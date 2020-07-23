@@ -81,7 +81,7 @@ export class Register extends Component {
     
                 <Modal.Footer>
                   <Button onClick={this.handleClick} variant="secondary">Close</Button>
-                  <Button variant="primary">Submit</Button>
+                  <Button variant="primary">Register</Button>
                 </Modal.Footer>
               </Modal.Dialog>
               </Modal>
