@@ -25,6 +25,14 @@ def host_login(info):
         return json.dumps({"error": True, "message": "Email doesn't exist"})
     else:
         if status.email == email and status.password == password:
+            host = ApartmentModel.query.filter(
+                ApartmentModel.user_id == status.id).first()
+
+            if host is None:
+                host = False
+            else:
+                host = True
+
             data = {
                 "email": status.email,
                 "created_at": str(datetime.datetime.utcnow()),
@@ -33,6 +41,6 @@ def host_login(info):
 
             encoded_data = jwt.encode(data, SECRET_KEY)
 
-            return json.dumps({"error": False, "message": "Logged in successfully", "token": encoded_data.decode()})
+            return json.dumps({"host":host,"error": False, "message": "Logged in successfully", "token": encoded_data.decode()})
 
         return json.dumps({"error": True, "message": "Incorrect Password!"})
