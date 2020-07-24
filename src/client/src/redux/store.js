@@ -1,5 +1,5 @@
 
-import reducer from "./HomeRedux/reducer";
+import reducer from "./ListRedux/reducer";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
