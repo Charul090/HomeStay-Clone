@@ -21,34 +21,79 @@ const LOGIN_FAILURE = (payload) => {
     }
 }
 
-const Start_Login_Query = (data)=>{
-    return dispatch=>{
+const Start_Login_Query = (data) => {
+    return dispatch => {
         dispatch(LOGIN_QUERY())
         return axios({
-            method:"post",
-            baseURL:"http://0f3cf9485c74.ngrok.io",
-            url:"/guest/login",
-            data:data
+            method: "post",
+            baseURL: "http://0f3cf9485c74.ngrok.io",
+            url: "/guest/login",
+            data: data
         })
-        .then((payload)=>payload.data)
-        .then((data)=>{
-            if(data["error"]){
-                dispatch(LOGIN_FAILURE(data))
-            }
-            else{
-                dispatch(LOGIN_SUCCESS(data))
-            }
+            .then((payload) => payload.data)
+            .then((data) => {
+                if (data["error"]) {
+                    dispatch(LOGIN_FAILURE(data))
+                }
+                else {
+                    dispatch(LOGIN_SUCCESS(data))
+                }
 
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 }
 
-const GOOGLE_QUERY = ()=>{
+const FACEBOOK_QUERY = () => {
     return {
-        type:SEND_GOOGLE_QUERY
+        type: SEND_FACEBOOK_QUERY
+    }
+}
+
+const FACEBOOK_SUCCESS = (payload) => {
+    return {
+        type: LOGIN_FACEBOOK_SUCCESSFULL,
+        payload
+    }
+}
+
+const FACEBOOK_FAILURE = (payload) => {
+    return {
+        type: LOGIN_FACEBOOK_FAIL,
+        payload
+    }
+}
+
+const Facebook_Login_Query = (data) => {
+    return dispatch => {
+        dispatch(FACEBOOK_QUERY())
+        return axios({
+            method: "post",
+            baseURL: "http://0f3cf9485c74.ngrok.io",
+            url: "/oauth/facebook",
+            data: data
+        })
+            .then((payload) => payload.data)
+            .then((data) => {
+                if (data["error"]) {
+                    dispatch(FACEBOOK_FAILURE(data))
+                }
+                else {
+                    dispatch(FACEBOOK_SUCCESS(data))
+                }
+
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+}
+
+const GOOGLE_QUERY = () => {
+    return {
+        type: SEND_GOOGLE_QUERY
     }
 }
 
@@ -66,29 +111,29 @@ const GOOGLE_FAILURE = (payload) => {
     }
 }
 
-const Google_Login_Query=(data)=>{
-    return dispatch=>{
+const Google_Login_Query = (data) => {
+    return dispatch => {
         dispatch(GOOGLE_QUERY())
         return axios({
             method: "post",
-            baseURL:"http://0f3cf9485c74.ngrok.io",
+            baseURL: "http://0f3cf9485c74.ngrok.io",
             url: "/oauth/google",
             data: data
         })
-        .then((payload)=>payload.data)
-        .then((data)=>{
-            if(data["error"]){
-                dispatch(GOOGLE_FAILURE(data))
-            }
-            else{
-                dispatch(GOOGLE_SUCCESS(data))
-            }
+            .then((payload) => payload.data)
+            .then((data) => {
+                if (data["error"]) {
+                    dispatch(GOOGLE_FAILURE(data))
+                }
+                else {
+                    dispatch(GOOGLE_SUCCESS(data))
+                }
 
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 }
 
-export {Start_Login_Query,Google_Login_Query}
+export { Start_Login_Query, Google_Login_Query, Facebook_Login_Query }
