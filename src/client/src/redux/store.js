@@ -1,9 +1,11 @@
 import AuthReducer from "./AuthRedux/reducer";
 import RegisterReducer from "./RegisterRedux/reducer"
+import reducer from "./ListRedux/reducer";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
-const rootReducer = combineReducers({ auth:AuthReducer,regis:RegisterReducer});
+const rootReducer = combineReducers({ auth:AuthReducer,regis:RegisterReducer,list:reducer});
+
 
 let composeEnhancers = compose;
 
@@ -14,7 +16,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const enhancer = composeEnhancers(applyMiddleware(thunk));
-
 const store = createStore(rootReducer, enhancer);
 
 export {store};
+
