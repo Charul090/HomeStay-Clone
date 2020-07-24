@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Modal,Button, ButtonGroup,Dropdown} from 'react-bootstrap'
-import  './Filter.css'
+import  './Filter.css';
+import {fetchData} from '../../redux/ListRedux/action.js';
 
 export class Filter extends Component {
 
@@ -63,7 +64,6 @@ export class Filter extends Component {
             else{
               myurl.searchParams.append(key,obj[key])
               console.log(myurl);
-              
             }
             
           }
@@ -72,18 +72,24 @@ export class Filter extends Component {
         if(prevProps.location.search!==myurl.search){
           if(myurl.search==""){
             this.props.history.push("/destination")
+            console.log("inside prevprops")
+            this.props.fetch(myurl.search)
           }
           else{
             this.props.history.push(myurl.search);
+            console.log("inside prevprops")
+            console.log('http://0f3cf9485c74.ngrok.io/stays/listing'+myurl.search)
+            this.props.fetch(myurl.search)
           }
         }
       
       }
 
     render() {
-      // console.log(this.props)
+      const {data,error} = this.props
+      console.log(data);
+      console.log(error);
         
-        // console.log(this.state);
         return (
             <div>                                
                 <div>
@@ -120,12 +126,16 @@ export class Filter extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    
-})
-
-const mapDispatchToProps = {
-    
+const mapStateToProps = state => {
+  return {
+    error: state.error,
+    data: state.data
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    fetch: (n) => dispatch(fetchData(n))
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter)

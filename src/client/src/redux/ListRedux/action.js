@@ -1,10 +1,8 @@
 import axios from "axios";
+import {FETCH_REQUEST,FETCH_FAILURE,FETCH_SUCCESS} from './actionTypes'
 
-const FETCH_REQUEST = "FETCH_REQUEST";
-const FETCH_SUCCESS = "FETCH_SUCCESS";
-const FETCH_FAILURE = "FETCH_FAILURE";
 
-const fetchPostRequest = query => {
+const fetchRequest = query => {
   console.log("fetch post request action called");
   return {
     type: FETCH_REQUEST,
@@ -12,7 +10,7 @@ const fetchPostRequest = query => {
   };
 };
 
-const fetchPostSuccess = data => {
+const fetchSuccess = data => {
   console.log("fetch post success action called");
   return {
     type: FETCH_SUCCESS,
@@ -20,7 +18,7 @@ const fetchPostSuccess = data => {
   };
 };
 
-const fetchPostFailure = error => {
+const fetchFailure = error => {
   console.log("fetch post failure action called");
   return {
     type: FETCH_FAILURE,
@@ -32,24 +30,20 @@ const fetchData = (query = null) => {
   console.log("fetch Data called", query);
   return dispatch => {
     console.log("dispatching post request action...");
-    dispatch(fetchPostRequest());
-    console.log("hello");
+    dispatch(fetchRequest());
     return axios
-      .get(`https://api.github.com/search/users?q=${query}`)
+      .get(`http://0f3cf9485c74.ngrok.io/stays/listing${query}`)
       .then(res => {
-        console.log("response success", res.data.items);
-        return dispatch(fetchPostSuccess(res.data.items));
+        console.log("response success", res);
+        return dispatch(fetchSuccess(res));
       })
-      .catch(err => dispatch(fetchPostFailure(err)));
+      .catch(err => dispatch(fetchFailure(err)));
   };
 };
 
 export {
   fetchData,
-  fetchGetFailure,
-  fetchGetRequest,
-  fetchGetSuccess,
-  FETCH_FAILURE,
-  FETCH_REQUEST,
-  FETCH_SUCCESS
+  fetchFailure,
+  fetchRequest,
+  fetchSuccess,
 };

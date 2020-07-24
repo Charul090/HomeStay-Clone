@@ -1,23 +1,30 @@
-
+import {FETCH_REQUEST,FETCH_FAILURE,FETCH_SUCCESS,fetchRequest,fetchGetFailure,fetchGetSuccess,} from './actionTypes'
 
 const initState = {
-    status:false
+    data:[],
+    error:""
 }
 
- const authReducer = (state=initState,{type,payload})=>{
+ const reducer = (state=initState,{type,payload})=>{
 
     switch(type){
-        case "AUTH_SUCCESS":
+        case "FETCH_REQUEST":
+            console.log(state)
+            return{
+                ...state
+            }
+            case "FETCH_SUCCESS":
             console.log(state)
             return{
                 ...state,
-                status:true
+                data:payload
             }
 
-            case "LOGOUT":
+            case "FETCH_FAILURE":
+            console.log(state)
             return{
                 ...state,
-                status:false
+                error:payload
             }
 
             default:
@@ -27,4 +34,4 @@ const initState = {
     }
 
 }
-export default authReducer
+export default reducer

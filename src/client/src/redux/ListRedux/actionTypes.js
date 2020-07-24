@@ -1,2 +1,3 @@
-export const AUTH_SUCCESS = "AUTH_SUCCESS";
-export const LOGOUT = "LOGOUT";
+export const FETCH_REQUEST = "FETCH_REQUEST";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const FETCH_FAILURE = "FETCH_FAILURE";
