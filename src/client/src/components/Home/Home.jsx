@@ -1,6 +1,6 @@
 import React from 'react'
 import HomeHero from '../HomeHero/HomeHero';
-import HeroCard from '../HeroCard/HeroCard.jsx';
+import RegisterModal from "../RegisterModal/RegisterModal"
 import LoginModal from '../LoginModal/LoginModal';
 import TransparentNavBar from "../TransparentNavBar/TransparentNavBar.jsx"
 
@@ -9,6 +9,7 @@ export default function Home() {
         <>
             <TransparentNavBar />
             <LoginModal />
+            <RegisterModal />
             <HomeHero />
         </>
     )

@@ -33,7 +33,7 @@ export default function OpaqueNavBar() {
                             Sign Up
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Guest Signup</a>
+                            <a class="dropdown-item" href="#registermodal" data-toggle="modal">Guest Signup</a>
                             <a class="dropdown-item" href="#">Host Signup</a>
                         </div>
                     </div>
