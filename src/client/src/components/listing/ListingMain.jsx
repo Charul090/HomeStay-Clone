@@ -4,6 +4,7 @@ import Slider from './Slider.jsx'
 import SearchBar from './SearchBar.jsx'
 import ListCard from './ListCard.jsx'
 import NavBarHome from '../NavBarHome/NavBarHome.jsx'
+import Filter from '../Filter(Listing page)/Filter.jsx'
 
 const data = 
     
@@ -54,14 +55,13 @@ export class ListingMain extends Component {
         console.log(cards)
         return (
             <div>
-                <div className=" ml-5" >
+                <div className=" ml-3" >
                 <NavBarHome />
                 </div>
-                <div className="row mb-5" style={{background:"#512B1A"}} >
-                    <div className="col-12 mt-3 mb-0">
-                        <div className="row d-flex" >
+                <div className="row mb-4 mb-4" style={{background:"#512B1A"}} >
+                    <div className="col-12 mt-3 ">
+                        <div className="row  m-0" >
                             <div className="col-8" ><SearchBar /></div>
-                            <div className="col-2"><Slider /></div>
                         </div>
                     </div>
                 </div>
