@@ -1,7 +1,7 @@
 import { SEND_LOGIN_QUERY, LOGIN_SUCCESSFULL, LOGIN_FAIL, SEND_GOOGLE_QUERY, LOGIN_GOOGLE_SUCCESSFULL, LOGIN_GOOGLE_FAIL, SEND_FACEBOOK_QUERY, LOGIN_FACEBOOK_SUCCESSFULL, LOGIN_FACEBOOK_FAIL } from "./actiontypes.js"
 
 const initialState = {
-    admin: false,
+    host: false,
     logged_user: false,
     token: "",
     message: ""
@@ -16,7 +16,7 @@ export default (state = initialState, { type, payload }) => {
         case LOGIN_SUCCESSFULL:
             return {
                 ...state,
-                admin: payload["admin"] || false,
+                host: payload["host"] || false,
                 logged_user: true,
                 token: payload["token"],
                 message: payload["message"]
@@ -25,7 +25,7 @@ export default (state = initialState, { type, payload }) => {
         case LOGIN_FAIL:
             return {
                 ...state,
-                admin: false,
+                host: false,
                 logged_user: false,
                 token: "",
                 message: payload["message"]
@@ -37,7 +37,7 @@ export default (state = initialState, { type, payload }) => {
         case LOGIN_GOOGLE_SUCCESSFULL:
             return {
                 ...state,
-                admin: payload["admin"] || false,
+                host: payload["host"] || false,
                 logged_user: true,
                 token: payload["token"],
                 message: payload["message"]
@@ -46,7 +46,7 @@ export default (state = initialState, { type, payload }) => {
         case LOGIN_GOOGLE_FAIL:
             return {
                 ...state,
-                admin: false,
+                host: false,
                 logged_user: false,
                 token: "",
                 message: payload["message"]
@@ -58,7 +58,7 @@ export default (state = initialState, { type, payload }) => {
         case LOGIN_FACEBOOK_SUCCESSFULL:
             return {
                 ...state,
-                admin: payload["admin"] || false,
+                host: payload["host"] || false,
                 logged_user: true,
                 token: payload["token"],
                 message: payload["message"]
@@ -67,7 +67,7 @@ export default (state = initialState, { type, payload }) => {
         case LOGIN_FACEBOOK_FAIL:
             return {
                 ...state,
-                admin: false,
+                host: false,
                 logged_user: false,
                 token: "",
                 message: payload["message"]
