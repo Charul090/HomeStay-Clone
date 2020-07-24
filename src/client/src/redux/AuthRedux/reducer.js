@@ -16,7 +16,7 @@ export default (state = initialState, { type, payload }) => {
         case LOGIN_SUCCESSFULL:
             return {
                 ...state,
-                admin: payload["admin"],
+                admin: payload["admin"]||false,
                 logged_user: true,
                 token: payload["token"],
                 message: payload["message"]

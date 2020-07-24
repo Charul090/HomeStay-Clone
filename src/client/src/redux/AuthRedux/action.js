@@ -30,6 +30,7 @@ const Start_Login_Query = (data)=>{
             url:"/guest/login",
             data:data
         })
+        .then((payload)=>payload.data)
         .then((data)=>{
             if(data["error"]){
                 dispatch(LOGIN_FAILURE(data))
