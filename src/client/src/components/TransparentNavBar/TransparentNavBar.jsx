@@ -30,22 +30,20 @@ export default function OpaqueNavBar() {
                     </div>
                     <div class="dropdown">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            SignUp
+                            Sign Up
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Guest Signup</a>
+                            <a class="dropdown-item" href="#">Host Signup</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Login
+                            Log in
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#loginmodal" data-toggle="modal" data-target="#loginmodal">Guest Login</a>
+                            <a class="dropdown-item" href="#">Host Login</a>
                         </div>
                     </div>
                     <div class="dropdown">

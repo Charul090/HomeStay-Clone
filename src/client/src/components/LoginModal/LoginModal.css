@@ -1,0 +1,81 @@
+#loginmodal{
+    font-family: 'Open Sans', sans-serif;
+    color:#512B1A;
+}
+
+.modal-header > .close{
+    margin-left:0 !important;
+    padding-left: 0 !important;
+    font-size:2.4rem;
+    font-weight: 100;
+    color: #BDBDBD !important;
+}
+
+.modal-sm{
+    max-width:340px !important;
+}
+
+#logincontent{
+    background-color: #F1EFEF;
+}
+
+.modal-body > button{
+    border: 1px solid black !important;
+    color:#512b1a !important;
+    background-color: #e6e6e6;
+    width:95%;
+    margin:13px auto;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px !important;
+}
+
+.modal-body > button > div{
+    margin:0 !important;
+}
+
+.modal-body > button > span{
+    width:100%;
+    margin:0 auto;
+}
+
+.modal-body > span > button{
+    width:95%;
+    margin:0 auto;
+    padding:9px;
+    display:inline-flex;
+}
+.my-facebook-button-class{
+    text-transform: uppercase;
+    font-size: 15px;
+    color:#3b5998;
+    border:1px solid black;
+}
+
+.my-facebook-button-class > i{
+    padding:3px;
+    font-size: 18px;
+    text-align: left;
+    margin-right: 50px;
+}
+
+#login-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 0.75em;
+}
+#login-separator::before, #login-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+#login-separator::before {
+    margin-right: .25em;
+}
+#login-separator::after {
+    margin-left: .25em;
+}
+
+#login-form{
+    width:95%;
+    margin:0 auto;
+}
