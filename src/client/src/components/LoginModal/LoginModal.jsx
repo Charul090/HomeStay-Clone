@@ -103,14 +103,14 @@ export default function LoginModal() {
                         <div id="login-separator">
                             or with your email
                         </div>
-                        <form id="login-form" onSubmit={handleSubmit}>
+                        <form id="login-form">
                             <div className="form-group">
                                 <input type="email" value={email} onChange={handleEmail} class="form-control" placeholder="Email" />
                             </div>
                             <div className="form-group">
                                 <input type="password" value={password} onChange={handlePassword} class="form-control" placeholder="Password" />
                             </div>
-                            <button className="btn btn-block btn-danger" data-dismiss="modal">Log In</button>
+                            <button className="btn btn-block btn-danger" onClick={handleSubmit} data-dismiss="modal">Log In</button>
                         </form>
                     </div>
                     <div className="modal-footer">
