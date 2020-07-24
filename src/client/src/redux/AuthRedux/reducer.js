@@ -30,7 +30,27 @@ export default (state = initialState, { type, payload }) => {
                 token: "",
                 message: payload["message"]
             }
-
+        
+        case SEND_GOOGLE_QUERY:
+            return { ...state }
+        
+        case LOGIN_GOOGLE_SUCCESSFULL:
+            return {
+                ...state,
+                admin: payload["admin"]||false,
+                logged_user: true,
+                token: payload["token"],
+                message: payload["message"]
+            }
+        
+        case LOGIN_FAIL:
+            return {
+                ...state,
+                admin: false,
+                logged_user: false,
+                token: "",
+                message: payload["message"]
+            }
         default:
             return { ...state }
     }

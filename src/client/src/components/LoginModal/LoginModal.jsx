@@ -5,7 +5,8 @@ import "./LoginModal.css"
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import FacebookLogin from "react-facebook-login"
 import axios from "axios";
-import {Start_Login_Query} from "../../redux/AuthRedux/action.js"
+import {Start_Login_Query, Google_Login_Query} from "../../redux/AuthRedux/action.js"
+import $ from "jquery"
 
 
 export default function LoginModal() {
@@ -49,15 +50,10 @@ export default function LoginModal() {
     }
 
     const responseGoogle = (response) => {
-        console.log(response)
-        axios({
-            "method": "post",
-            "url": "https://c4491e4b9d2e.ngrok.io/oauth/google",
-            "data": response
-        })
-            .then((data) => {
-                console.log(data)
-            })
+        window.$("#loginmodal").modal("toggle");
+
+        disptach(Google_Login_Query(response))
+        
     }
 
     const responseFacebook = (response) => {
@@ -92,14 +88,14 @@ export default function LoginModal() {
                             fields="name,email,picture"
                             callback={responseFacebook}
                             cssClass="my-facebook-button-class"
-                            icon="fa-facebook" />
+                            icon="fa-facebook" data-dismiss="modal"/>
                         <GoogleLogin
                             clientId="863252758203-dajc84f5om56upbk0ufibfjpj2062dht.apps.googleusercontent.com"
                             buttonText="LOGIN WITH GOOGLE"
                             onSuccess={responseGoogle}
                             onFailure={responseGoogle}
                             cookiePolicy={'single_host_origin'}
-                        />
+                            data-dismiss="modal"/>
                         <div id="login-separator">
                             or with your email
                         </div>
