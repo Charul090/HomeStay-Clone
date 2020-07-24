@@ -19,7 +19,6 @@ export class Login extends Component {
   }
   render(){
 
-    const {auth_success} = this.props
 
     return(
       <React.Fragment>
@@ -54,7 +53,7 @@ export class Login extends Component {
             </Modal.Footer>
           </Modal.Dialog>
           </Modal>
-  </React.Fragment>
+    </React.Fragment>
 
       )
       }

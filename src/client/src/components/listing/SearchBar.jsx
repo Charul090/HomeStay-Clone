@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Filter from '../Filter(Listing page)/Filter.jsx'
+import Slider from './Slider.jsx'
 
 export class SearchBar extends Component {
 
@@ -49,7 +51,7 @@ export class SearchBar extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                        
-                    <div class="form-row ml-2">
+                    <div class="form-row ml-2 mr-0">
                         
                         <div class="col-sm-3 form-group col-md-2">
                         <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
@@ -61,7 +63,7 @@ export class SearchBar extends Component {
                         </div>
                         </div>
 
-                        <div class="col-sm-3 form-group col-md-2">
+                        <div class="col-sm-3 form-group col-md-2 col-2">
                         <div class="input-group">
                             <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></div>
@@ -70,7 +72,7 @@ export class SearchBar extends Component {
                         </div>
                         </div>
 
-                        <div class="col-sm-3 form-group col-md-2">
+                        <div class="col-sm-3 form-group col-md-2 col-2">
                         <div class="input-group">
                             <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></div>
@@ -81,7 +83,7 @@ export class SearchBar extends Component {
 
                         
                         
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-2 col-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-user-o" aria-hidden="true"></i></div>
                             
@@ -99,8 +101,16 @@ export class SearchBar extends Component {
                    
                     <div className="col-1 ">
                     <button type="submit" className="btn mt-1" style={{background:"brown"}}><i className="fa fa-search" style={{fontSize:"24px",color:"white"}}></i></button>
+                    </div >
+                    <div className="col-1">
+                        <Filter />
                     </div>
+                    <div className="col-2">
+                        <Slider />
                     </div>
+
+                    </div>
+                    
                     </form>
             </div>
         )
