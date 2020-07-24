@@ -1,10 +1,53 @@
-import React from 'react'
+import React, { useState ,useEffect} from 'react'
+import { useDispatch,useSelector } from "react-redux"
+import {useHistory} from "react-router-dom"
 import "./LoginModal.css"
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import FacebookLogin from "react-facebook-login"
 import axios from "axios";
+import {Start_Login_Query} from "../../redux/AuthRedux/action.js"
+
 
 export default function LoginModal() {
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    let disptach = useDispatch()
+    let {logged_user,admin} = useSelector(state=>state.auth)
+    let history = useHistory()
+
+    useEffect(()=>{
+        if(logged_user){
+            if(admin){
+                history.push("/host/listing")
+            }
+            else{
+                history.push("/guest")
+            }
+            
+        }
+    },[logged_user])
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        let data = {
+            "email": email,
+            "password": password
+        }
+
+        disptach(Start_Login_Query(data))
+    }
+
     const responseGoogle = (response) => {
         console.log(response)
         axios({
@@ -28,6 +71,8 @@ export default function LoginModal() {
                 console.log(data)
             })
     }
+
+    console.log(email, password)
 
     return (
         <div className="modal fade" id="loginmodal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -58,10 +103,14 @@ export default function LoginModal() {
                         <div id="login-separator">
                             or with your email
                         </div>
-                        <form id="login-form" style={{width:"95%",margin:"0 auto"}}>
+                        <form id="login-form" onSubmit={handleSubmit}>
                             <div className="form-group">
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                                <input type="email" value={email} onChange={handleEmail} class="form-control" placeholder="Email" />
                             </div>
+                            <div className="form-group">
+                                <input type="password" value={password} onChange={handlePassword} class="form-control" placeholder="Password" />
+                            </div>
+                            <button className="btn btn-block btn-danger" data-dismiss="modal">Log In</button>
                         </form>
                     </div>
                     <div className="modal-footer">

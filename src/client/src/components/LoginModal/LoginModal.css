@@ -62,6 +62,7 @@
     align-items: center;
     text-align: center;
     font-size: 0.75em;
+    margin:10px 0;
 }
 #login-separator::before, #login-separator::after {
     content: '';
