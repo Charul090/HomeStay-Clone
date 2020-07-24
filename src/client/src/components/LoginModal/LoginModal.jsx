@@ -5,7 +5,7 @@ import "./LoginModal.css"
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import FacebookLogin from "react-facebook-login"
 import axios from "axios";
-import {Start_Login_Query, Google_Login_Query} from "../../redux/AuthRedux/action.js"
+import {Start_Login_Query, Google_Login_Query,Facebook_Login_Query} from "../../redux/AuthRedux/action.js"
 import $ from "jquery"
 
 
@@ -51,24 +51,15 @@ export default function LoginModal() {
 
     const responseGoogle = (response) => {
         window.$("#loginmodal").modal("toggle");
-
         disptach(Google_Login_Query(response))
         
     }
 
     const responseFacebook = (response) => {
-        console.log(response)
-        axios({
-            "method": "post",
-            "url": "https://c4491e4b9d2e.ngrok.io/oauth/facebook",
-            "data": response
-        })
-            .then((data) => {
-                console.log(data)
-            })
+        window.$("#loginmodal").modal("toggle");
+        disptach(Facebook_Login_Query(response))
     }
 
-    console.log(email, password)
 
     return (
         <div className="modal fade" id="loginmodal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">

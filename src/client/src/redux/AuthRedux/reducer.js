@@ -16,7 +16,7 @@ export default (state = initialState, { type, payload }) => {
         case LOGIN_SUCCESSFULL:
             return {
                 ...state,
-                admin: payload["admin"]||false,
+                admin: payload["admin"] || false,
                 logged_user: true,
                 token: payload["token"],
                 message: payload["message"]
@@ -30,20 +30,20 @@ export default (state = initialState, { type, payload }) => {
                 token: "",
                 message: payload["message"]
             }
-        
+
         case SEND_GOOGLE_QUERY:
             return { ...state }
-        
+
         case LOGIN_GOOGLE_SUCCESSFULL:
             return {
                 ...state,
-                admin: payload["admin"]||false,
+                admin: payload["admin"] || false,
                 logged_user: true,
                 token: payload["token"],
                 message: payload["message"]
             }
-        
-        case LOGIN_FAIL:
+
+        case LOGIN_GOOGLE_FAIL:
             return {
                 ...state,
                 admin: false,
@@ -51,6 +51,28 @@ export default (state = initialState, { type, payload }) => {
                 token: "",
                 message: payload["message"]
             }
+
+        case SEND_FACEBOOK_QUERY:
+            return { ...state }
+
+        case LOGIN_FACEBOOK_SUCCESSFULL:
+            return {
+                ...state,
+                admin: payload["admin"] || false,
+                logged_user: true,
+                token: payload["token"],
+                message: payload["message"]
+            }
+
+        case LOGIN_FACEBOOK_FAIL:
+            return {
+                ...state,
+                admin: false,
+                logged_user: false,
+                token: "",
+                message: payload["message"]
+            }
+
         default:
             return { ...state }
     }
