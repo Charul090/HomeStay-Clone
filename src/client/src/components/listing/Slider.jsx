@@ -41,12 +41,24 @@ const Styles = styled.div`
 `;
 
 export default class Slider extends React.Component {
-  state = {
-    value: 50
-  }
 
-  handleOnChange = (e) => this.setState({ value: e.target.value },
-    console.log(e.target.value))
+          constructor(props){
+            super(props)
+            this.state = {
+              value: 50
+            }
+          }
+          
+      handleOnChange = (e) => {
+        this.setState({ value: e.target.value })
+        console.log(e.target.value)
+        // console.log(this.props.location.search);
+        // var myurl = "http://localhost:3000/destination"
+        // myurl = myurl.href+this.props.location.search
+        // //  myurl.searchParams.append('per_night',e.target.value)
+        //          console.log(myurl.href)
+
+      }
 
   render() {
     return (
