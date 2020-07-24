@@ -8,13 +8,12 @@ export class Filter extends Component {
     constructor(props){
         super(props)
         this.state={
-          show :false,
-          meals :false,
-          males:"",
-          females:"",
-          students:"",
-          useKitchen:""
-
+            meals_provided :false,
+            accept_male:false,
+            accept_female:false,
+            accept_students:false,
+            self_catering:false
+          
         }
       }
     
@@ -40,9 +39,51 @@ export class Filter extends Component {
         //   console.log(this.state.meals)
       }
 
-    render() {
+      // componentDidMount(){
+      //   console.log(this.props)
+      //   let params = new URLSearchParams(this.props.history.location.search);
         
-        console.log(this.state);
+      // }
+
+      componentDidUpdate(prevProps){
+        console.log(prevProps);
+        console.log(this.props)
+        var obj = this.state;
+
+        var myurl = new URL('http://localhost:3000/destination')
+        // console.log(obj);
+        for(var key in obj){
+          if(obj[key]!== false){
+            
+            // console.log(myurl);
+            if(obj[key]==true){
+              myurl.searchParams.append(key,1)
+              console.log(myurl.href);
+            }
+            else{
+              myurl.searchParams.append(key,obj[key])
+              console.log(myurl);
+              
+            }
+            
+          }
+        }
+        console.log(myurl.search);
+        if(prevProps.location.search!==myurl.search){
+          if(myurl.search==""){
+            this.props.history.push("/destination")
+          }
+          else{
+            this.props.history.push(myurl.search);
+          }
+        }
+      
+      }
+
+    render() {
+      // console.log(this.props)
+        
+        // console.log(this.state);
         return (
             <div>                                
                 <div>
@@ -56,16 +97,16 @@ export class Filter extends Component {
                             <div className="m-1">
                                 <p className="font-weight-bold small text-center ">MEALS</p>
                                 <ButtonGroup vertical >
-                                    <Button variant={this.state.males?"success":"light"} border="dark" name="males" value={this.state.males} onClick={this.handleFilter}>Males</Button>
-                                    <Button variant={this.state.females?"success":"light"} border="secondary" name="females" value={this.state.females} onClick={this.handleFilter}>Females</Button>
-                                    <Button variant={this.state.students?"success":"light"} border="secondary" name="students" value={this.state.students}  onClick={this.handleFilter}>students</Button>
+                                    <Button variant={this.state.accept_male?"success":"light"} border="dark" name="accept_male" value={this.state.accept_male} onClick={this.handleFilter}>Males</Button>
+                                    <Button variant={this.state.accept_female?"success":"light"} border="secondary" name="accept_female" value={this.state.accept_female} onClick={this.handleFilter}>Females</Button>
+                                    <Button variant={this.state.accept_students?"success":"light"} border="secondary" name="accept_students" value={this.state.accept_students}  onClick={this.handleFilter}>students</Button>
                                 </ButtonGroup>
                             </div>
                             <div className="m-1">
                                 <p className="font-weight-bold small text-center ">HOST WELCOMES</p>
                                 <ButtonGroup vertical className="bg-secondary">
-                                    <Button variant={this.state.meals?"success":"light"} border="dark" name="meals" value={this.state.meals} onClick={this.handleFilter}>Meals Provided</Button>
-                                    <Button variant={this.state.useKitchen?"success":"light"} border="secondary" value={this.state.useKitchen} name="useKitchen" onClick={this.handleFilter}>Use Kitchen</Button>
+                                    <Button variant={this.state.meals_provided?"success":"light"} border="dark" name="meals_provided" value={this.state.meals_provided} onClick={this.handleFilter}>Meals Provided</Button>
+                                    <Button variant={this.state.self_catering?"success":"light"} border="secondary" value={this.state.self_catering} name="self_catering" onClick={this.handleFilter}>Use Kitchen</Button>
                                 </ButtonGroup>
                             </div>
                             </div>

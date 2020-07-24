@@ -50,7 +50,12 @@ const data =
 
 
 export class ListingMain extends Component {
+    constructor(props){
+        super(props)
+        this.state={}
+    }
     render() {
+        // console.log(this.props)
         var cards = data.subdata
         console.log(cards)
         return (
@@ -59,9 +64,9 @@ export class ListingMain extends Component {
                 <NavBarHome />
                 </div>
                 <div className="row mb-4 mb-4" style={{background:"#512B1A"}} >
-                    <div className="col-12 mt-3 ">
+                    <div className="col-12 mt-2 p-2 ">
                         <div className="row  m-0" >
-                            <div className="col-8" ><SearchBar /></div>
+                            <div className="col-8" ><SearchBar {...this.props}/></div>
                         </div>
                     </div>
                 </div>
