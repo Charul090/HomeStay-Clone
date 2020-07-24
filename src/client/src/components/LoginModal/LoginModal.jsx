@@ -15,12 +15,12 @@ export default function LoginModal() {
     const [password, setPassword] = useState("")
 
     let disptach = useDispatch()
-    let {logged_user,admin} = useSelector(state=>state.auth)
+    let {logged_user,host} = useSelector(state=>state.auth)
     let history = useHistory()
 
     useEffect(()=>{
         if(logged_user){
-            if(admin){
+            if(host){
                 history.push("/host/listing")
             }
             else{
@@ -79,14 +79,14 @@ export default function LoginModal() {
                             fields="name,email,picture"
                             callback={responseFacebook}
                             cssClass="my-facebook-button-class"
-                            icon="fa-facebook" data-dismiss="modal"/>
+                            icon="fa-facebook"/>
                         <GoogleLogin
                             clientId="863252758203-dajc84f5om56upbk0ufibfjpj2062dht.apps.googleusercontent.com"
                             buttonText="LOGIN WITH GOOGLE"
                             onSuccess={responseGoogle}
                             onFailure={responseGoogle}
                             cookiePolicy={'single_host_origin'}
-                            data-dismiss="modal"/>
+                            />
                         <div id="login-separator">
                             or with your email
                         </div>
