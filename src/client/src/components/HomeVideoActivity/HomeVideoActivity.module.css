@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+
+.section{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #512B1A;
+}
+
+.spacer1{
+    margin-top: 5em;
+}
+
+.spacer2{
+    margin-top:2.5em;
+}
+
+.section > div > h3{
+    text-align: left;
+    line-height: 1.4em;
+    margin: 0;
+    font-size: 2.25em;
+    font-weight: 300;
+}
+
+.section > div:nth-child(3)::before,
+.section > div:nth-child(3)::after{
+    display: table;
+    content: " ";
+}
