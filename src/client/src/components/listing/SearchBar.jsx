@@ -47,47 +47,47 @@ export class SearchBar extends Component {
     render() {
         // console.log(this.props);
         return (
-            <div className="search-bar pt-3">
-                <div className=" col-10">
+            <div className="search-bar pt-2">
+                <div className=" col-10 ">
                 <form onSubmit={this.handleSubmit}>
                        
                     <div class="form-row mr-0">
                         
-                        <div class="col-sm-3 form-group col-md-2">
+                        <div class="col-sm-3 form-group col-md-3 ">
                         <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                            <div class="input-group-text"><i class='fas fa-map-marker-alt' style={{fontSize:"15px"}}></i></div>
                             </div>
-                            <input type="text" onChange ={this.handleChange} name="location" class="form-control p-4" id="inlineFormInputGroupUsername" placeholder="Location"/>
+                            <input type="text" onChange ={this.handleChange} name="location" class="form-control p-3 " id="inlineFormInputGroupUsername" placeholder="Location"/>
                         </div>
                         </div>
 
                         <div class="col-sm-3 form-group col-md-2 col-2">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></div>
+                            <div class="input-group-text"><i class='far fa-calendar-plus' style={{fontSize:"15px"}}></i></div>
                             </div>
-                            <input class="form-control p-4" placeholder="Check-In" name="check_in" onChange={this.handleChange} id="inlineFormInputGroupUsername" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
+                            <input class="form-control" placeholder="check-In" name="check_in" onChange={this.handleChange} id="inlineFormInputGroupUsername" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
                         </div>
                         </div>
 
                         <div class="col-sm-3 form-group col-md-2 col-2">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></div>
+                            <div class="input-group-text"><i class='far fa-calendar-minus' style={{fontSize:"15px"}}></i></div>
                             </div>
-                            <input class="form-control p-4" placeholder="Check-Out" name="check_out" onChange={this.handleChange} id="inlineFormInputGroupUsername" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
+                            <input class="form-control " placeholder="check-Out" name="check_out" onChange={this.handleChange} id="inlineFormInputGroupUsername" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
                         </div>
                         </div>
 
                         
                         
-                        <div class="form-group col-md-2 col-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fa fa-user-o" aria-hidden="true"></i></div>
+                        <div class="form-group col-sm-2 col-md-1  ">
+                        <div class="input-group-prepend ">
+                            <div class="input-group-text"><i class='fas fa-user-alt' style={{fontSize:"15px"}}></i></div>
                             
-                        <select id="inputState" name="guests" onChange={this.handleChange} class="form-control p-4">
+                        <select id="inputState" name="guests" onChange={this.handleChange} className="form-control p-2">
                             <option value ="0" selected>Guest-0</option>
                             <option value="1"> 1</option>
                             <option value="2"> 2</option>
@@ -95,12 +95,14 @@ export class SearchBar extends Component {
                             <option value="4"> 4</option>
                             <option value="5"> 5</option>
                         </select>
+                        
                         </div>
+                        
                         </div>
                         
                    
                     <div className="col-1 ">
-                    <button type="submit" className="btn mt-1" style={{background:"brown"}}><i className="fa fa-search" style={{fontSize:"24px",color:"white"}}></i></button>
+                    <button type="submit" className="btn " style={{background:"brown"}}><i className="fa fa-search" style={{fontSize:"24px",color:"white"}}></i></button>
                     </div >
                     <div className="col-3">
                         <Filter {...this.props}/>

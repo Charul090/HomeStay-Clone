@@ -30,7 +30,7 @@ export class Pagination extends Component {
         }
         return (
             <div>
-                <div id="pagination-panel" className="activepage_entries_info rightFloat m-5">
+                <div id="pagination-panel" className="activepage_entries_info rightFloat m-5 ">
                     <div class="mobile-pagination">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">

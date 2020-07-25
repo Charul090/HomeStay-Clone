@@ -69,8 +69,8 @@ export class ListingMain extends Component {
                 <div >
                     <SearchBar {...this.props}/>
                 </div>
-                <div className="row">
-                    <div className="col-12 p-5">
+                <div className="row m-5">
+                    <div className="col-12 ">
                         <div className="row">
                             {cards && cards.map(item =>(
                                     <ListCard data={item}/>
@@ -79,7 +79,7 @@ export class ListingMain extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="fixed-bottom">
+                <div className="fixed-bottom bg-light " style={{height:"90px"}}>
                 <Pagination {...this.props}/>
                 </div>
             </div>
