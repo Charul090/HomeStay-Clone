@@ -62,6 +62,10 @@ export default function RegisterModal() {
                 }
         
                 disptach(Start_Register_Query(data))
+                setEmail("")
+                setPassword("")
+                setFirstName("")
+                setLastName("")
             }
             else{
                 setMessage("Password should be long than 4 charaters")
