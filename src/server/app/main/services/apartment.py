@@ -1,6 +1,6 @@
 import json
 import jwt
-from ..models import db, UsersModel, ApartmentModel, BedroomModel, HostProfileModel
+from ..models import db, UsersModel, ApartmentModel, BedroomModel, HostProfileModel, LocationModel, ReviewsModel
 import datetime
 import random
 
@@ -76,3 +76,41 @@ def basic_info(apartment_id):
         "apartment_data": apartment_data,
         "host_data": host_data
     })
+
+
+def area_info(apartment_id):
+    apartment_id = int(apartment_id)
+    area_data = {}
+    review_data = []
+
+    apartment_query = ApartmentModel.query.filter(
+        ApartmentModel.id == apartment_id).first()
+
+    area_data["about_area"] = apartment_query.about_area
+    area_data["local_facilities"] = apartment_query.local_facilities
+    area_data["meals"] = apartment_query.meals
+    area_data["rules"] = apartment_query.rules
+
+    location_query = LocationModel.query.filter(
+        LocationModel.apartment_id == apartment_id).first()
+
+    if location_query is not None:
+        area_data["latitude"] = location_query.latitude
+        area_data["longitude"] = location_query.longitude
+
+    review_query = ReviewsModel.query.filter(
+        ReviewsModel.apartment_id == apartment_id).all()
+
+    if review_query is not None:
+        for x in review_query:
+            obj = {}
+            obj["review"] = x.reviews
+            obj["rating"] = x.rating
+
+            user_query = UsersModel.query.filter(
+                UsersModel.id == x.guest_id).first()
+
+            obj["name"] = user_query.firstname
+            obj["profile_pic"] = user_query.image
+
+    return json.dumps({"error": False, "area_data": area_data, "reviews_data": review_data})
