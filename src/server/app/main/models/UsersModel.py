@@ -9,3 +9,4 @@ class UsersModel(db.Model):
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
     phonenumber = db.Column(db.String(100), unique=True)
+    image = db.Column(db.String(1000))
