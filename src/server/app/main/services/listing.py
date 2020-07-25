@@ -82,9 +82,16 @@ def apartment_listing(info):
 
     total_pages, start, end = pagination(len(data), info["page"])
 
+    if total_pages is False:
+        return json.dumps({
+            "error":True,
+            "message":"Invalid page number."
+        })
+
     data = data[start:end]
 
     return json.dumps({
+        "error":False,
         "total_pages": total_pages,
         "page": info["page"],
         "data": data
