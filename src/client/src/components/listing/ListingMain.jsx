@@ -56,8 +56,8 @@ export class ListingMain extends Component {
     }
     render() {
         // console.log(this.props)
-        var cards = data.subdata
-        console.log(cards)
+        var cards = this.props.data
+        console.log("listing"+cards)
         return (
             <div>
                 <div className=" ml-3" >
@@ -71,7 +71,7 @@ export class ListingMain extends Component {
                     </div>
                 </div>
                 <div className="float-left">
-                {cards.map(item =>(
+                {cards && cards.map(item =>(
                         <ListCard data={item}/>
                     )
                 )}
@@ -81,9 +81,12 @@ export class ListingMain extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    
-})
+const mapStateToProps = state => {
+    return {
+      
+      data: state.data
+    }
+  }
 
 const mapDispatchToProps = {
     
