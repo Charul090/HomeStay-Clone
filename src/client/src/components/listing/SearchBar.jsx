@@ -48,7 +48,7 @@ export class SearchBar extends Component {
         // console.log(this.props);
         return (
             <div className="search-bar pt-3">
-                <div className=" col-9">
+                <div className=" col-10">
                 <form onSubmit={this.handleSubmit}>
                        
                     <div class="form-row mr-0">

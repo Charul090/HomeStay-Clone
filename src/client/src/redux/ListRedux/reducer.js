@@ -2,12 +2,20 @@ import {FETCH_REQUEST,FETCH_FAILURE,FETCH_SUCCESS,fetchRequest,fetchGetFailure,f
 
 const initState = {
     data:["lalitha"],
-    error:""
+    error:"",
+    total:5,
+    page:1
 }
 
  const reducer = (state=initState,{type,payload})=>{
 
     switch(type){
+        case "PAGE_CHANGE":
+            // console.log(state)
+            return{
+                ...state,
+                page:payload
+            }
         case "FETCH_REQUEST":
             // console.log(state)
             return{

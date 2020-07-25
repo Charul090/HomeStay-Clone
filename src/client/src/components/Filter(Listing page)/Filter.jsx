@@ -91,11 +91,15 @@ export class Filter extends Component {
          
       }
 
-      // componentDidMount(){
-      //   console.log(this.props)
-      //   let params = new URLSearchParams(this.props.history.location.search);
+      componentDidMount(){
+        console.log("componentdidmount")
+        var myurl = new URL('http://localhost:3000/destination')
+        myurl.searchParams.append('page',1);
+        this.props.history.push(myurl.search);
+        this.props.fetch(myurl.search)
+
         
-      // }
+      }
 
       componentDidUpdate(prevProps){
         console.log(prevProps);
@@ -103,33 +107,36 @@ export class Filter extends Component {
         var obj = this.state;
         console.log("cdu"+this.state.max_price)
         var myurl = new URL('http://localhost:3000/destination')
+        
         // console.log(obj);
+        myurl.searchParams.append('page',this.props.pagenum)
         for(var key in obj){
           if(obj[key]!== false){
             
             // console.log(myurl);
             if(obj[key]==true){
               myurl.searchParams.append(key,1)
-              console.log(myurl.href);
+              // console.log(myurl.href);
             }
             if(obj[key]!==true){
               myurl.searchParams.append(key,obj[key])
-              console.log(myurl);
+              // console.log(myurl);
             }
             
           }
         }
-        console.log(myurl.search);
+        // console.log(myurl.search);
         if(prevProps.location.search!==myurl.search){
           if(myurl.search==""){
             this.props.history.push("/destination")
-            console.log("inside prevprops")
+            // console.log("inside prevprops")
             this.props.fetch(myurl.search)
           }
           else{
+            
             this.props.history.push(myurl.search);
-            console.log("inside prevprops")
-            console.log('https://bdbe487b2b7f.ngrok.io'+myurl.search)
+            // console.log("inside prevprops")
+            // console.log('https://bdbe487b2b7f.ngrok.io'+myurl.search)
             this.props.fetch(myurl.search)
           }
         }
@@ -138,14 +145,14 @@ export class Filter extends Component {
 
     render() {
       const {data} = this.props
-      console.log('filter' + data);
+      // console.log('filter' + data);
         
         return (
             <div className="d-flex pr-1">                                
                 <div>
                 <Dropdown className="trans">
-                <Dropdown.Toggle className="trans">
-                <i className="fa fa-filter" style={{fontSize:"24px",color:"white"}}></i>
+                <Dropdown.Toggle variant="red">
+                <i className="fa fa-filter" style={{fontSize:"32px",color:"white"}}></i>
                 </Dropdown.Toggle>                
 
                     <Dropdown.Menu>
@@ -153,9 +160,9 @@ export class Filter extends Component {
                             <div className="m-1">
                                 <p className="font-weight-bold small text-center ">MEALS</p>
                                 <ButtonGroup vertical >
-                                    <Button variant={this.state.accept_male?"success":"light"} border="dark" name="accept_male" value={this.state.accept_male} onClick={this.handleFilter}>Males</Button>
-                                    <Button variant={this.state.accept_female?"success":"light"} border="secondary" name="accept_female" value={this.state.accept_female} onClick={this.handleFilter}>Females</Button>
-                                    <Button variant={this.state.accept_students?"success":"light"} border="secondary" name="accept_students" value={this.state.accept_students}  onClick={this.handleFilter}>students</Button>
+                                    <Button variant={this.state.accept_male?"success":"light"} variant="outline-light" name="accept_male" value={this.state.accept_male} onClick={this.handleFilter}>Males</Button>
+                                    <Button variant={this.state.accept_female?"success":"light"}  name="accept_female" value={this.state.accept_female} onClick={this.handleFilter}>Females</Button>
+                                    <Button variant={this.state.accept_students?"success":"light"}  name="accept_students" value={this.state.accept_students}  onClick={this.handleFilter}>students</Button>
                                 </ButtonGroup>
                             </div>
                             <div className="m-1">
@@ -186,7 +193,8 @@ export class Filter extends Component {
 const mapStateToProps = state => {
   return {
     error: state.error,
-    data: state.list.data
+    data: state.list.data,
+    pagenum : state.list.page
   }
 }
 const mapDispatchToProps = dispatch => {
