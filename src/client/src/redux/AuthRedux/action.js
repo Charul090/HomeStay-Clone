@@ -36,6 +36,7 @@ const Start_Login_Query = (data)=>{
                 dispatch(LOGIN_FAILURE(data))
             }
             else{
+                window.$("#loginmodal").modal("toggle");
                 dispatch(LOGIN_SUCCESS(data))
             }
 
@@ -82,6 +83,7 @@ const Facebook_Login_Query=(data)=>{
             }
             else{
                 dispatch(FACEBOOK_SUCCESS(data))
+                
             }
 
         })
