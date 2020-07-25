@@ -141,7 +141,7 @@ export class Filter extends Component {
       console.log('filter' + data);
         
         return (
-            <div className="d-flex">                                
+            <div className="d-flex pr-1">                                
                 <div>
                 <Dropdown className="trans">
                 <Dropdown.Toggle className="trans">
@@ -186,7 +186,7 @@ export class Filter extends Component {
 const mapStateToProps = state => {
   return {
     error: state.error,
-    data: state.data
+    data: state.list.data
   }
 }
 const mapDispatchToProps = dispatch => {

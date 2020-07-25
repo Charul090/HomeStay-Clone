@@ -6,7 +6,7 @@ const fetchRequest = query => {
   console.log("fetch post request action called");
   return {
     type: FETCH_REQUEST,
-    query: query || ""
+    payload: query || ""
   };
 };
 
@@ -14,7 +14,7 @@ const fetchSuccess = data => {
   console.log("fetch post success action called");
   return {
     type: FETCH_SUCCESS,
-    data: data
+    payload: data
   };
 };
 
@@ -22,7 +22,7 @@ const fetchFailure = error => {
   console.log("fetch post failure action called");
   return {
     type: FETCH_FAILURE,
-    error: error
+    payload: error
   };
 };
 
@@ -35,7 +35,7 @@ const fetchData = (query = null) => {
       .get(`https://bdbe487b2b7f.ngrok.io/stays/listing${query}`)
       .then(res => {
         console.log("response success", res.data);
-        return dispatch(fetchSuccess(res.data));
+        return dispatch(fetchSuccess(res.data.data));
       })
       .catch(err => dispatch(fetchFailure(err)));
   };

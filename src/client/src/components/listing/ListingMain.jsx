@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Slider from './Slider.jsx'
-import SearchBar from './SearchBar.jsx'
+import SearchBar from './SearchBar.jsx' 
+import '../listing/SearchBar.css'
 import ListCard from './ListCard.jsx'
 import NavBarHome from '../NavBarHome/NavBarHome.jsx'
 import Filter from '../Filter(Listing page)/Filter.jsx'
+
 
 const data = 
     
@@ -60,21 +62,21 @@ export class ListingMain extends Component {
         console.log("listing"+cards)
         return (
             <div>
-                <div className=" ml-3" >
+                <div className="ml-1" >
                 <NavBarHome />
                 </div>
-                <div className="row mb-4 mb-4" style={{background:"#512B1A"}} >
-                    <div className="col-12 mt-2 p-2 ">
-                        <div className="row  m-0" >
-                            <div className="col-8" ><SearchBar {...this.props}/></div>
+                <div >
+                    <SearchBar {...this.props}/>
+                </div>
+                <div className="row">
+                    <div className="col-12 p-5">
+                        <div className="row">
+                            {cards && cards.map(item =>(
+                                    <ListCard data={item}/>
+                                )
+                            )}
                         </div>
                     </div>
-                </div>
-                <div className="float-left">
-                {cards && cards.map(item =>(
-                        <ListCard data={item}/>
-                    )
-                )}
                 </div>
             </div>
         )
@@ -84,7 +86,7 @@ export class ListingMain extends Component {
 const mapStateToProps = state => {
     return {
       
-      data: state.data
+      data: state.list.data
     }
   }
 
