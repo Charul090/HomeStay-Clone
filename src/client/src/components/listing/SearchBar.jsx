@@ -100,12 +100,12 @@ export class SearchBar extends Component {
                     <div className="col-1 ">
                     <button type="submit" className="btn mt-1" style={{background:"brown"}}><i className="fa fa-search" style={{fontSize:"24px",color:"white"}}></i></button>
                     </div >
-                    <div className="col-1">
+                    <div className="col-3">
                         <Filter {...this.props}/>
                     </div>
-                    <div className="col-2">
+                    {/* <div className="col-2">
                         <Slider {...this.props} />
-                    </div>
+                    </div> */}
 
                     </div>
                     

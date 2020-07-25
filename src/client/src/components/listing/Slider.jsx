@@ -52,6 +52,7 @@ export default class Slider extends React.Component {
       handleOnChange = (e) => {
         this.setState({ value: e.target.value })
         console.log(e.target.value)
+        this.props.handleChange(e.target.value)
         // console.log(this.props.location.search);
         // var myurl = "http://localhost:3000/destination"
         // myurl = myurl.href+this.props.location.search
@@ -64,7 +65,7 @@ export default class Slider extends React.Component {
     return (
       <Styles opacity={this.state.value > 10 ? (this.state.value / 255) : .1} color={this.props.color}>
         <label className="font-weight-bold">Price:0</label>
-        <input type="range" min={0} max={1000} value={this.state.value} className="slider ml-1" onChange={this.handleOnChange} />
+        <input type="range" min={0} max={1000} value={this.state.value} name="price" className="slider ml-1" onChange={this.handleOnChange} />
         <p className="value">{this.state.value}</p>
       </Styles>
     )
