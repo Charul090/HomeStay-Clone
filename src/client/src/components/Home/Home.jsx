@@ -7,6 +7,7 @@ import SecondaryNavBar from '../SecondaryNavBar/SecondaryNavBar';
 import HomeReviewPanel from '../HomeReviewPanel/HomeReviewPanel';
 import styles from "./Home.module.css"
 import HomePromoBox from '../HomePromoBox/HomePromoBox';
+import HomeVideoActivity from '../HomeVideoActivity/HomeVideoActivity';
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
             <SecondaryNavBar />
             <HomeReviewPanel />
             <HomePromoBox />
+            <HomeVideoActivity />
         </div>
     )
 }

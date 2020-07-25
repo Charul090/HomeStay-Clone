@@ -4,8 +4,8 @@ import {Link} from "react-router-dom"
 
 export default function SecondaryNavBar() {
     return (
-        <section>
-            <nav className="navbar navbar-zero sticky-top">
+        <section className="sticky-top">
+            <nav className="navbar navbar-zero">
                 <div className="container">
                     <div className={styles.main}>
                         <div className={styles.element}>
