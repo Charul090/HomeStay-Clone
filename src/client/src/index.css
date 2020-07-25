@@ -13,3 +13,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar-zero{
+  padding:0  !important;
+  background-color: #6D635F;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15)
+}
+
+.navbar-zero > .container{
+  padding:0;
+}
