@@ -1,6 +1,13 @@
 import axios from "axios";
-import {FETCH_REQUEST,FETCH_FAILURE,FETCH_SUCCESS} from './actionTypes'
+import {FETCH_REQUEST,FETCH_FAILURE,FETCH_SUCCESS,PAGE_CHANGE} from './actionTypes'
 
+const pageChange = num => {
+  console.log("fetch post request action called");
+  return {
+    type: PAGE_CHANGE,
+    payload: num
+  };
+};
 
 const fetchRequest = query => {
   console.log("fetch post request action called");
@@ -46,4 +53,5 @@ export {
   fetchFailure,
   fetchRequest,
   fetchSuccess,
+  pageChange
 };

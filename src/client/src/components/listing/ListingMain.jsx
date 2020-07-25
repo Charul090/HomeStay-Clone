@@ -6,6 +6,7 @@ import '../listing/SearchBar.css'
 import ListCard from './ListCard.jsx'
 import NavBarHome from '../NavBarHome/NavBarHome.jsx'
 import Filter from '../Filter(Listing page)/Filter.jsx'
+import Pagination from '../Pagination/Pagination.jsx'
 
 
 const data = 
@@ -77,6 +78,9 @@ export class ListingMain extends Component {
                             )}
                         </div>
                     </div>
+                </div>
+                <div className="fixed-bottom">
+                <Pagination {...this.props}/>
                 </div>
             </div>
         )
