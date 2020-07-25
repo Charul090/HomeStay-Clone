@@ -12,4 +12,4 @@ class BedroomModel(db.Model):
     price_1_night = db.Column(db.Integer)
     price_1_week = db.Column(db.Integer)
     price_1_month = db.Column(db.Integer)
-    image = db.String(2000)
+    image = db.Column(db.String(2000))
