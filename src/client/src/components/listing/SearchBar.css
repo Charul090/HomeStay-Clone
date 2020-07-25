@@ -1,0 +1,23 @@
+.search-bar{
+width: 100%;
+position: relative;
+margin: 0;
+padding: 0 15px;
+box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+background-color: #6D635F;
+border-radius: 0;
+min-height: 66px;
+}
+
+.nav li{
+    position: relative;
+}
+
+#hs-wrapper #homestay-listing .search-bar ul.nav li {
+    height: 100%;
+    display: inline-block;
+}
+
+.row div{
+    max-height: 200px;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Filter from '../Filter(Listing page)/Filter.jsx'
 import Slider from './Slider.jsx'
+import './SearchBar.css'
 
 export class SearchBar extends Component {
 
@@ -46,10 +47,11 @@ export class SearchBar extends Component {
     render() {
         // console.log(this.props);
         return (
-            <div>
+            <div className="search-bar pt-3">
+                <div className=" col-9">
                 <form onSubmit={this.handleSubmit}>
                        
-                    <div class="form-row ml-2 mr-0">
+                    <div class="form-row mr-0">
                         
                         <div class="col-sm-3 form-group col-md-2">
                         <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
@@ -111,7 +113,10 @@ export class SearchBar extends Component {
                     
                     </form>
             </div>
-        )
+       
+            </div>
+       
+            )
     }
 }
 
