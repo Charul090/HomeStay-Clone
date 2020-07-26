@@ -72,7 +72,7 @@ export class ListingMain extends Component {
                 <div  style={{background:"white"}}>
                 <NavBarHome />
                 </div>
-                <div className="col-12 ">
+                <div className="search-bar">
                     <SearchBar {...this.props}/>
                 </div>
                 <div className="col-12   pl-3 pb-3">
@@ -88,7 +88,7 @@ export class ListingMain extends Component {
                     </div>
                 </div>
                 </div>
-                <div className="fixed-bottom bg-light " style={{height:"90px"}}>
+                <div className="fixed-bottom bg-light " style={{height:"40px"}}>
                 <Pagination {...this.props}/>
                 </div>
             </div>

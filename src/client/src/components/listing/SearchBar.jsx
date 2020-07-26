@@ -47,14 +47,14 @@ export class SearchBar extends Component {
     render() {
         // console.log(this.props);
         return (
-            <div className="search-bar pt-3 ">
+            <div className="search-bar pt-2">
                 <div className="row">
                 <div className=" col-12  col-sm-12 col-md-10 col-lg-10 ">
                 <form onSubmit={this.handleSubmit}>
                        
-                    <div class="form-row mr-0">
+                    <div class="row mr-0">
                         
-                        <div class="ml-2 col-6 col-sm-6 form-group col-md-6 col-lg-3">
+                        <div class="pl-2 col-6 col-sm-6 form-group col-md-6 col-lg-3">
                         <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
