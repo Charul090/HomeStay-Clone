@@ -8,6 +8,7 @@ import HomeReviewPanel from '../HomeReviewPanel/HomeReviewPanel';
 import styles from "./Home.module.css"
 import HomePromoBox from '../HomePromoBox/HomePromoBox';
 import HomeVideoActivity from '../HomeVideoActivity/HomeVideoActivity';
+import HomeUsp from '../HomeUsp/HomeUsp';
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
             <HomeReviewPanel />
             <HomePromoBox />
             <HomeVideoActivity />
+            <HomeUsp />
         </div>
     )
 }

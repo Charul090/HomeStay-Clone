@@ -14,6 +14,10 @@ code {
     monospace;
 }
 
+.container-fluid{
+  margin:0 11px !important;
+}
+
 .navbar-zero{
   padding:0  !important;
   background-color: #6D635F;
