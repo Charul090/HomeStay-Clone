@@ -8,3 +8,4 @@ class BookingModel(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     start_date = db.Column(db.DateTime)
     end_date = db.Column(db.DateTime)
+    total_cost = db.Column(db.Integer)
