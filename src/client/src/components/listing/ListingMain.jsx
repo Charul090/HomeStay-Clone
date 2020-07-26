@@ -59,20 +59,23 @@ export class ListingMain extends Component {
         super(props)
         this.state={}
     }
+    componentDidMount(){
+        document.body.style.backgroundColor = "rgba(183, 177, 174, 0.3)"
+    }
     render() {
         // console.log(this.props)
         var cards = this.props.data.data
         console.log("listing"+cards)
         return (
-            <div className="bg-light row">
+            <div className="mt-2 row">
                 <div className="col-sm-12 col-lg-12 col-md-12">
-                <div >
+                <div  style={{background:"white"}}>
                 <NavBarHome />
                 </div>
                 <div className="col-12 ">
                     <SearchBar {...this.props}/>
                 </div>
-                <div className="col-12 m-1 p-4">
+                <div className="col-12   pl-3 pb-3">
                     <div className="row">
                     <div className="col-12 ">
                         <div className="row ">

@@ -60,8 +60,13 @@ export class Filter extends Component {
             self_catering:false,
             max_price: 100000,
             min_price:0,
-            count:0
-          
+            count:0,
+            wifi:false,
+            tv:false,
+            garden:false,
+            bikes:false,
+            swimming_pool:false,
+            gym:false
         }
       }
     
@@ -158,24 +163,26 @@ export class Filter extends Component {
         
         return (
             <div className="d-flex  row">                                
-                <div className="col-12 col-sm-12 col-md-4 col-lg-4  ">
-                <Dropdown className="trans">
-                <Dropdown.Toggle variant="trans">
+                <div className="col-12 col-sm-6 col-md-4 col-lg-4  ">
+                <Dropdown className="null">
+                <Dropdown.Toggle variant="null">
                   <span className="small  font-weight-bold text-light">FILTER 
                    ({this.state.count})</span>
                 {/* <i className="fa fa-filter" style={{fontSize:"32px",color:"white"}}></i> */}
                 </Dropdown.Toggle>                
                     
-                    <Dropdown.Menu>
-                        <div className="d-flex  row   " style={{background:"rgba(183, 177, 174, 0.3)"}} >
+                    <Dropdown.Menu className="filterWidth" style={{background:"rgba(183, 177, 174, 0.3)"}}>
+                        <div className="d-flex  row  filterWidth  ml-1 p-4 " style={{background:"rgba(183, 177, 174, 0.3)",backgroundRepeat:"rgba(183, 177, 174, 0.3)"}} >
                           
                             <div className=" col-4">
                                 <p className="font-weight-bold small text-center filterHead">HOST WELCOMES</p>
                                 <div className=" d-flex justify-content-center">
                                 <ButtonGroup vertical className=" filterFont" >
-                                    <Button className="btnWidth" variant={this.state.accept_male?"success":"light"}  name="accept_male" value={this.state.accept_male} onClick={this.handleFilter}>Males</Button>
-                                    <Button className="btnWidth" variant={this.state.accept_female?"success":"light"}   name="accept_female" value={this.state.accept_female} onClick={this.handleFilter}>Females</Button>
-                                    <Button className="btnWidth" variant={this.state.accept_students?"success":"light"}  name="accept_students" value={this.state.accept_students}  onClick={this.handleFilter}>students</Button>
+                                    <Button className="btnWidth " variant={this.state.accept_male?"success":"light"}  name="accept_male" value={this.state.accept_male} onClick={this.handleFilter}>Males</Button>
+                                    <Button className="btnWidth " variant={this.state.accept_female?"success":"light"}   name="accept_female" value={this.state.accept_female} onClick={this.handleFilter}>Females</Button>
+                                    <Button className="btnWidth" variant={this.state.accept_students?"success":"light"}  name="accept_students" value={this.state.accept_students}  onClick={this.handleFilter}>Students</Button>
+                                    <Button className="btnWidth " variant={this.state.accept_couples?"success":"light"}   name="accept_couples" value={this.state.accept_couples} onClick={this.handleFilter}>Families</Button>
+                                    <Button className="btnWidth" variant={this.state.accept_families?"success":"light"}  name="accept_families" value={this.state.accept_families}  onClick={this.handleFilter}>Couples</Button>
                                 </ButtonGroup>
                                 </div>
                             </div>
@@ -190,11 +197,16 @@ export class Filter extends Component {
                             </div>
 
                             <div className=" col-4">
-                                <p className="font-weight-bold small text-center filterHead">MEALS</p>
+                                <p className="font-weight-bold small text-center filterHead">AMENITIES</p>
                                 <div className=" d-flex justify-content-center">
-                                <ButtonGroup vertical className="bg-light filterFont">
-                                    <Button className="btnWidth" variant={this.state.meals_provided?"success":"light"}   name="meals_provided" value={this.state.meals_provided} onClick={this.handleFilter}>Meals Provided</Button>
-                                    <Button className="btnWidth" variant={this.state.self_catering?"success":"light"}   value={this.state.self_catering} name="self_catering" onClick={this.handleFilter}>Use Kitchen</Button>
+                                <ButtonGroup vertical className=" filterFont" >
+                                    <Button className="btnWidth " variant={this.state.wifi?"success":"light"}  name="wifi" value={this.state.wifi} onClick={this.handleFilter}>Wifi</Button>
+                                    <Button className="btnWidth " variant={this.state.tv?"success":"light"}   name="tv" value={this.state.tv} onClick={this.handleFilter}>TV</Button>
+                                    <Button className="btnWidth" variant={this.state.garden?"success":"light"}  name="garden" value={this.state.garden}  onClick={this.handleFilter}>Garden</Button>
+                                    <Button className="btnWidth " variant={this.state.bikes?"success":"light"}   name="bikes" value={this.state.bikes} onClick={this.handleFilter}>Bikes</Button>
+                                    <Button className="btnWidth" variant={this.state.parking?"success":"light"}  name="parking" value={this.state.parking}  onClick={this.handleFilter}>Parking</Button>
+                                    <Button className="btnWidth " variant={this.state.swimming_pool?"success":"light"}   name="swimming_pool" value={this.state.swimming_pool} onClick={this.handleFilter}>Swimming_pool</Button>
+                                    <Button className="btnWidth" variant={this.state.gym?"success":"light"}  name="gym" value={this.state.gym}  onClick={this.handleFilter}>Gym</Button>
                                 </ButtonGroup>
                                 </div>
                             </div>
@@ -205,7 +217,7 @@ export class Filter extends Component {
                     </div>                        
 
                   {/* <Slider handleChange={this.handleFilter}/> */}
-                  <div className="col-12 col-sm-12  col-md-8 col-lg-8 " style={{width:"50px"}}>
+                  <div className="col-12 col-sm-6  col-md-8 col-lg-8 " style={{width:"50px"}}>
                   <Styles opacity={this.state.max_price > 10 ? (this.state.max_price / 255) : .1} color={this.props.color}>
                     <label className="font-weight-bold"><p className=" font-weight-bold pt-2 ">Price:0</p></label>
                     <input type="range" min={0} max={100000} value={this.state.max_price} name="max_price" className="slider m-1 mb-3" onChange={this.handleFilter} />

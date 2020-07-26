@@ -47,9 +47,9 @@ export class ListCard extends Component {
                         <h4 class="card-title title">{data.apartment_name}</h4>
                         <p style={{color:"#512B1A"}} className="homestay"><span className=" font-weight-bold"> {data.user_name}</span>  {data.location} </p>
                         <div style={{display:"block",maxWidth:"100%"}}><img src="https://www.homestay.com/assets/small-review-score-img-c68dbe08abd3620cb7ae9b367952c1caac5322eb67c4d65ecfcafd83fba88dda.svg"></img><span className="small text-muted">{data.reviews}</span></div>
-                          <p style={{color:"#512B1A"}}>{data.city}</p>
-                          <p class="card-text  small italic" style={{color:"lightgrey"}}>{this.props.data.description}</p>
-                          <p style={{color:"#512B1A"}} className=" font-weight-bold small">FROM <span className="price h5 font-weight-bold" style={{color:"#92C01F"}}> ${this.props.data.price_per_night} </span>PER NIGHT</p>
+                          <div style={{color:"#512B1A"}}>{data.city}</div>
+                          <div class="card-text  small italic" style={{color:"lightgrey"}}>{this.props.data.description}</div>
+                          <p style={{color:"#512B1A"}} className="  small">FROM <span className="price h5 font-weight-bold" style={{color:"#92C01F"}}> ${this.props.data.price_per_night} </span>PER NIGHT</p>
                         <p class="card-text"><span class="text-muted"></span></p>
                     </div>
                     </div>
