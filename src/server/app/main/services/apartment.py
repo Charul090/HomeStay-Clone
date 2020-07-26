@@ -101,6 +101,7 @@ def area_info(apartment_id):
     review_query = ReviewsModel.query.filter(
         ReviewsModel.apartment_id == apartment_id).all()
 
+
     if review_query is not None:
         for x in review_query:
             obj = {}
@@ -112,5 +113,6 @@ def area_info(apartment_id):
 
             obj["name"] = user_query.firstname
             obj["profile_pic"] = user_query.image
+            review_data.append(obj)
 
     return json.dumps({"error": False, "area_data": area_data, "reviews_data": review_data})
