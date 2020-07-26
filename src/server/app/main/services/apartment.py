@@ -1,6 +1,6 @@
 import json
 import jwt
-from ..models import db, UsersModel, ApartmentModel, BedroomModel, HostProfileModel, LocationModel, ReviewsModel
+from ..models import db, UsersModel, ApartmentModel, BedroomModel, HostProfileModel, LocationModel, ReviewsModel,BookingModel
 import datetime
 import random
 
@@ -115,4 +115,47 @@ def area_info(apartment_id):
             obj["profile_pic"] = user_query.image
             review_data.append(obj)
 
-    return json.dumps({"error": False, "area_data": area_data, "reviews_data": review_data})
+    return json.dumps({"error": False,"apartment_id":apartment_id,"area_data": area_data, "reviews_data": review_data})
+
+
+def booking_info(apartment_id):
+    apartment_id = int(apartment_id)
+    bedroom_data = {}
+    booking_data = []
+
+    bedroom_query = BedroomModel.query.filter(BedroomModel.apartment_id == apartment_id).first()
+
+    bedroom_data["name"] = bedroom_query.name
+    bedroom_data["beds"] = bedroom_query.beds
+    bedroom_data["guests"] = bedroom_query.guests
+    bedroom_data["bathroom_type"] = bedroom_query.bathroom_type
+    bedroom_data["image"] = bedroom_query.image
+
+    try:
+        bedroom_data["price_1_night"] = bedroom_query.price_1_night
+    except AttributeError:
+        pass
+
+    try:
+        bedroom_data["price_1_week"] = bedroom_query.price_1_week
+    except AttributeError:
+        pass
+
+    try:
+        bedroom_data["price_1_month"] = bedroom_query.price_1_month
+    except AttributeError:
+        pass
+
+    booking_query = BookingModel.query.filter(BookingModel.apartment_id == apartment_id).all()
+
+    for x in booking_query:
+        if x.start_date >= datetime.datetime.utcnow():
+            obj = {
+                "start_date":x.start_date,
+                "end_date":x.end_date
+            }
+
+            booking_data.append(obj)
+    
+    
+    return json.dumps({"error":False,"bedroom":bedroom_data,"booking":booking_data})
