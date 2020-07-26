@@ -16,26 +16,24 @@ export class ListCard extends Component {
         console.log(this.props.data)
         const {data} = this.props
         return (
-            <>
-            <div className="col-6 ">
-              <div className="card row m-3">
-                <div className=" col-12">
-                <div className="row  ">
-                  <div class="col-4  p-0">
+            
+            <div className="col-12 col-sm-12 col-md-6 col-lg-6  mb-2 ">
+              <div className="card row m-1">
+                  <div class="col-4 col-sm-6 col-md-4 col-lg-4 p-0">
                   <div class="carousel-wrapper">
                   <Carousel showThumbs={false} showStatus={false} useKeyboardArrows className="carousel-root presentation-mode " style={{height:"100%"}}>
                     <div key="content-1" className="my-slide content ">
-                      <img style={{display:"block",minHeight:"200px"}} src="https://www.homestay.com/assets/homepage/hero/double-bed-next-to-bright-window-7f379bf25b6b842eccfcc25921e9f1c98fa5727582669ddd9d480aa1c49d48e5.jpg" />
-                    <div className="legend"><img className="img img-fluid profile" src="https://i.imgur.com/UG3C4rm.jpg"/></div>
+                      <img style={{display:"block",minHeight:"250px",maxHeight:"250px"}} src={data.bedroom_image} />
+                      <div style={{border:"4px solid white"}} className=" profile"><img className="img img-fluid profile legendInline" src={data.user_pic}/></div>
+                      <div  className=" legendInlinestar"><i className="fa fa-star p-2" style={{fontSize:"18px"}} aria-hidden="true"></i>
+</div>
                     </div>
-                    <div key="content-2" className="my-slide content">
-                      <img style={{display:"block",minHeight:"200px"}} src="https://www.homestay.com/assets/homepage/hero/double-bed-next-to-bright-window-7f379bf25b6b842eccfcc25921e9f1c98fa5727582669ddd9d480aa1c49d48e5.jpg" />
-                    </div>
-                    <div key="content-2" className="my-slide content">
-                      <img style={{display:"block",minHeight:"200px"}} src="https://www.homestay.com/assets/homepage/hero/double-bed-next-to-bright-window-7f379bf25b6b842eccfcc25921e9f1c98fa5727582669ddd9d480aa1c49d48e5.jpg" />
+                    <div key="content-2" className="my-slide content ">
+                      <img style={{display:"block",minHeight:"250px" ,maxHeight:"250px"}} src={data.apartment_image} />
+                      <div style={{border:"4px solid white"}} className=" profile"><img className="img img-fluid profile legendInline" src={data.user_pic}/></div>
                     </div>
                 </Carousel>
-              </div>                  
+              </div>                   
         
         {/* <div className="d-flex  justify-content-end  pt-0 pr-0 mr-0" >
             <div className="profile ">
@@ -44,22 +42,20 @@ export class ListCard extends Component {
         </div> */}
               
                     </div>
-                    <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{data.user_name}</h5>
-                        <div style={{display:"block",maxWidth:"100%"}}><img src="https://www.homestay.com/assets/small-review-score-img-c68dbe08abd3620cb7ae9b367952c1caac5322eb67c4d65ecfcafd83fba88dda.svg"></img></div>
-                          <p class="card-text">{this.props.data.description}</p>
-                          <h3 className="text-success"> ${this.props.data.price_per_night}</h3>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="col-6 col-sm-6  col-md-8 col-lg-8">
+                    <div class="card-body text-left">
+                        <h4 class="card-title title">{data.apartment_name}</h4>
+                        <p style={{color:"#512B1A"}} className="homestay"><span className=" font-weight-bold"> {data.user_name}</span>  {data.location} </p>
+                        <div style={{display:"block",maxWidth:"100%"}}><img src="https://www.homestay.com/assets/small-review-score-img-c68dbe08abd3620cb7ae9b367952c1caac5322eb67c4d65ecfcafd83fba88dda.svg"></img><span className="small text-muted">{data.reviews}</span></div>
+                          <p style={{color:"#512B1A"}}>{data.city}</p>
+                          <p class="card-text  small italic" style={{color:"lightgrey"}}>{this.props.data.description}</p>
+                          <p style={{color:"#512B1A"}} className=" font-weight-bold small">FROM <span className="price h5 font-weight-bold" style={{color:"#92C01F"}}> ${this.props.data.price_per_night} </span>PER NIGHT</p>
+                        <p class="card-text"><span class="text-muted"></span></p>
                     </div>
                     </div>
                 </div>
-              
-                </div>
-              </div>
             </div>
-            
-            </>
+          
         )
     }
 }

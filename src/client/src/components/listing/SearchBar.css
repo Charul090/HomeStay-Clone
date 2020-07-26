@@ -5,8 +5,12 @@
     padding: 0;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
     background-color: #6D635F;
-    border-radius: 0;
-    max-height: 55px;
+    border-radius: 0 px;
+    max-height: 66px;
+    }
+
+    .search-bar input,button{
+        border-radius: unset;
     }
     
     .nav li{
@@ -24,13 +28,14 @@
     
     .inpt{
         width:40px;
+        border-radius: 0px;
     }
     
     div input{
         font-size: small;
     }
     
-    .profile {
+    /* .profile {
         border: 7px solid white;
         overflow: hidden;
         overflow-x: hidden;
@@ -38,9 +43,11 @@
         width: 26px;
         height: 26px;
         border-radius: 50%;
+    } */
+    
+    .legend{
+        background-color: transparent;
     }
-    
-    
     
     .spacer-half {
         margin-top: 0.625em;
@@ -165,11 +172,62 @@
     
     
     
-    
-    
-
+.carousel .slide .legendInline {
 
     
+    position: absolute;
+    bottom: 40px;
+    margin-left: 10%;
+    width: 40%;
+    height:40%;
+    border-radius: 50%;
+    border: 5px solid white;
+    font-size: 12px;
+    text-align: center;
+    opacity: 1;
+    margin-bottom: 40%;
+
+}
+
+.legendInlinestar{
+    position: absolute;
+    bottom: 40px;
+    margin-left: 10%;
+    width: 15%;
+    height:15%;
+    font-size: 12px;
+    text-align: center;
+    opacity: 1;
+    color:silver;
+    background-color: white;
+}
+
+.title{
+    color:#512B1A;
+    font-size: 1em;
+    padding-top: .25em;
+    font-weight: 400;
+}
+
+.title::first-letter {
+    text-transform: capitalize;
+}
+
+.host {
+    font-weight: 600;
+}
+
+.homestay {
+    font-size: 0.750em;
+    margin-top: .5em;
+    text-transform: uppercase;
+}
+    
+.price{
+    color:#92C01F;
+    text-transform: uppercase;
+    font-weight: 600;
+}
 
 
     

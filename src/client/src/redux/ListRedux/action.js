@@ -39,10 +39,10 @@ const fetchData = (query = null) => {
     console.log("dispatching post request action...");
     dispatch(fetchRequest());
     return axios
-      .get(`https://bdbe487b2b7f.ngrok.io/stays/listing${query}`)
+      .get(`https://afa8f7d94c43.ngrok.io/stays/listing${query}`)
       .then(res => {
         console.log("response success", res.data);
-        return dispatch(fetchSuccess(res.data.data));
+        return dispatch(fetchSuccess(res.data));
       })
       .catch(err => dispatch(fetchFailure(err)));
   };
