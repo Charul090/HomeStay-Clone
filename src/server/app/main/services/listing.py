@@ -61,7 +61,7 @@ def apartment_listing(info):
     if len(pass_id) != 0:
         query_placeholder = ", ".join(["%d" for x in pass_id])
         query_data = db.session.execute(
-            ''' SELECT u.firstname,a.id,a.user_id,a.city,a.name,a.neighbourhood_area,b.price_1_night,a.about_homestay FROM apartment as a JOIN users as u ON a.user_id=u.id JOIN bedroom as b ON b.apartment_id=a.id WHERE a.id IN ({}); '''.format(query_placeholder) % (tuple(pass_id)))
+            ''' SELECT u.firstname,a.id,a.user_id,a.city,a.name,a.neighbourhood_area,b.price_1_night,a.about_homestay,u.image,a.current_rating FROM apartment as a JOIN users as u ON a.user_id=u.id JOIN bedroom as b ON b.apartment_id=a.id WHERE a.id IN ({}); '''.format(query_placeholder) % (tuple(pass_id)))
     else:
         query_data = []
 
@@ -78,6 +78,10 @@ def apartment_listing(info):
             obj["location"] = x[5]
             obj["price_per_night"] = x[6]
             obj["description"] = x[7][0:147]+"..."
+            obj["user_pic"] = x[8]
+            obj["current_rating"] = 0 if x[9] == None else x[9]
+            reviews = ReviewsModel.query.filter(ReviewsModel.apartment_id == x[1]).all()
+            obj["reviews_number"] = len(reviews)
             data.append(obj)
 
     total_pages, start, end = pagination(len(data), info["page"])
