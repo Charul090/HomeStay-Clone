@@ -19,7 +19,7 @@
     }
     
     .row div{
-        max-height:250px;
+        max-height:300px;
     }
     
     .inpt{
@@ -31,14 +31,15 @@
     }
     
     .profile {
-        border: 3px solid #36ADA4;
+        border: 7px solid white;
         overflow: hidden;
         overflow-x: hidden;
         overflow-y: hidden;
-        width: 76px;
-        height: 76px;
-        border-radius: 38px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
     }
+    
     
     
     .spacer-half {
@@ -158,10 +159,14 @@
     }
     
     
-
-
-
-
+    .carousel-root {
+        outline: none;
+    }
+    
+    
+    
+    
+    
 
 
     

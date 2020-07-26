@@ -70,9 +70,9 @@ export class ListingMain extends Component {
                     <SearchBar {...this.props}/>
                 </div>
                 <div className="row m-5">
-                    <div className="col-12 ">
-                        <div className="row">
-                            {cards && cards.map(item =>(
+                    <div className="col-12 m-2">
+                        <div className="row ">
+                            {data.subdata.map(item =>(
                                     <ListCard data={item}/>
                                 )
                             )}
