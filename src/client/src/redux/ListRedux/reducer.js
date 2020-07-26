@@ -25,7 +25,8 @@ const initState = {
              console.log(payload)
             return{
                 ...state,
-                data:payload
+                data:payload,
+                total:payload.total_pages
             }
 
             case "FETCH_FAILURE":

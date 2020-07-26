@@ -1,7 +1,30 @@
 .filter{
-    background: rgb(207, 205, 204);
+    background-color: rgba(183, 177, 174, 0.3) !important;
+    padding:20px;
 }
 
 .trans{
     background-color: transparent;
+}
+
+.filterWidth{
+    width: 450px;
+}
+
+.filterFont Button{
+    text-align: left;
+    color:#512B1A;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.filterHead {
+    font-size: 0.750em;
+    font-weight: 600;
+    color:#512B1A;
+
+}
+
+.btnWidth{
+    width:100%;
 }
