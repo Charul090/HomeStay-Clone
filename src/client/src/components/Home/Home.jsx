@@ -10,6 +10,7 @@ import HomePromoBox from '../HomePromoBox/HomePromoBox';
 import HomeVideoActivity from '../HomeVideoActivity/HomeVideoActivity';
 import HomeUsp from '../HomeUsp/HomeUsp';
 import HomeGuideBook from '../HomeGuideBook/HomeGuideBook';
+import HomePress from '../HomePress/HomePress';
 
 export default function Home() {
     return (
@@ -24,6 +25,7 @@ export default function Home() {
             <HomeVideoActivity />
             <HomeUsp />
             <HomeGuideBook />
+            <HomePress />
         </div>
     )
 }
