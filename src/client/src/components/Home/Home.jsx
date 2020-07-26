@@ -12,6 +12,7 @@ import HomeUsp from '../HomeUsp/HomeUsp';
 import HomeGuideBook from '../HomeGuideBook/HomeGuideBook';
 import HomePress from '../HomePress/HomePress';
 import HomeInsiderTip from '../HomeInsiderTip/HomeInsiderTip';
+import Footer from '../Footer/Footer';
 
 export default function Home() {
     return (
@@ -28,6 +29,7 @@ export default function Home() {
             <HomeGuideBook />
             <HomePress />
             <HomeInsiderTip />
+            <Footer />
         </div>
     )
 }
