@@ -23,7 +23,7 @@ export class ListCard extends Component {
                   <div class="carousel-wrapper">
                   <Carousel showThumbs={false} showStatus={false} useKeyboardArrows className="carousel-root presentation-mode " style={{height:"100%"}}>
                     <div key="content-1" className="my-slide content ">
-                      <img style={{display:"block",minHeight:"250px",maxHeight:"250px"}} src={data.bedroom_image} />
+                      <img style={{display:"block",minHeight:"250px",maxHeight:"250px",opacity:"1"}} src={data.bedroom_image} />
                       <div style={{border:"4px solid white"}} className=" profile"><img className="img img-fluid profile legendInline" src={data.user_pic}/></div>
                       <div  className=" legendInlinestar"><i className="fa fa-star p-2" style={{fontSize:"18px"}} aria-hidden="true"></i>
 </div>
