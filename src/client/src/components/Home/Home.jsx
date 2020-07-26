@@ -9,6 +9,7 @@ import styles from "./Home.module.css"
 import HomePromoBox from '../HomePromoBox/HomePromoBox';
 import HomeVideoActivity from '../HomeVideoActivity/HomeVideoActivity';
 import HomeUsp from '../HomeUsp/HomeUsp';
+import HomeGuideBook from '../HomeGuideBook/HomeGuideBook';
 
 export default function Home() {
     return (
@@ -22,6 +23,7 @@ export default function Home() {
             <HomePromoBox />
             <HomeVideoActivity />
             <HomeUsp />
+            <HomeGuideBook />
         </div>
     )
 }
