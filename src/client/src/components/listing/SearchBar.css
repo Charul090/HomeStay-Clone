@@ -177,15 +177,15 @@
     
     position: absolute;
     bottom: 40px;
-    margin-left: 10%;
-    width: 40%;
-    height:40%;
+    margin-left: 22%;
+    width: 30%;
+    height:30%;
     border-radius: 50%;
     border: 5px solid white;
     font-size: 12px;
     text-align: center;
     opacity: 1;
-    margin-bottom: 40%;
+    margin-bottom: 43%;
 
 }
 
@@ -193,8 +193,8 @@
     position: absolute;
     bottom: 40px;
     margin-left: 10%;
-    width: 15%;
-    height:15%;
+    width: 12%;
+    height:12%;
     font-size: 12px;
     text-align: center;
     opacity: 1;

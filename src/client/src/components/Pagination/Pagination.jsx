@@ -16,8 +16,9 @@ export class Pagination extends Component {
             handlePage = (e)=>{
 
                 var num = this.state.page
-                this.props.pageChange(Number(e.target.id));
-                this.props.fetch(this.props.history.location.search+`page=${num}`)
+                console.log(e.target.value)
+                // this.props.pageChange(Number(e.target.id));
+                // this.props.fetch(this.props.history.location.search+`page=${num}`)
             }
 
 
@@ -35,16 +36,16 @@ export class Pagination extends Component {
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
                             <li class="page-item">
-                            <button class="page-link disabled"  id="previous" aria-label="Previous">
+                            <button class="page-link " onClick={this.handlePage} id="previous" value="-1"  aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </button>
                             </li>
                             { list &&
-                                list.map((item, index) => <li class="page-item"><button class="page-link" key={index} id={item} onClick={this.handlePage}>{item}</button></li>)
+                                list.map((item, index) => <li class="page-item"><button class="page-link" value ={item} key={index} id={item} onClick={this.handlePage}>{item}</button></li>)
                                 }
                                 
                             <li class="page-item">
-                            <button class="page-link disabled"  id="next" aria-label="Next">
+                            <button class="page-link " onClick={this.handlePage} value="0" id="next" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </button>
                             </li>
