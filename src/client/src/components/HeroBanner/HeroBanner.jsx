@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import styles from "./HeroBanner.module.css"
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 
 export default function HeroBanner() {
 
@@ -7,6 +10,18 @@ export default function HeroBanner() {
     const [check_in, setCheckIn] = useState("")
     const [check_out, setCheckOut] = useState("")
     const [guests, setGuest] = useState("")
+
+
+    const [startDate, setStartDate] = useState(new Date());
+    const ExampleCustomInput1 = ({ value, onClick }) => (
+        <input style={{zIndex:"10400",width:"60px"}} className="form-control form-control-sm pt-4 pb-3" style={{ borderRadius: "unset" }} onClick={onClick} placeholder="Check-In" name="check_in" type="text" value={value} />
+
+    );
+
+    const ExampleCustomInput2 = ({ value, onClick }) => (
+        <input style={{zIndex:"10400",width:"60px"}} className="form-control form-control-sm pt-4 pb-3" style={{ borderRadius: "unset" }} onClick={onClick} placeholder="Check-Out" name="check_out" type="text" value={value} />
+
+    );
 
     const handleChange = (e) => {
         if (e.target.name === "location") {
@@ -24,12 +39,7 @@ export default function HeroBanner() {
             }
         }
     }
-    const _onFocus = (e) => {
-        e.currentTarget.type = "date";
-    }
-    const _onBlur = (e) => {
-        e.currentTarget.type = "text";
-    }
+
     return (
         <section className={styles.main}>
             <div className={styles.search}>
@@ -37,7 +47,7 @@ export default function HeroBanner() {
                     <div className={styles.intro}>
                         <h1>
                             Quality Rooms at
-                            <br/>
+                            <br />
                             Wallet-Friendly Prices
                         </h1>
                         <h2>33,000 homestays in over 160 countries</h2>
@@ -54,27 +64,27 @@ export default function HeroBanner() {
                                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                                         </span>
                                     </div>
-                                    <input type="text" className="form-control form-control-lg" placeholder="Where do you want to go?" />
+                                    <input type="text" readOnly className="form-control form-control-lg" placeholder="Where do you want to go?" />
                                 </div>
                                 <div className={styles.row}>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text">
+                                                <span class="input-group-text" style={{ borderRadius: "unset" }}>
                                                     <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                                                 </span>
+                                                <DatePicker value={check_out} selected={startDate} customInput={<ExampleCustomInput1 />} />
                                             </div>
-                                            <input class="form-control form-control-sm p-4" placeholder="Check-In" name="check_in" onChange={handleChange} id="inlineFormInputGroupUsername" type="text" onFocus={_onFocus} onBlur={_onBlur} />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text">
+                                                <span class="input-group-text" style={{ borderRadius: "unset" }}>
                                                     <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                                                 </span>
+                                                <DatePicker value={check_in} selected={startDate} customInput={<ExampleCustomInput2 />} />
                                             </div>
-                                            <input class="form-control p-4" placeholder="Check-Out" name="check_out" onChange={handleChange} id="inlineFormInputGroupUsername" type="text" onFocus={_onFocus} onBlur={_onBlur} />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -82,7 +92,7 @@ export default function HeroBanner() {
                                             <span class="input-group-text" style={{ borderRadius: "unset" }}>
                                                 <i class="fa fa-user" aria-hidden="true"></i>
                                             </span>
-                                            <select id="inputState" style={{ borderRadius: "unset" }} name="guests" onChange={handleChange} className="form-control p-4">
+                                            <select id="inputState" style={{ borderRadius: "unset" }} name="guests" onChange={handleChange} className="form-control">
                                                 <option value="1" selected> 1</option>
                                                 <option value="2"> 2</option>
                                                 <option value="3"> 3</option>
@@ -93,7 +103,7 @@ export default function HeroBanner() {
                                     </div>
                                 </div>
                                 <button className={styles.button}>
-                                <i class="fa fa-search" aria-hidden="true"></i>
+                                    <i class="fa fa-search" aria-hidden="true"></i>
                                 &nbsp; Search
                                 </button>
                             </form>

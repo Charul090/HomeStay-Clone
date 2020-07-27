@@ -1,7 +1,7 @@
 .main{
     position: absolute;
     padding: 7em 0 1.5em;
-    z-index:2;
+    z-index:1;
     font-family: Open sans;
 }
 
@@ -112,4 +112,13 @@
 
 .button > i{
     font-size: 24px;
+}
+
+.calendar{
+    position:absolute;
+    z-index:10;
+}
+
+.row input{
+    max-width: 100%;
 }
