@@ -1,0 +1,115 @@
+.main{
+    position: absolute;
+    padding: 7em 0 1.5em;
+    z-index:2;
+    font-family: Open sans;
+}
+
+.search > div{
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.intro{
+    width: 60%;
+    padding-right: 30px;
+    text-align: justify;
+}
+
+.intro >h1{
+    color: #FFFFFF;
+    text-shadow: 0 0.04em 0.8em rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    font-size: 3.38em;   
+}
+
+.intro > h2{
+    color: #FFFFFF;
+    text-shadow: 0 0.04em 0.8em rgba(0, 0, 0, 0.7);
+    font-weight: 400;
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.4em;
+}
+
+.book{
+    width: 40%;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cont{
+    padding: 30px;
+    width: 100%;
+    text-align: left;
+}
+
+.cont > h4{
+    color: #FFFFFF;
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+}
+
+.form{
+    margin-top: 1.2em;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: 2px;
+    border-color: #DBD8D6;
+    box-shadow: none;
+}
+
+.form > div span{
+    background-color: #FFFFFF;
+}
+
+.row{
+    display: inline-flex;
+}
+
+.row > div:nth-child(1),
+.row > div:nth-child(2){
+    width: 37%;
+    margin-right: 2%;
+}
+
+.row > div:nth-child(3){
+    width: 22%;
+}
+
+.row > div:nth-child(1) input,
+.row > div:nth-child(2) input,
+.row > div:nth-child(3) input{
+    font-size: 15px;
+    padding:0;
+}
+
+.row > div:nth-child(1) span,
+.row > div:nth-child(2) span,
+.row > div:nth-child(3) span{
+    background-color: #FFFFFF;
+}
+
+.button{
+    width:100%;
+    background: #CA005D;
+    color:#FFFFFF;
+    -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    outline: none;
+    border: 0;
+    height: 2.915em;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 2px;
+    margin: 0;
+    line-height: 1.6em;
+    padding: .52em 1em;
+}
+
+.button > i{
+    font-size: 24px;
+}
