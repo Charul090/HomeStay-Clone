@@ -21,7 +21,8 @@ const fetchSuccess = data => {
   console.log("fetch post success action called");
   return {
     type: FETCH_SUCCESS,
-    payload: data
+    payload: data,
+    page:1
   };
 };
 
@@ -41,7 +42,7 @@ const fetchData = (query = null) => {
     return axios
       .get(`http://231b28e3df63.ngrok.io/stays/listing${query}`)
       .then(res => {
-        console.log("response success", res.data);
+        // console.log("response success", res.data);
         return dispatch(fetchSuccess(res.data));
       })
       .catch(err => dispatch(fetchFailure(err)));

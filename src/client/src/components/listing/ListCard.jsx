@@ -13,7 +13,7 @@ export class ListCard extends Component {
 
         
     render() {
-        console.log(this.props.data)
+        // console.log(this.props.data)
         const {data} = this.props
         return (
             
@@ -35,11 +35,7 @@ export class ListCard extends Component {
                 </Carousel>
               </div>                   
         
-        {/* <div className="d-flex  justify-content-end  pt-0 pr-0 mr-0" >
-            <div className="profile ">
-            <img className="img img-fluid profile" src="https://i.imgur.com/UG3C4rm.jpg"/>
-            </div>
-        </div> */}
+        
               
                     </div>
                     <div class="col-6 col-sm-6  col-md-8 col-lg-8">

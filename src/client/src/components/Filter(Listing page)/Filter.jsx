@@ -66,7 +66,8 @@ export class Filter extends Component {
             garden:false,
             bikes:false,
             swimming_pool:false,
-            gym:false
+            gym:false,
+            initial:true
         }
       }
     
@@ -78,6 +79,7 @@ export class Filter extends Component {
       handleFilter = (e)=>{
         //   console.log(e.target.name)
         var val = this.state.count
+      
         if(e.target.name==="max_price"){
             this.setState({
               [e.target.name]: e.target.value
@@ -96,7 +98,8 @@ export class Filter extends Component {
             //   console.log(reset)
               this.setState({
                   [e.target.name]: reset,
-                  count:val
+                  count:val,
+                  initial:false
               })
             //   console.log(this.state.meals)
         }
@@ -104,63 +107,68 @@ export class Filter extends Component {
       }
 
       componentDidMount(){
-        console.log("componentdidmount")
-        var myurl = new URL('http://localhost:3000/destination')
-        myurl.searchParams.append('page',1);
-        this.props.history.push(myurl.search);
-        this.props.fetch(myurl.search)
+        
+        var para = this.props.history.location.search
+        console.log(para)
+          this.props.fetch(para);
 
         
       }
 
       componentDidUpdate(prevProps){
-        console.log(this.props.history.location.search);
-        console.log(prevProps);
-        console.log(this.props)
-        var obj = this.state;
-        console.log("cdu"+this.state.max_price)
-        var myurl = new URL('http://localhost:3000/destination')
-        
-        // console.log(obj);
-        myurl.searchParams.append('page',this.props.pagenum)
-        for(var key in obj){
-          if(obj[key]!== false){
+        // console.log(this.props.history.location.search);
+        // console.log(prevProps);
+        // console.log(this.props)
+        if(this.state.initial!==true){
+            var obj = this.state;
+            // console.log("cdu"+this.state.max_price)
+            var myurl = new URL('http://localhost:3000/destination')
             
-            // console.log(myurl);
-            if(obj[key]==true){
-              myurl.searchParams.append(key,1)
-              // console.log(myurl.href);
+            // console.log(obj);
+            myurl.searchParams.append('page',this.props.pagenum)
+            for(var key in obj){
+              if(obj[key]!== false){
+                
+                // console.log(myurl);
+                if(obj[key]==true){
+                  myurl.searchParams.append(key,1)
+                  // console.log(myurl.href);
+                }
+                if(obj[key]!==true){
+                  myurl.searchParams.append(key,obj[key])
+                  // console.log(myurl);
+                }
+                
+              }
             }
-            if(obj[key]!==true){
-              myurl.searchParams.append(key,obj[key])
-              // console.log(myurl);
+            // console.log(myurl.search);
+            if(prevProps.location.search!==myurl.search){
+              if(myurl.search==""){
+                this.props.history.push("/destination")
+                // console.log("inside prevprops")
+                this.props.fetch(myurl.search)
+              }
+              else{
+                
+                this.props.history.push(myurl.search);
+                // console.log("inside prevprops")
+                // console.log('https://bdbe487b2b7f.ngrok.io'+myurl.search)
+                this.props.fetch(myurl.search)
+              }
             }
-            
-          }
-        }
-        // console.log(myurl.search);
-        if(prevProps.location.search!==myurl.search){
-          if(myurl.search==""){
-            this.props.history.push("/destination")
-            // console.log("inside prevprops")
-            this.props.fetch(myurl.search)
           }
           else{
+            console.log("initial state");
             
-            this.props.history.push(myurl.search);
-            // console.log("inside prevprops")
-            // console.log('https://bdbe487b2b7f.ngrok.io'+myurl.search)
-            this.props.fetch(myurl.search)
           }
-        }
-      
+          
       }
 
     render() {
       const {data} = this.props
       const{count} = this.state
       // console.log('filter' + data);
-      console.log(count)
+      // console.log(count)
         
         return (
             <div className="  row">                                
