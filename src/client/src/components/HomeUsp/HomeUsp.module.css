@@ -1,0 +1,62 @@
+.spacer1{
+    margin-top: 2.5em;
+    text-align: left;
+}
+
+.section{
+    background-color: #FFFFFF;
+    line-height: 1.625em;
+    font-family: Open sans;
+    font-weight: 400;
+    color: #512B1A;
+}
+
+.section>div::after,
+.section>div::before{
+    display: table;
+    content: " ";
+}
+
+.icon1,.icon2,.icon3{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 999px;
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 1.8em;
+}
+
+.icon1{
+    background: #EFAA00;
+}
+
+.icon2{
+    background-color: #CA005D;
+}
+
+.icon3{
+    background-color: #8EC9E7;
+}
+
+.icon_container{
+    display: flex;
+}
+
+.content{
+    text-align: left;
+}
+
+.content > h4{
+    margin: 0.75em 0 0;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+}
+
+.content > p{
+    margin: 1em 0 0;
+    font-size: 1em;
+}
