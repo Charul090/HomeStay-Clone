@@ -29,10 +29,13 @@ export class NavBarAfterLogin extends Component {
                                 <div className="col-2 pt-2">
                                     <Dropdown >
                                     <Dropdown.Toggle split variant="light" id="dropdown-split" />
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                    <Dropdown.Menu className="sec">
+                                        <Dropdown.Item href="#/action-1">Dashboard</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Inbox</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Trips</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-1">Find guest</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">verify</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">bookings</Dropdown.Item>
                                     </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
@@ -44,10 +47,13 @@ export class NavBarAfterLogin extends Component {
                                 <div className="col-3">
                                 <Dropdown >
                                     <Dropdown.Toggle split variant="light" id="dropdown-split-basic" />
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                    <Dropdown.Menu className="sec">
+                                        <Dropdown.Item href="#/action-1">General</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Host</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Guests</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-1">Messeging</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Reviews</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Invite Friend</Dropdown.Item>
                                     </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
