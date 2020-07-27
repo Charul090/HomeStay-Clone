@@ -17,7 +17,7 @@ const NavBarHome = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <div className="ml-auto d-flex">
             <Nav>
-              <NavDropdown className="colorChange" bg="light" title="Destination" >
+              <NavDropdown className="colorChange"  bg="light" title="Destination" >
                   <NavDropdown.Item href="#action/3.1"><Link to="/destination">Hyderabad</Link></NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">Banglore</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Mumbai</NavDropdown.Item>
