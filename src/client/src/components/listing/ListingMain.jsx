@@ -67,15 +67,17 @@ export class ListingMain extends Component {
         var cards = this.props.data.data
         console.log("listing"+cards)
         return (
-            <div className="mt-2 row">
+            <div className=" row">
                 <div className="col-sm-12 col-lg-12 col-md-12">
                 <div  style={{background:"white"}}>
                 <NavBarHome />
                 </div>
-                <div className="col-12">
+                <div className="col-12 col-sm-12 col-lg-12 col-md-12" style={{height:"10px",minHeight: "70px",backgroundColor:"#6D635F"}}>
+                    <div className="pt-2 row">
                     <SearchBar {...this.props}/>
+                    </div>
                 </div>
-                <div className="col-12   pl-3 pb-3">
+                <div className="col-12 ">
                     <div className="row">
                     <div className="col-12 ">
                         <div className="row ">
