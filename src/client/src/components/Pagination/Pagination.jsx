@@ -9,22 +9,50 @@ export class Pagination extends Component {
                 super(props)
                 this.state = {
                     page:1,
-                    total:this.props.total
+                    total:1
                 }
             }
 
             handlePage = (e)=>{
 
-                var num = this.state.page
-                console.log(e.target.value)
                 this.props.pageChange(Number(e.target.id));
-                this.props.fetch(this.props.history.location.search+`page=${num}`)
+                this.props.fetch(this.props.history.location.search+`page=${e.target.id}`)
+                
+                console.log(this.props.pagenum)
+                var num = this.props.pagenum
+                console.log("e.target.id"+ e.target.value)
+                console.log("props total"+this.props.total)
+                if(e.target.value==="-1"){
+                    if(num!==1){
+                        num = num-1
+                        // this.props.fetch(this.props.history.location.search+`page=${num}`)
+                    }  
+                }
+                else if(e.target.value==="0"){
+                    if(num<this.props.total){
+                        num = num+1;
+                        console.log("inside 0"+num)
+                        this.props.pageChange(num);
+                        // this.props.fetch(this.props.history.location.search+`page=${num}`)
+                    }
+                    else{
+                        num = num;
+                    }
+                }
+                if(e.target.id!=="0"&&e.target.id!=="-1"){
+                    num = Number(e.target.id);
+                    this.props.pageChange(num);
+                    // this.props.fetch(this.props.history.location.search+`page=${num}`)
+                }
+                console.log("num"+num);
+                // this.props.fetch(this.props.history.location.search+`page=${num}`)
             }
 
 
     render() {
-        console.log(this.state);
-        var {total} = this.props
+        // console.log(this.state);
+        var {total,pagenum} = this.props
+        console.log(pagenum)
         var list = [];
         for(var  i=0; i<total; i++){
             list.push(i+1);
@@ -36,7 +64,7 @@ export class Pagination extends Component {
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
                             <li class="page-item">
-                            <button className="page-link " onClick={this.handlePage} id="previous" value="-1"  aria-label="Previous">
+                            <button   id="-1" value="0.1"  aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </button>
                             </li>
@@ -45,7 +73,7 @@ export class Pagination extends Component {
                                 }
                                 
                             <li class="page-item">
-                            <button className="page-link " onClick={this.handlePage} value="0" id="next" aria-label="Next">
+                            <button   value="0" id="0" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </button>
                             </li>

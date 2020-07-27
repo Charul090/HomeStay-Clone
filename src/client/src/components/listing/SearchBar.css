@@ -22,14 +22,14 @@
         display: inline-block;
     }
     
-    .row div{
+     .row div{
         max-height:300px;
     }
     
     .inpt{
         width:40px;
         border-radius: 0px;
-    }
+    } */
     
     div input{
         font-size: small;

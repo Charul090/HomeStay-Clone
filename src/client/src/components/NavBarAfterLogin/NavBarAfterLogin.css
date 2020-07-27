@@ -1,0 +1,32 @@
+.himage img{
+    height:30px;
+}
+
+
+.fontstyle{
+    color: #512B1A;
+    padding: 15px;
+    border-bottom: none;
+    line-height: 65px;
+    display: inline-block;
+    position: relative;
+    font-size: .75em;
+    line-height: 1.625em;
+    letter-spacing: .03em;
+    font-family: Open sans;
+    font-weight: bolder;
+    justify-content: center;
+}
+
+.fontstyle1{
+    color: #512B1A !important;
+    border-bottom: none;
+    line-height: 65px;
+    display: inline-block;
+    font-size: .75em;
+    line-height: 1.625em;
+    letter-spacing: .03em;
+    font-family: Open sans;
+    font-weight: bolder;
+    background: none;
+}

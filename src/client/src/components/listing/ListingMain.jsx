@@ -59,9 +59,12 @@ export class ListingMain extends Component {
         super(props)
         this.state={}
     }
+    
     componentDidMount(){
         document.body.style.backgroundColor = "rgba(183, 177, 174, 0.3)"
     }
+
+
     render() {
         // console.log(this.props)
         var cards = this.props.data.data

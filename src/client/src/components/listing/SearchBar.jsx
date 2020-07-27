@@ -91,7 +91,7 @@ export class SearchBar extends Component {
                                     <div class="input-group-prepend">
                                         <div class="input-group-text" style={{borderRadius:"unset"}}><i class='fas fa-user-alt' style={{fontSize:"15px"}}></i></div>
                                         
-                                            <select id="inputState" style={{borderRadius:"unset"}} name="guests" onChange={this.handleChange} className="form-control p-4">
+                                            <select id="inputState" style={{borderRadius:"unset"}} name="guests" onChange={this.handleChange} className="form-control p-2">
                                                 <option value ="0" selected>Guest-0</option>
                                                 <option value="1"> 1</option>
                                                 <option value="2"> 2</option>
