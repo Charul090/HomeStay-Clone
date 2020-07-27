@@ -60,3 +60,59 @@
 .spacer2{
     margin-top: 0.625em;
 }
+
+.profile{
+    background: #F1EFEF;
+    text-align: center;
+    border: 6px solid #FFFFFF;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 82px;
+    width: 164px;
+    height: 164px;
+    display: inline-block;
+    position: relative;
+}
+
+.profile > img:nth-child(1){
+    border-radius: 76px;
+    width: 152px;
+    height: 152px;
+    max-width: 100%;
+}
+
+.profile > img:nth-child(2){
+    width: 120px;
+    background-size: 120px;
+    height: 26px;
+    margin-top: -10px;
+}
+
+.social{
+    font-size: 1em;
+    margin: 0;
+}
+
+.hr{
+    border: 0;
+    border-top: 1px solid #DBD8D6;
+    margin: 0 !important;
+}
+
+.question_title{
+    font-size: .75em;
+    line-height: 1.625em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .03em;
+    color: #B7B1AE;
+    text-align: left;
+}
+
+.question_answer{
+    margin-top: .3em;
+    font-size: .75em;
+    line-height: 1.625em;
+    letter-spacing: .03em;
+    text-align: left;
+}

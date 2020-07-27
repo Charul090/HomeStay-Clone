@@ -53,7 +53,7 @@ export class SearchBar extends Component {
                 <div className=" col-12  col-sm-12 col-md-10 col-lg-10 ">
                 <form onSubmit={this.handleSubmit}>
                        
-                    <div class="row mr-0">
+                    <div id="row" class="row mr-0">
                         
                         <div class="pl-2 col-6 col-sm-6 form-group col-md-6 col-lg-3">
                         <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
