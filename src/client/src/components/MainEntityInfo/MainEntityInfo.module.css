@@ -1,0 +1,62 @@
+.sideContainer{
+    padding-top: 0px;
+    padding-bottom: 1px;
+    position: static;
+    transform: none;
+    top: 0px;
+    left: 904px;
+}
+
+.button{
+    width: 100%;
+    background: #92C01F;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    margin-top: 0.4em;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 2px;
+    margin: 0;
+    border: 0;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1.6em;
+    padding: .52em 1em;
+}
+
+.amount{
+    font-size: 17px;
+}
+
+.spacer1{
+    margin-top: 1.25em;
+}
+
+.card{
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.card_body{
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 1.25em 15px;
+}
+
+.host_info{
+    position: relative;
+    z-index: 999;
+    text-align: center;
+}
+.host_info > h2{
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+}
+
+.spacer2{
+    margin-top: 0.625em;
+}

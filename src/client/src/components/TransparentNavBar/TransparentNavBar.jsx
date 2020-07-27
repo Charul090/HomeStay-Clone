@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom"
 import "./TransparentNavBar.css"
 
-export default function OpaqueNavBar() {
+export default function TransparentNavBar() {
     return (
         <header>
             <nav className="navbar navbar-home">

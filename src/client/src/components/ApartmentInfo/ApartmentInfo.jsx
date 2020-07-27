@@ -3,6 +3,7 @@ import ListingBanner from '../ListingBanner/ListingBanner'
 import {useDispatch,useSelector} from "react-redux"
 import {useParams, useLocation,useHistory} from "react-router-dom"
 import {Start_Basic_Query} from "../../redux/EntityRedux/action.js"
+import MainEntityInfo from '../MainEntityInfo/MainEntityInfo'
 
 export default function ApartmentInfo() {
     let dispatch = useDispatch()
@@ -17,6 +18,7 @@ export default function ApartmentInfo() {
     return (
         <div>
             <ListingBanner />
+            <MainEntityInfo />
         </div>
     )
 }
