@@ -44,6 +44,10 @@ def basic_info(apartment_id):
     host_temp_data = {}
     count = 3
 
+    reviews_query = ReviewsModel.query.filter(ReviewsModel.apartment_id == apartment_id).all()
+
+    apartment_data["number_reviews"] = len(reviews_query)
+
     host_data["welcomes"] = hostprofile_query.family_welcome
     if hostprofile_query.friends_describe != None:
         host_temp_data["friends_describe"] = hostprofile_query.friends_describe
