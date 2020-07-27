@@ -3,6 +3,7 @@ import ListingBanner from '../ListingBanner/ListingBanner'
 import {useDispatch,useSelector} from "react-redux"
 import {useParams, useLocation,useHistory} from "react-router-dom"
 import {Start_Basic_Query} from "../../redux/EntityRedux/action.js"
+import HostProfileInfo from '../HostProfileInfo/HostProfileInfo'
 import MainEntityInfo from '../MainEntityInfo/MainEntityInfo'
 
 export default function ApartmentInfo() {
@@ -18,6 +19,8 @@ export default function ApartmentInfo() {
     return (
         <div>
             <ListingBanner />
+            <HostProfileInfo />
+            <div style={{height:"385px"}}></div>
             <MainEntityInfo />
         </div>
     )
