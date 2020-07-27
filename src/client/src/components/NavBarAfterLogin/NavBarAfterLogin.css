@@ -1,5 +1,8 @@
 .himage img{
     height:30px;
+    float: left;
+    margin-left:10px ;
+    margin-top: 10px;
 }
 
 
@@ -10,7 +13,7 @@
     line-height: 65px;
     display: inline-block;
     position: relative;
-    font-size: .75em;
+    font-size: .80em;
     line-height: 1.625em;
     letter-spacing: .03em;
     font-family: Open sans;
@@ -29,4 +32,14 @@
     font-family: Open sans;
     font-weight: bolder;
     background: none;
+}
+.bordr{
+    border:5px solid white;
+}
+
+.imge{
+    border-radius: 50%;
+    border:2px solid silver;
+    padding:5px;
+    margin-right: 8px;
 }
