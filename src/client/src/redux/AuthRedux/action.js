@@ -26,7 +26,7 @@ const Start_Login_Query = (data)=>{
         dispatch(LOGIN_QUERY())
         return axios({
             method:"post",
-            baseURL:"http://0f3cf9485c74.ngrok.io",
+            baseURL:"http://bdbe487b2b7f.ngrok.io",
             url:"/guest/login",
             data:data
         })
@@ -36,6 +36,7 @@ const Start_Login_Query = (data)=>{
                 dispatch(LOGIN_FAILURE(data))
             }
             else{
+                window.$("#loginmodal").modal("toggle");
                 dispatch(LOGIN_SUCCESS(data))
             }
 
@@ -71,7 +72,7 @@ const Facebook_Login_Query=(data)=>{
         dispatch(FACEBOOK_QUERY())
         return axios({
             method: "post",
-            baseURL:"http://0f3cf9485c74.ngrok.io",
+            baseURL:"http://bdbe487b2b7f.ngrok.io",
             url: "/oauth/facebook",
             data: data
         })
@@ -82,6 +83,7 @@ const Facebook_Login_Query=(data)=>{
             }
             else{
                 dispatch(FACEBOOK_SUCCESS(data))
+                
             }
 
         })
@@ -116,7 +118,7 @@ const Google_Login_Query=(data)=>{
         dispatch(GOOGLE_QUERY())
         return axios({
             method: "post",
-            baseURL:"http://0f3cf9485c74.ngrok.io",
+            baseURL:"http://bdbe487b2b7f.ngrok.io",
             url: "/oauth/google",
             data: data
         })

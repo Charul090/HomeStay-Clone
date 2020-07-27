@@ -1,0 +1,73 @@
+.section {
+    font-size: 16px;
+    line-height: 1.625em;
+    font-family: Open sans;
+    font-weight: 400;
+    text-align: left;
+    height: 80vh;
+    background-color: #F1EFEF;
+    position: relative;
+    overflow: hidden;
+    background-position: 50%;
+    background-size: cover;
+    background-image: url("https://www.homestay.com/assets/homepage/student_girl-f8b5d1a387e0f8509ae9a4ddf5e81c7cd8ee80f2547e154db88603d316cad32b.jpg");
+}
+
+.section::after{
+    box-shadow: inset 0 -200px 100px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    left: -100px;
+    right: -100px;
+    content: "";
+    top: 0;
+}
+
+.content{
+    position: absolute;
+    bottom: 2.5em;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    color: #FFFFFF;
+}
+
+.spacer1{
+    margin-top: 3.75em;
+}
+
+.content > div > h3{
+    line-height: 1.4em;
+    margin: 0;
+    font-size: 2.25em;
+    font-weight: 300;
+}
+
+.spacer2{
+    margin-top: 1.25em;
+}
+
+.text{
+    margin:0;
+    font-size:1em;
+}
+
+.button{
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0.88em 1.3em;
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: .75em;
+    font-weight: 600;
+    letter-spacing: .03em;
+    line-height: 1.6em;
+}
+
+.hr{
+    margin: 0 !important;
+    border: 0;
+    border-top: 1px solid #DBD8D6;
+}

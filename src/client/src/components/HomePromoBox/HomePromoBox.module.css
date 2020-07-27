@@ -1,0 +1,84 @@
+.section{
+    font-family: Open sans;
+    font-weight: 400;
+    color: #512B1A;
+}
+
+.section>div:nth-child(2):before, .section>div:nth-child(2):after {
+    display: table;
+    content: " ";
+}
+
+.spacer {
+    margin-top: 3.75em;
+}
+
+.card {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+
+.content {
+    width: 35%;
+    padding: 30px;
+    text-align: left;
+}
+
+.content>h4 {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+    text-align: left;
+}
+
+.content > p{
+    margin:1em 0 1.25em;
+    text-align: left;
+    font-size: 1em;
+}
+
+.button{
+    width:100%;
+    padding:10px;
+    border-radius: 2px;
+    background-color: #2B95CA;
+    font-size: 1em;
+    color:#FFFFFF;
+    border:0;
+}
+
+.button:hover{
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+.picture{
+    background-color: #DBD8D6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 65%;
+    background-size: cover;
+    background-position: 0 80%;
+    background-image: url(https://www.homestay.com/assets/promotions/rent_out_spare_room_double-73ec840ad9c4b34d54dee6f54c25ca997e004d2de2a5b80519a0398a403597fb.jpg)
+}
+
+.hr{
+    width:100%;
+    padding:0 15px;
+}
+.hr:before,.hr:after{
+    display: table;
+    content: " ";
+}
+
+.hr > hr{
+    border: 0;
+    border-top: 1px solid #DBD8D6;
+    margin: 0 !important;
+}
