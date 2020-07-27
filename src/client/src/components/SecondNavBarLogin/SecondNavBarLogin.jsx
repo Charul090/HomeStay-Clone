@@ -8,13 +8,13 @@ export class SecondNavBarLogin extends Component {
             <div>
                 <div  style={{background:"#6D635F"}}>
                     <div className="row">
-                        <div className="col-md-9 border himage p-2" ></div>
-                        <div className="col-6 col-md-3 border" >
+                        <div className="col-md-9 border border-dark himage p-2" ></div>
+                        <div className="col-6 col-md-3 border border-dark" >
                         <div className="row ">
-                        <div className="col-4 border-left border-secondary  p-1 fontstyle"></div>
-                        <div className="col-4 border-left border-secondary p-1">1</div>
-                        <div className="col-2 border-left border-secondary p-1"></div>
-                        <div className="col-2 border-left border-secondary p-1"><i className="fa fa-search" style={{fontSize:"28px",color:"black"}}></i></div>
+                        <div className="col-4  border-dark  p-1 "></div>
+                        <div className="col-4 border-left border-dark p-1">1</div>
+                        <div className="col-2 border-left border-dark  p-1"></div>
+                        <div className="col-2 border-left border-dark p-1"></div>
                         </div>
                     </div>
                     </div>
