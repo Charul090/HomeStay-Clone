@@ -13,6 +13,7 @@ import HomeGuideBook from '../HomeGuideBook/HomeGuideBook';
 import HomePress from '../HomePress/HomePress';
 import HomeInsiderTip from '../HomeInsiderTip/HomeInsiderTip';
 import Footer from '../Footer/Footer';
+import HeroBanner from '../HeroBanner/HeroBanner';
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
             <TransparentNavBar />
             <LoginModal />
             <RegisterModal />
+            <HeroBanner />
             <HomeHero />
             <SecondaryNavBar />
             <HomeReviewPanel />

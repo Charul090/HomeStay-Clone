@@ -1,0 +1,26 @@
+.prev{
+    left: 0;
+    background-image: url("https://www.homestay.com/assets/slider/slider-arrow-left-9fab9c676aeec928ea99cfeb71f446823bf73c7c4c6846c1f043632b760f2553.png");
+    border-radius: 0 4px 4px 0;
+    position: absolute;
+    top: 194px;
+    height: 70px;
+    width: 46px;
+    z-index: 100019;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: center;
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.prev:hover{
+    opacity: 1;
+    transition: opacity .3s;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container{
+    overflow-x: hidden;
+}
