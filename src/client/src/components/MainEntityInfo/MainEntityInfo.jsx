@@ -3,81 +3,80 @@ import styles from "./MainEntityInfo.module.css"
 import { useSelector } from "react-redux"
 
 export default function MainEntityInfo() {
-    let { number_reviews, price_starting } = useSelector(state => state.entity.apartment_data)
-    let {host_name,questions,social_skills,host_pic,created_at,hobbies} = useSelector(state=>state.entity.host_profile)
-    let questions_keys = null
+    let { welcomes } = useSelector(state => state.entity.host_profile)
+    let { about, house_facilities } = useSelector(state => state.entity.apartment_data)
+    let welcomes_keys = null
 
-    if(questions){
-        questions_keys = Object.keys(questions)
+    if (welcomes) {
+        welcomes_keys = Object.keys(welcomes)
     }
-    
 
-    const question_map={
-        friends_describe:"FRIENDS MIGHT DESCRIBE ME AS…",
-        host_guest:"WHEN I HOST GUESTS….",
-        typical_day:"ON A TYPICAL DAY…",
-        difference:"I’M DIFFERENT TO OTHER HOSTS BECAUSE…",
-        home_is:"MY HOME IS…"
+    if (about) {
+        about = about.split("\n")
+    }
+
+    let house_facilities_keys = null
+
+    if (house_facilities) {
+        house_facilities_keys = Object.keys(house_facilities)
     }
 
     return (
-        <div className="container-fluid" id="main-content-row-margin">
-            <div className="row">
-                <div className="col-3 offset-9" style={{
-                    position: "relative",
-                    overflow: "visible",
-                    boxSizing: "border-box",
-                    minHeight: "1px"
-                }}>
-                    <div className={styles.sideContainer}>
-                        <div className={styles.sidebar}>
-                            <button className={styles.button}>
-                                Check Avialability
-                            </button>
-                            <div className={styles.spacer1}></div>
-                            <div className={styles.card}>
-                                <div className={styles.card_body}>
-                                    <div className={styles.host_info}>
-                                        <div className={styles.spacer2}></div>
-                                        <h2>Meet {host_name}</h2>
-                                        <div className={styles.spacer1}></div>
-                                        <div className={styles.profile}>
-                                            <img src={host_pic}/>
-                                            <img src={"https://www.homestay.com/assets/small-review-score-img-c68dbe08abd3620cb7ae9b367952c1caac5322eb67c4d65ecfcafd83fba88dda.svg"}/>
-                                        </div>
-                                        <div className={styles.spacer2}></div>
-                                        <p className={styles.social}>{social_skills}</p>
-                                        <div className={styles.spacer1}></div>
-                                        <hr className={styles.hr}></hr>
-                                        <div className={styles.spacer1}></div>
-                                        <div className={styles.questions}>
-                                            {
-                                                questions_keys === null || questions_keys.length === 0?null:
-                                                questions_keys.map((elem)=>{
-                                                    return( 
-                                                    <div className="mb-3">
-                                                        <h5 className={styles.question_title}>{question_map[elem]}</h5>
-                                                        <p className={styles.question_answer}>{questions[elem]}</p>
-                                                    </div>
-                                                    )
-                                                })
-                                            }
-                                            {
-                                                hobbies === undefined?null:
-                                                <div className="mb-3">
-                                                        <h5 className={styles.question_title}>FAMILY HOBBIES</h5>
-                                                        <p className={styles.question_answer}>{hobbies.join(",")}</p>
+        <div className={styles.main}>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-8">
+                        <div className={styles.spacer1}></div>
+                        <h2 className={styles.about}>About the homestay</h2>
+                        <div className={styles.spacer2}></div>
+                        <div className={styles.welcomes}>
+                            <p className="small">Welcomes</p>
+                            {welcomes_keys && welcomes_keys.map((elem) => {
+                                return (
+                                    <p className="small">
+                                        {welcomes[elem] ?
+                                            <span className={styles.wel_yay}>
+                                                <i className="fa fa-check mr-1" aria-hidden="true"></i>
+                                                <span className={styles.reset}>{elem[0].toUpperCase() + elem.slice(1)}</span>
+                                            </span>
+                                            :
+                                            <span className={styles.wel_nay}>
+                                                <i class="fa fa-times mr-1" aria-hidden="true"></i>
+                                                <span>{elem[0].toUpperCase() + elem.slice(1)}</span>
+                                            </span>
+                                        }
+                                    </p>
+                                )
+                            })}
+                        </div>
+                        <div className={styles.spacer3}></div>
+                        {
+                            about && about.map((elem) => {
+                                return (
+                                    <p>{elem}</p>
+                                )
+                            })
+                        }
+                        <div className={styles.spacer1}></div>
+                        <h5 className={styles.house_fac}>HOUSE FACILITIES</h5>
+                        <div className={styles.house_fac_container}>
+                            <div className="row">
+                                {
+                                    house_facilities_keys && house_facilities_keys.map((elem) => {
+
+                                        if (house_facilities[elem]) {
+                                            return (
+                                                <div className="col-3">
+                                                    <p className="small">
+                                                        <i className="fa fa-check mr-1" aria-hidden="true"></i>
+                                                        <span>{elem[0].toUpperCase() + elem.slice(1)}</span>
+                                                    </p>
                                                 </div>
-                                            }{
-                                                created_at === undefined?null:
-                                                <div className="mb-3">
-                                                        <h5 className={styles.question_title}>HOSTING GUESTS SINCE</h5>
-                                                        <p className={styles.question_answer}>{created_at}</p>
-                                                </div>
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
+                                            )
+                                        }
+
+                                    })
+                                }
                             </div>
                         </div>
                     </div>
