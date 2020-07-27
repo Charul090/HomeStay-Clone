@@ -114,6 +114,7 @@ export class Filter extends Component {
       }
 
       componentDidUpdate(prevProps){
+        console.log(this.props.history.location.search);
         console.log(prevProps);
         console.log(this.props)
         var obj = this.state;
@@ -162,8 +163,8 @@ export class Filter extends Component {
       console.log(count)
         
         return (
-            <div className="d-flex  row">                                
-                <div className="col-12 col-sm-6 col-md-4 col-lg-4  ">
+            <div className="  row">                                
+                <div className="col-12 col-sm-12 col-md-12 col-lg-4  ">
                 <Dropdown className="null">
                 <Dropdown.Toggle variant="null">
                   <span className="small  font-weight-bold text-light">FILTER 
@@ -217,7 +218,7 @@ export class Filter extends Component {
                     </div>                        
 
                   {/* <Slider handleChange={this.handleFilter}/> */}
-                  <div className="col-12 col-sm-6  col-md-8 col-lg-8 " style={{width:"100px"}}>
+                  <div className="col-12 col-sm-12  col-md-12 col-lg-8 " style={{width:"100px"}}>
                   <Styles opacity={this.state.max_price > 10 ? (this.state.max_price / 255) : .1} color={this.props.color}>
                     <label className="font-weight-bold"><p className=" font-weight-bold pt-2 ">Price:0</p></label>
                     <input type="range" min={0} max={100000} value={this.state.max_price} name="max_price" className="slider m-1 mb-3" onChange={this.handleFilter} />
