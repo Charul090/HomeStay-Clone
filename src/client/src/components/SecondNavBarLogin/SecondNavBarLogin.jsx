@@ -8,7 +8,7 @@ export class SecondNavBarLogin extends Component {
         return (
             <div>
                 <div class="d-flex justify-content-end secNav" style={{background:"#6D635F"}}>
-                <div>dashboard</div>
+                <div>Dashboard</div>
                 <div>inbox</div>
                 <div>find guests</div>
                 <div>bookings</div>

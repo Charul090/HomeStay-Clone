@@ -15,3 +15,13 @@ z-index: 1;
     display: block;
     transition: border 0.15s ease-in-out;
 }
+
+.sec a{
+    padding: 1.2em; 
+    font-weight: 600;
+    letter-spacing: .03em;
+    font-size: 12px;
+    position: relative;
+    display: block;
+    transition: border 0.15s ease-in-out;
+}
