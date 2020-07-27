@@ -72,7 +72,7 @@ export class ListingMain extends Component {
                 <div  style={{background:"white"}}>
                 <NavBarHome />
                 </div>
-                <div className="search-bar">
+                <div className="col-12">
                     <SearchBar {...this.props}/>
                 </div>
                 <div className="col-12   pl-3 pb-3">

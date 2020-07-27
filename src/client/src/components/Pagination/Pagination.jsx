@@ -17,8 +17,8 @@ export class Pagination extends Component {
 
                 var num = this.state.page
                 console.log(e.target.value)
-                // this.props.pageChange(Number(e.target.id));
-                // this.props.fetch(this.props.history.location.search+`page=${num}`)
+                this.props.pageChange(Number(e.target.id));
+                this.props.fetch(this.props.history.location.search+`page=${num}`)
             }
 
 
@@ -31,12 +31,12 @@ export class Pagination extends Component {
         }
         return (
             <div>
-                <div id="pagination-panel" className="activepage_entries_info rightFloat m-5 ">
+                <div id="pagination-panel" className="activepage_entries_info rightFloat ">
                     <div class="mobile-pagination">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
                             <li class="page-item">
-                            <button class="page-link " onClick={this.handlePage} id="previous" value="-1"  aria-label="Previous">
+                            <button className="page-link " onClick={this.handlePage} id="previous" value="-1"  aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </button>
                             </li>
@@ -45,7 +45,7 @@ export class Pagination extends Component {
                                 }
                                 
                             <li class="page-item">
-                            <button class="page-link " onClick={this.handlePage} value="0" id="next" aria-label="Next">
+                            <button className="page-link " onClick={this.handlePage} value="0" id="next" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </button>
                             </li>

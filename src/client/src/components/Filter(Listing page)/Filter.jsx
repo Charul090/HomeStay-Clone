@@ -58,7 +58,7 @@ export class Filter extends Component {
             accept_female:false,
             accept_students:false,
             self_catering:false,
-            max_price: 100000,
+            max_price: 10000,
             min_price:0,
             count:0,
             wifi:false,
@@ -217,7 +217,7 @@ export class Filter extends Component {
                     </div>                        
 
                   {/* <Slider handleChange={this.handleFilter}/> */}
-                  <div className="col-12 col-sm-6  col-md-8 col-lg-8 " style={{width:"50px"}}>
+                  <div className="col-12 col-sm-6  col-md-8 col-lg-8 " style={{width:"100px"}}>
                   <Styles opacity={this.state.max_price > 10 ? (this.state.max_price / 255) : .1} color={this.props.color}>
                     <label className="font-weight-bold"><p className=" font-weight-bold pt-2 ">Price:0</p></label>
                     <input type="range" min={0} max={100000} value={this.state.max_price} name="max_price" className="slider m-1 mb-3" onChange={this.handleFilter} />

@@ -47,7 +47,8 @@ export class SearchBar extends Component {
     render() {
         // console.log(this.props);
         return (
-            <div className="search-bar pt-2">
+            <div className="search-bar row pt-2">
+                <div className="col-12">
                 <div className="row">
                 <div className=" col-12  col-sm-12 col-md-10 col-lg-10 ">
                 <form onSubmit={this.handleSubmit}>
@@ -102,7 +103,7 @@ export class SearchBar extends Component {
                         </div>
                         
                    
-                    <div className="col-6 col-sm-6  col-md-1 col-lg-1  ml-2">
+                    <div className="col-6 col-sm-6  col-md-1 col-lg-1 ml-2">
                     <button type="submit" className=" p-2" style={{background:"#CA005D",border:"#CA005D",borderRadius:"none"}}><i className="fa fa-search" style={{fontSize:"26px",color:"white"}}></i></button>
                     </div >
                     <div className="col-6 col-sm-6 col-md-2 col-lg-2 ">
@@ -115,6 +116,7 @@ export class SearchBar extends Component {
                     </div>
                     
                     </form>
+                    </div>
             </div>
             </div>
             </div>
