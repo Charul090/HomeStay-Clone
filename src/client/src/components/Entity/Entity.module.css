@@ -1,0 +1,14 @@
+.main{
+    font-size: 16px;
+    line-height: 1.625em;
+    font-family: Open sans;
+    font-weight: 400;
+    color: #512B1A;
+    background-color: #F1EFEF;
+}
+
+.header{
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
+}

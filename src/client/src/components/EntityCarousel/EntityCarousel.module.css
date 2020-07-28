@@ -1,0 +1,20 @@
+.main div{
+    max-height: none;
+}
+
+.main{
+    max-height: none !important;
+}
+
+.container{
+    max-height: 423px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.img{
+    object-fit: scale-down;
+    max-width: 100% !important;
+    max-height:100%;
+    width:inherit !important;
+}

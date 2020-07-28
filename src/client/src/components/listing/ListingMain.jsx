@@ -7,6 +7,7 @@ import ListCard from './ListCard.jsx'
 import NavBarHome from '../NavBarHome/NavBarHome.jsx'
 import Filter from '../Filter(Listing page)/Filter.jsx'
 import Pagination from '../Pagination/Pagination.jsx'
+import NavBarAfterLogin from '../NavBarAfterLogin/NavBarAfterLogin.jsx'
 
 
 const data = 
@@ -59,23 +60,30 @@ export class ListingMain extends Component {
         super(props)
         this.state={}
     }
+    
     componentDidMount(){
         document.body.style.backgroundColor = "rgba(183, 177, 174, 0.3)"
     }
+
+
     render() {
         // console.log(this.props)
         var cards = this.props.data.data
-        console.log("listing"+cards)
+        let {logged_user} = this.props
+        console.log(cards)
         return (
-            <div className="mt-2 row">
+            <div className="row">
                 <div className="col-sm-12 col-lg-12 col-md-12">
                 <div  style={{background:"white"}}>
-                <NavBarHome />
+                {logged_user?
+                <NavBarAfterLogin />
+                :
+                <NavBarHome />}
                 </div>
-                <div className="col-12">
+                <div className="col-12 mb-2">
                     <SearchBar {...this.props}/>
                 </div>
-                <div className="col-12   pl-3 pb-3">
+                <div className="col-12   pl-1 pb-3">
                     <div className="row">
                     <div className="col-12 ">
                         <div className="row ">
@@ -99,7 +107,8 @@ export class ListingMain extends Component {
 const mapStateToProps = state => {
     return {
       
-      data: state.list.data
+      data: state.list.data,
+      logged_user:state.auth.logged_user
     }
   }
 

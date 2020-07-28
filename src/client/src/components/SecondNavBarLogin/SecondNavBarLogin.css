@@ -1,0 +1,28 @@
+.secNav{
+color: #FFFFFF;
+border-left: 1px solid #524a47;
+z-index: 1;
+
+}
+.secNav div{
+    border-left: 1px solid #524a47;
+    padding: .80em 1.2em; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    font-size: .75em;
+    position: relative;
+    display: block;
+    transition: border 0.15s ease-in-out;
+}
+
+.sec a{
+    padding: 1.2em; 
+    font-weight: 600;
+    letter-spacing: .03em;
+    font-size: 12px;
+    position: relative;
+    display: block;
+    transition: border 0.15s ease-in-out;
+    color:#512B1A;
+}

@@ -1,0 +1,83 @@
+.spacer1{
+    margin-top: 2.5em;
+}
+
+.spacer2{
+    margin-top: 1.25em;
+}
+
+.spacer3{
+    margin-top: 0.625em;
+}
+
+.spacer4{
+    margin-top: 3.75em;
+}
+
+.main{
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.625em;
+    font-family: Open sans;
+    font-weight: 400;
+    color: #512B1A;
+    background-color:  #FFFFFF;
+}
+
+.main::after{
+    display: table;
+    content: " ";
+}
+
+.main > div > div>div{
+    max-height: none;
+}
+
+.about{
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+}
+
+.welcomes{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    width:60%;
+}
+
+.house_fac{
+    font-size: .75em;
+    line-height: 1.625em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .03em;
+    margin-bottom: 20px;
+}
+
+.house_fac_container{
+    width:80%;
+
+}
+
+.house_fac_container p{
+    margin: 0;
+}
+
+.house_fac_container i{
+    color: #92C01F;
+}
+
+.reset{
+    color: #512B1A;
+}
+
+.wel_yay{
+    color: #92C01F;
+}
+
+.wel_nay{
+    color: #B7B1AE;
+}
