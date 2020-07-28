@@ -47,9 +47,9 @@ export class SearchBar extends Component {
     render() {
         // console.log(this.props);
         return (
-            <div className="search-bar row pt-2">
+            <div className="search-bar row pt-2 ">
                 <div className="col-12">
-                <div className="row">
+                <div className="row ">
                 <div className=" col-12  col-sm-12 col-md-10 col-lg-10 ">
                 <form onSubmit={this.handleSubmit}>
                        
@@ -65,7 +65,7 @@ export class SearchBar extends Component {
                         </div>
                         </div>
 
-                        <div class="col-6 col-sm-6 form-group col-md-6 col-lg-2 col-1">
+                        <div class="col-6 col-sm-6 form-group col-md-6 col-lg-2 ">
                         <div class="input-group">
                             <div class="input-group-prepend">
                             <div class="input-group-text"><i class='far fa-calendar-plus' style={{fontSize:"15px"}}></i></div>
@@ -74,7 +74,7 @@ export class SearchBar extends Component {
                         </div>
                         </div>
 
-                        <div class="col-6 col-sm-6 form-group col-md-6 col-lg-2 col-1">
+                        <div class="col-6 col-sm-6 form-group col-md-6 col-lg-2 ">
                         <div class="input-group">
                             <div class="input-group-prepend">
                             <div class="input-group-text" style={{borderRadius:"unset"}}><i class='far fa-calendar-minus' style={{fontSize:"15px"}}></i></div>
@@ -85,38 +85,39 @@ export class SearchBar extends Component {
 
                         
                         
-                        <div class="form-group col-6 col-sm-6 col-md-6 col-lg-1  ">
-                        <div class="input-group-prepend ">
-                            <div class="input-group-text" style={{borderRadius:"unset"}}><i class='fas fa-user-alt' style={{fontSize:"15px"}}></i></div>
-                            
-                        <select id="inputState" style={{borderRadius:"unset"}} name="guests" onChange={this.handleChange} className="form-control p-4">
-                            <option value ="0" selected>Guest-0</option>
-                            <option value="1"> 1</option>
-                            <option value="2"> 2</option>
-                            <option value="3"> 3</option>
-                            <option value="4"> 4</option>
-                            <option value="5"> 5</option>
-                        </select>
-                        
-                        </div>
-                        
-                        </div>
-                        
+                        <div class="form-group col-6 col-sm-6 col-md-6 col-lg-2 pt-2 ">
+                            <div className="row">
+                                <div className="col-6 col-sm-8  col-md-6 col-lg-8 ">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text" style={{borderRadius:"unset"}}><i class='fas fa-user-alt' style={{fontSize:"15px"}}></i></div>
+                                        
+                                            <select id="inputState" style={{borderRadius:"unset"}} name="guests" onChange={this.handleChange} className="form-control p-2">
+                                                <option value ="0" selected>Guest-0</option>
+                                                <option value="1"> 1</option>
+                                                <option value="2"> 2</option>
+                                                <option value="3"> 3</option>
+                                                <option value="4"> 4</option>
+                                                <option value="5"> 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
                    
-                    <div className="col-6 col-sm-6  col-md-1 col-lg-1 ml-2">
-                    <button type="submit" className=" p-2" style={{background:"#CA005D",border:"#CA005D",borderRadius:"none"}}><i className="fa fa-search" style={{fontSize:"26px",color:"white"}}></i></button>
+                                    <div className="  col-sm-3  col-md-6 col-lg-4">
+                    <button type="submit" className=" p-2 ml-3" style={{background:"#CA005D",border:"#CA005D",borderRadius:"none"}}><i className="fa fa-search" style={{fontSize:"26px",color:"white"}}></i></button>
                     </div >
-                    <div className="col-6 col-sm-6 col-md-2 col-lg-2 ">
+                    </div>
+                    </div>
+                    
+                    <div className="col-sm-12 col-md-6 col-lg-3">
                         <Filter {...this.props}/>
                     </div>
                     {/* <div className="col-2">
                         <Slider {...this.props} />
-                    </div> */}
-
-                    </div>
+                    </div> */}</div>
                     
                     </form>
                     </div>
+
             </div>
             </div>
             </div>
@@ -134,3 +135,8 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
+
+
+
+
+
