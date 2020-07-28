@@ -8,7 +8,9 @@ const initialState = {
     apartment_data: {},
     host_profile: {},
     bedroom: {},
-    booking: {}
+    booking: {},
+    area:{},
+    reviews:{}
 }
 
 export default (state = initialState, { type, payload }) => {

@@ -150,6 +150,7 @@ export default function BedroomInfo() {
                                             <h1>Hello</h1>
                                         </div>
                                     </div>
+                                    <div className={styles.spacer1}></div>
                                 </div>
                             </div>
                         </div>
