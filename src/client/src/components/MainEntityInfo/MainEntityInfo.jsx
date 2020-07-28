@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./MainEntityInfo.module.css"
 import { useSelector } from "react-redux"
+import EntityCarousel from '../EntityCarousel/EntityCarousel'
 
 export default function MainEntityInfo() {
     let { welcomes } = useSelector(state => state.entity.host_profile)
@@ -79,6 +80,12 @@ export default function MainEntityInfo() {
                                 }
                             </div>
                         </div>
+                        <div className={styles.spacer4}></div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-8" style={{maxHeight:"none"}}>
+                        <EntityCarousel />
                     </div>
                 </div>
             </div>
