@@ -1,29 +1,35 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.container-fluid{
-  margin:0 11px !important;
-}
-
-.navbar-zero{
-  padding:0  !important;
+.navbar-zero {
+  padding: 0 !important;
   background-color: #6D635F;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15)
 }
 
-.navbar-zero > .container{
-  padding:0;
+.navbar-zero>.container {
+  padding: 0;
+}
+
+#banner-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index:1
+}
+
+/**********     Very important for entity page           **********/
+
+#main-content-row-margin div{
+  max-height: none;
 }
