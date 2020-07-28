@@ -1,6 +1,6 @@
 import json
 import jwt
-from ..models import db, UsersModel, UserAuthModel,ApartmentModel
+from ..models import db, UsersModel, UserAuthModel, ApartmentModel
 import datetime
 from instance.config import SECRET_KEY
 
@@ -28,13 +28,13 @@ def google_auth(info):
     db.session.commit()
 
     host = ApartmentModel.query.filter(
-                ApartmentModel.user_id == status.id).first()
-    
+        ApartmentModel.user_id == status.id).first()
+
     if host is None:
         host = False
     else:
         host = True
-    
+
     data = {
         "email": status.email,
         "created_at": str(datetime.datetime.utcnow()),
@@ -43,7 +43,8 @@ def google_auth(info):
 
     encoded_data = jwt.encode(data, SECRET_KEY)
 
-    return json.dumps({"error": False, "message": "Logged in successfully", "token": encoded_data.decode(),"host":host})
+    return json.dumps({"name": status.firstname,
+                       "host": host, "error": False, "message": "Logged in successfully", "token": encoded_data.decode(), "host": host})
 
 
 def facebook_auth(info):
@@ -61,11 +62,11 @@ def facebook_auth(info):
 
     if status is None:
         user = UsersModel(firstname=firstname, lastname=lastname,
-                          email = email, password = "")
+                          email=email, password="")
         db.session.add(user)
         db.session.commit()
 
-        status=UsersModel.query.filter(
+        status = UsersModel.query.filter(
             UsersModel.email == email).first()
 
     user_oauth = UserAuthModel(user_id=status.id, provider=provider,
@@ -74,14 +75,16 @@ def facebook_auth(info):
     db.session.commit()
 
     host = ApartmentModel.query.filter(
-                ApartmentModel.user_id == status.id).first()
-    
+        ApartmentModel.user_id == status.id).first()
+
     if host is None:
         host = False
     else:
         host = True
 
     data = {
+        "name": status.firstname,
+        "host": host,
         "email": status.email,
         "created_at": str(datetime.datetime.utcnow()),
         "expiry_at": str(datetime.datetime.utcnow() + datetime.timedelta(days=1))
@@ -89,4 +92,5 @@ def facebook_auth(info):
 
     encoded_data = jwt.encode(data, SECRET_KEY)
 
-    return json.dumps({"error": False, "message": "Logged in successfully", "token": encoded_data.decode(),"host":host})
+    return json.dumps({"name": status.firstname,
+                       "host": host, "error": False, "message": "Logged in successfully", "token": encoded_data.decode(), "host": host})
