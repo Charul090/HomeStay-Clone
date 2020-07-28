@@ -1,0 +1,91 @@
+.footer{
+    margin-top: 6.25em;
+    padding-top: 3.5em;
+    padding-bottom: 0;
+    background-color: #6D635F;
+    text-align: left;
+    font-family: Open sans;
+    font-weight: 400;
+}
+
+.dl{
+    margin:0;
+    padding:0;
+}
+
+.dt{
+    font-size: .75em;
+    text-transform: uppercase;
+    line-height: 1.6em;
+    letter-spacing: .03em;
+    padding: 0;
+    color: #B7B1AE;
+    margin: 0;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.dd{
+    padding: 0 0 .5em;
+    line-height: 1.6em;
+    margin:0;
+    color: #FFFFFF;
+}
+
+.dd:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.spacer{
+    margin-top: 0.625em;
+}
+
+.spacer1{
+    margin-top: 1.25em;
+}
+
+.social_cont{
+    width:100%;
+    display: flex;
+}
+
+.social_cont  i{
+    margin: 4px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    height: 40px;
+    width:40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 26px;
+    background-color: rgb(136, 124, 119);
+    color:#FFFFFF;
+    cursor: pointer;
+}
+
+.footnote{
+    padding: 0.625em 15px;
+    background-color: #F1EFEF;
+    text-align: center;
+}
+
+.footnote>h6{
+    font-size: .75em;
+    line-height: 1.6em;
+    font-weight: 600;
+    letter-spacing: .03em;
+    color: #B7B1AE;
+    margin:0;
+}
+
+.footnote a{
+    color: #512B1A !important;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+}
+
+.footnote a:hover{
+    color: #512B1A;
+    text-decoration: underline !important;
+}

@@ -1,11 +1,14 @@
 import React from "react";
-import {Link} from 'react-router-dom'
-import  "./NavBarHome.css";
-import {Navbar,Nav,NavDropdown} from 'react-bootstrap';
+import { Link } from 'react-router-dom'
+import "./NavBarHome.css";
+import { Navbar, Nav, NavDropdown, Button, NavbarBrand, } from 'react-bootstrap';
+import Login from '../Login/Login';
+import Register from '../Register/Register'
+import styles from "./NavBarHome.module.css"
 
 
 const NavBarHome = () => {
- 
+
   return (
       <React.Fragment>
               <Navbar collapseOnSelect expand="lg" >
