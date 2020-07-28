@@ -19,7 +19,7 @@ const NavBarHome = () => {
                   </Navbar.Brand>
                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                   <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="ml-auto ">
+                    <Nav className="ml-auto align-middle">
                       <NavDropdown title="destinations" className="sec" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

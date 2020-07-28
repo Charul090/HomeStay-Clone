@@ -10,7 +10,7 @@ const NavBarAfterLogin = () => {
             <div>
                 <div className="border-dark border ">
                     <div className="row">
-                        <div className="col-md-7 himage " >
+                        <div className="col-md-7" id="himage" >
                             <div className=" h-image ">
                             <Link href="/"><img src="https://www.homestay.com/assets/logo-homestay-36a9388d17da279b965e5b0dc5153eab12f98ceef3e29332a720df00b71fa2ac.svg"/></Link>
                             </div>

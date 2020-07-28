@@ -10,6 +10,9 @@ import MealInfo from '../MealInfo/MealInfo.jsx'
 export default function Entity() {
     return (
         <div className={styles.main}>
+            <div className={styles.header}>
+                <NavBarHome />
+            </div>
             <ApartmentInfo />
             <BedroomInfo />
             <AreaInfo />

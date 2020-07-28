@@ -8,6 +8,7 @@
     background-color: #F1EFEF;
     text-align: left;
     z-index: 1;
+    overflow: hidden;
 }
 
 .background {
