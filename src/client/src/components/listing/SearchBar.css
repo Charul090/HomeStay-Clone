@@ -119,6 +119,12 @@
     font-weight: 600;
 }
 
+.row1{
+    display:block;
+    min-height:250px;
+    max-height:250px;
+    opacity:1;
+}
 
     
     
