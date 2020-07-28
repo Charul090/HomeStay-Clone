@@ -41,6 +41,7 @@ def host_login(info):
 
             encoded_data = jwt.encode(data, SECRET_KEY)
 
-            return json.dumps({"host":host,"error": False, "message": "Logged in successfully", "token": encoded_data.decode()})
+            return json.dumps({"name": status.firstname,
+                               "host": host,"error": False, "message": "Logged in successfully", "token": encoded_data.decode()})
 
         return json.dumps({"error": True, "message": "Incorrect Password!"})
