@@ -30,7 +30,7 @@ export default function AreaInfo() {
                         <div styles={{ width: "100%", textAlign: "center" }}>
                             {
                                 latitude && longitude &&
-                                <StaticGoogleMap size="750x360" apiKey="AIzaSyCTfjMrsLNTuM1PKWnjPDroPZojD1pUWIM" center={point}>
+                                <StaticGoogleMap size="750x360" apiKey="AIzaSyCTfjMrsLNTuM1PKWnjPDroPZojD1pUWIMc" center={point}>
                                     <Marker
                                         location={point}
                                         color="blue"
