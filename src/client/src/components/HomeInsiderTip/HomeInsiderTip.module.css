@@ -1,0 +1,62 @@
+.section{
+    background-color: #F1EFEF;
+    font-family: Open sans;
+    font-weight: 400;
+    color: #512B1A;
+}
+
+.section > div::after,
+.section > div::before{
+    display: table;
+    content: " ";
+}
+
+.hr{
+    margin: 0 !important;
+    border: 0;
+    border-top: 1px solid #DBD8D6;
+}
+
+.spacer1{
+    margin-top: 5em;
+}
+
+.title{
+    line-height: 1.4em;
+    margin: 0;
+    font-size: 2.25em;
+    font-weight: 300;
+}
+
+.quote{
+    font-weight: 600;
+    font-style: italic;
+    margin:1em 0 0;
+    font-size: 1em;
+}
+
+.form{
+    margin-top: 2em;
+}
+
+.form input{
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    border-radius: 2px;
+    border-color: #DBD8D6;
+    box-shadow: none;
+    height: 46px;
+}
+
+.button{
+    height: 46px;
+    width:100%;
+    padding: .52em 1em;
+    background: #2B95CA;
+    color:#FFFFFF;
+    font-size: 1em;
+    border: #2B95CA;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+}

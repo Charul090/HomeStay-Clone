@@ -14,8 +14,10 @@ export default function LoginModal() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const[local_message,setMessage] = useState("")
+
     let disptach = useDispatch()
-    let {logged_user,host} = useSelector(state=>state.auth)
+    let {logged_user,host,error,message} = useSelector(state=>state.auth)
     let history = useHistory()
 
     useEffect(()=>{
@@ -26,9 +28,12 @@ export default function LoginModal() {
             else{
                 history.push("/guest")
             }
-            
         }
     },[logged_user])
+
+    useEffect(()=>{
+        setMessage(message)
+    },[error])
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -40,13 +45,20 @@ export default function LoginModal() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
-        let data = {
-            "email": email,
-            "password": password
+        setMessage("")
+        if(email == "" || password == ""){
+            setMessage("Please do not leave fields empty")
         }
+        else{
+            let data = {
+                "email": email,
+                "password": password
+            }
 
-        disptach(Start_Login_Query(data))
+            disptach(Start_Login_Query(data))            
+        }
+        
+
     }
 
     const responseGoogle = (response) => {
@@ -91,13 +103,14 @@ export default function LoginModal() {
                             or with your email
                         </div>
                         <form id="login-form">
+                        <small className="form-text text-danger">{local_message !== ""?local_message:null}</small>
                             <div className="form-group">
                                 <input type="email" value={email} onChange={handleEmail} class="form-control" placeholder="Email" />
                             </div>
                             <div className="form-group">
                                 <input type="password" value={password} onChange={handlePassword} class="form-control" placeholder="Password" />
                             </div>
-                            <button className="btn btn-block btn-danger" onClick={handleSubmit} data-dismiss="modal">Log In</button>
+                            <button className="btn btn-block btn-danger" onClick={handleSubmit}>Log In</button>
                         </form>
                     </div>
                     <div className="modal-footer">

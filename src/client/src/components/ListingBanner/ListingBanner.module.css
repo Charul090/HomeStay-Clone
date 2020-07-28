@@ -1,0 +1,101 @@
+.listing_container {
+    min-height: 385px;
+    padding-top: 3.75em;
+    padding-bottom: 6.25em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #F1EFEF;
+    text-align: left;
+    z-index: 1;
+}
+
+.background {
+    bottom: 5px;
+    top: -5px;
+    filter: blur(3px);
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.background::before, .background::after {
+    content: "";
+    position: inherit;
+    top: inherit;
+    right: inherit;
+    bottom: inherit;
+    left: inherit;
+}
+
+.background::after {
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #FFFFFF;
+    text-shadow: 0 0.04em 0.8em rgba(0, 0, 0, 0.6);
+    line-height: 1.4em;
+    margin: 0;
+    font-size: 2.25em;
+    font-weight: 300;
+}
+
+.spacer1 {
+    margin-top: 1.25em;
+}
+
+.catchphrase>h5 {
+    color: #FFFFFF;
+    text-shadow: 0 0.04em 0.8em rgba(0, 0, 0, 0.6);
+    font-size: .75em;
+    line-height: 1.625em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+.price>h5 {
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1.625em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-shadow: 0 0.04em 0.8em rgba(0, 0, 0, 0.6);
+    letter-spacing: .03em;
+}
+
+.amount {
+    font-size: 30px;
+}
+
+.fav_container {
+    height: 36px;
+    position: absolute;
+    bottom: 78px;
+}
+
+.fav_button {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    width: 36px;
+    height: 36px;
+    background-size: 18px 16px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 2px;
+    background-color: #F1EFEF;
+    background-image: url("https://www.homestay.com/assets/icons/icon-star-gray-45bbb37c12ef226b0d7f9b4f89c00877ec84a5ad7456073e1fa90313137b005b.svg");
+}

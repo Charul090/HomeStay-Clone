@@ -1,0 +1,59 @@
+.spacer1{
+    margin-top: 3.75em;
+}
+
+.spacer2{
+    margin-top: 1.25em;
+}
+
+.spacer3{
+    margin-top: 2.5em;
+}
+
+.mealmain{
+    text-align: left;
+}
+
+.mealmain h5{
+    font-size: .75em;
+    line-height: 1.625em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+.mealmain,
+.mealmain div{
+    max-height: none !important;
+}
+
+.title{
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+    text-align: left;
+}
+
+.para{
+    margin-top: 1em;
+    font-size: 1em;
+    margin: 0;
+}
+
+.wel_yay{
+    color: #92C01F;
+    margin-bottom: .3em;
+    font-size: .80em;
+    line-height: 1.625em;
+    letter-spacing: .03em;
+}
+
+.wel_nay{
+    color: #DC4814;
+    margin-bottom: .3em;
+    font-size: .80em;
+    line-height: 1.625em;
+    letter-spacing: .03em;
+}
