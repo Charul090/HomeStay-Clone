@@ -23,10 +23,10 @@ export default function LoginModal() {
     useEffect(()=>{
         if(logged_user){
             if(host){
-                history.push("/host/listing")
+                history.push("/destination")
             }
             else{
-                history.push("/guest")
+                history.push("/destination")
             }
         }
     },[logged_user])
