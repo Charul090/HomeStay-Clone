@@ -21,6 +21,12 @@
     font-family: Open sans;
     font-weight: 400;
     color: #512B1A;
+    background-color:  #FFFFFF;
+}
+
+.main::after{
+    display: table;
+    content: " ";
 }
 
 .main > div > div>div{
