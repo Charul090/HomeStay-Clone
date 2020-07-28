@@ -18,18 +18,20 @@ export class ListCard extends Component {
         return (
             
             <div className="col-12 col-sm-12 col-md-6 col-lg-6  mb-2 ">
-              <div className="card row m-1">
+              <div className="row1 card row m-1 ">
                   <div class="col-4 col-sm-6 col-md-4 col-lg-4 p-0">
                   <div class="carousel-wrapper">
                   <Carousel showThumbs={false} showStatus={false} useKeyboardArrows className="carousel-root presentation-mode " style={{height:"100%"}}>
-                    <div key="content-1" className="my-slide content ">
-                      <img style={{display:"block",minHeight:"250px",maxHeight:"250px",opacity:"1"}} src={data.bedroom_image} />
-                      <div style={{border:"4px solid white"}} className=" profile"><img className="img img-fluid profile legendInline" src={data.user_pic}/></div>
-                      <div  className=" legendInlinestar"><i className="fa fa-star p-2" style={{fontSize:"18px"}} aria-hidden="true"></i>
-</div>
+                    <div key="content-1" className="my-slide content" onClick={()=> window.open("/destination?page=1", "_blank")}>
+                      <img  className="row1" src={data.bedroom_image} />
+                      <div>
+                        <img className="img img-fluid profile legendInline" src={data.user_pic}/>
+                      </div>
+                      <div className=" legendInlinestar"><i className="fa fa-star p-2" style={{fontSize:"18px"}} aria-hidden="true"></i>
+                      </div>
                     </div>
-                    <div key="content-2" className="my-slide content ">
-                      <img style={{display:"block",minHeight:"250px" ,maxHeight:"250px"}} src={data.apartment_image} />
+                    <div key="content-2" className="my-slide content " onClick={()=> window.open("/destination?page=1", "_blank")}>
+                      <img className="row1" src={data.apartment_image} />
                       <div style={{border:"4px solid white"}} className=" profile"><img className="img img-fluid profile legendInline" src={data.user_pic}/></div>
                     </div>
                 </Carousel>
