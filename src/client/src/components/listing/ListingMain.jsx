@@ -68,7 +68,7 @@ export class ListingMain extends Component {
     render() {
         // console.log(this.props)
         var cards = this.props.data.data
-        console.log("listing"+cards)
+        console.log(cards)
         return (
             <div className="mt-2 row">
                 <div className="col-sm-12 col-lg-12 col-md-12">

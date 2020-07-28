@@ -175,9 +175,9 @@ export class Filter extends Component {
                 <div className="col-12 col-sm-12 col-md-12 col-lg-4  ">
                 <Dropdown className="null">
                 <Dropdown.Toggle variant="null">
-                  <span className="small  font-weight-bold text-light">FILTER 
-                   ({this.state.count})</span>
-                {/* <i className="fa fa-filter" style={{fontSize:"32px",color:"white"}}></i> */}
+                  {/* <span className="small  font-weight-bold text-light">FILTER 
+                   ({this.state.count})</span> */}
+                <i className="fa fa-filter" style={{fontSize:"32px",color:"white"}}></i>
                 </Dropdown.Toggle>                
                     
                     <Dropdown.Menu className="filterWidth" style={{background:"rgba(183, 177, 174, 0.3)"}}>
