@@ -7,6 +7,7 @@ import random
 
 def basic_info(apartment_id):
     apartment_id = int(apartment_id)
+    social_words=["Sociable", "Trusting", "Open minded","Cultured","Helpful","Friendly","Outgoing","Creative"]
 
     apartment_data = {}
     host_data = {"questions": {}}
@@ -23,6 +24,7 @@ def basic_info(apartment_id):
 
     owner_id = apartment_query.user_id
     apartment_data["name"] = apartment_query.name
+    apartment_data["house_facilities"] = apartment_query.house_facilities
     apartment_data["area"] = apartment_query.neighbourhood_area
     apartment_data["city"] = apartment_query.city
     apartment_data["about"] = apartment_query.about_homestay
@@ -40,6 +42,11 @@ def basic_info(apartment_id):
 
     hostprofile_query = HostProfileModel.query.filter(
         HostProfileModel.user_id == owner_id).first()
+
+    user_query = UsersModel.query.filter(UsersModel.id == owner_id).first()
+
+    host_data["host_name"] = user_query.firstname
+    host_data["host_pic"] = user_query.image
 
     host_temp_data = {}
     count = 3
@@ -73,6 +80,16 @@ def basic_info(apartment_id):
     else:
         for x, y in host_temp_data.items():
             host_data["questions"][x] = y
+
+    numbers = random.sample(range(0,len(social_words)), 3)
+
+    social_skills=[]
+
+    for x in numbers:
+        social_skills.append(social_words[x])
+    
+    social_skills = ",".join(social_skills)
+    host_data["social_skills"] = social_skills
 
     return json.dumps({
         "error": False,
