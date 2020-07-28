@@ -126,7 +126,12 @@
     opacity:1;
 }
 
-    
+.wrapper { position: relative;margin: 20px;}
+i.fa-calendar { position: absolute; top: 12px; left: 30px; color:lightgrey;}
+
+.dateInput {
+  padding:10px;
+}
     
     
     

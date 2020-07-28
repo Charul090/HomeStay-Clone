@@ -17,8 +17,8 @@ export class ListCard extends Component {
         const {data} = this.props
         return (
             
-            <div className="col-12 col-sm-12 col-md-6 col-lg-6  mb-2 ">
-                    <div className="row1 card row ml-1 " >
+            <div className="col-12 col-sm-12 col-md-6 col-lg-6  mb-3 ">
+                    <div className="row1 card row pl-1 ml-1 pr-1" >
                         <div class="col-4 col-sm-6 col-md-4 col-lg-4 p-0">
                         <div class="carousel-wrapper">
                         <Carousel showThumbs={false} showStatus={false} useKeyboardArrows className="carousel-root presentation-mode " style={{height:"100%"}}>
