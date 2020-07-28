@@ -24,4 +24,5 @@ z-index: 1;
     position: relative;
     display: block;
     transition: border 0.15s ease-in-out;
+    color:#512B1A;
 }

@@ -1,14 +1,11 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 import "./NavBarAfterLogin.css"
 import {Link} from "react-router-dom"
 import { Dropdown} from 'react-bootstrap'
 import SecondNavBarLogin from "../SecondNavBarLogin/SecondNavBarLogin.jsx"
 
-export class NavBarAfterLogin extends Component {
+const NavBarAfterLogin = () => {
 
-    
-    render() {
         return (
             <div>
                 <div className="border-dark border ">
@@ -70,14 +67,6 @@ export class NavBarAfterLogin extends Component {
             </div>
         )
     }
-}
 
-const mapStateToProps = (state) => ({
-    
-})
 
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(NavBarAfterLogin)
+export default NavBarAfterLogin

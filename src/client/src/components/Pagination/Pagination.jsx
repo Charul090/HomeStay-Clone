@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './Pagination.css'
 import {pageChange,fetchData} from '../../redux/ListRedux/action.js';
+import { Button } from 'react-bootstrap';
 
 
 export class Pagination extends Component {
@@ -14,34 +15,31 @@ export class Pagination extends Component {
             }
 
             handlePage = (e)=>{
-
-                this.props.pageChange(Number(e.target.id));
-                this.props.fetch(this.props.history.location.search+`page=${e.target.id}`)
                 
                 console.log(this.props.pagenum)
                 var num = this.props.pagenum
-                console.log("e.target.id"+ e.target.value)
-                console.log("props total"+this.props.total)
-                if(e.target.value==="-1"){
-                    if(num!==1){
+                
+                if(e.target.id==="previous"){
+                    if(num>1){
                         num = num-1
-                        // this.props.fetch(this.props.history.location.search+`page=${num}`)
+                        this.props.pageChange(Number(num));
+                        this.props.fetch(this.props.history.location.search+`page=${num}`)
                     }  
                 }
-                else if(e.target.value==="0"){
+                else if(e.target.id==="next"){
                     if(num<this.props.total){
                         num = num+1;
                         console.log("inside 0"+num)
-                        this.props.pageChange(num);
-                        // this.props.fetch(this.props.history.location.search+`page=${num}`)
+                        this.props.pageChange(Number(num));
+                        this.props.fetch(this.props.history.location.search+`page=${num}`)
                     }
                     else{
                         num = num;
                     }
                 }
-                if(e.target.id!=="0"&&e.target.id!=="-1"){
+                if(e.target.id!=="next"&&e.target.id!=="previous"){
                     num = Number(e.target.id);
-                    this.props.pageChange(num);
+                    this.props.pageChange(Number(e.target.id));
                     // this.props.fetch(this.props.history.location.search+`page=${num}`)
                 }
                 console.log("num"+num);
@@ -64,17 +62,16 @@ export class Pagination extends Component {
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
                             <li class="page-item">
-                            <button   id="-1" value="0.1"  aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </button>
+                            <Button  onClick={this.handlePage} className={pagenum==1?"disabled":"active"}  id="previous" value="0.1"  aria-label="Previous">previous
+                                {/* <span aria-hidden="true">&laquo;</span> */}
+                            </Button>
                             </li>
                             { list &&
                                 list.map((item, index) => <li class="page-item"><button class="page-link" value ={item} key={index} id={item} onClick={this.handlePage}>{item}</button></li>)
                                 }
                                 
                             <li class="page-item">
-                            <button   value="0" id="0" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
+                            <button  onClick={this.handlePage} value="0" id="next" aria-label="Next">nex
                             </button>
                             </li>
                         </ul>

@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import {Link} from "react-router-dom"
 import  "./SecondNavBarLogin.css"
 
-export class SecondNavBarLogin extends Component {
-    render() {
+const SecondNavBarLogin =()=> {
         return (
             <div>
                 <div class="d-flex justify-content-end secNav" style={{background:"#6D635F"}}>
@@ -19,14 +18,5 @@ export class SecondNavBarLogin extends Component {
             </div>
         )
     }
-}
 
-const mapStateToProps = (state) => ({
-    
-})
-
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SecondNavBarLogin)
+export default SecondNavBarLogin
