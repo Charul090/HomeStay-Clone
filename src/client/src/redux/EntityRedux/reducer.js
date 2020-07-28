@@ -1,11 +1,14 @@
-import {BASIC_QUERY,BASIC_QUERY_SUCCESS,BASIC_QUERY_FAIL} from "./actiontypes.js"
+import {BASIC_QUERY,BASIC_QUERY_SUCCESS,BASIC_QUERY_FAIL,BOOKING_QUERY,BOOKING_QUERY_SUCCESS,BOOKING_QUERY_FAIL} from "./actiontypes.js"
+
 
 const initialState = {
     error:false,
     message:"",
     apartment_id:null,
     apartment_data:{},
-    host_profile:{}
+    host_profile:{},
+    bedroom:{},
+    booking:{}
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -28,6 +31,24 @@ export default (state = initialState, { type, payload }) => {
             error:payload["error"],
             message:payload["message"]
         }
+    
+    case BOOKING_QUERY:
+        return { ...state}
+
+    case BOOKING_QUERY_SUCCESS:
+        return {
+            ...state,
+            error:payload["error"],
+            bedroom:{...payload["bedroom"]},
+            booking:{...payload["booking"]}
+        }
+    case BOOKING_QUERY_FAIL:
+        return {
+            ...state,
+            error:payload["error"],
+            message:payload["message"]
+        }
+    
     default:
         return {
             ...state
