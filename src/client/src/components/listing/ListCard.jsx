@@ -18,30 +18,27 @@ export class ListCard extends Component {
         return (
             
             <div className="col-12 col-sm-12 col-md-6 col-lg-6  mb-2 ">
-              <div className="row1 card row m-1 ">
-                  <div class="col-4 col-sm-6 col-md-4 col-lg-4 p-0">
-                  <div class="carousel-wrapper">
-                  <Carousel showThumbs={false} showStatus={false} useKeyboardArrows className="carousel-root presentation-mode " style={{height:"100%"}}>
-                    <div key="content-1" className="my-slide content" onClick={()=> window.open("/destination?page=1", "_blank")}>
-                      <img  className="row1" src={data.bedroom_image} />
-                      <div>
-                        <img className="img img-fluid profile legendInline" src={data.user_pic}/>
-                      </div>
-                      <div className=" legendInlinestar"><i className="fa fa-star p-2" style={{fontSize:"18px"}} aria-hidden="true"></i>
-                      </div>
-                    </div>
-                    <div key="content-2" className="my-slide content " onClick={()=> window.open("/destination?page=1", "_blank")}>
-                      <img className="row1" src={data.apartment_image} />
-                      <div style={{border:"4px solid white"}} className=" profile"><img className="img img-fluid profile legendInline" src={data.user_pic}/></div>
-                    </div>
-                </Carousel>
-              </div>                   
-        
-        
-              
+                    <div className="row1 card row ml-1 " >
+                        <div class="col-4 col-sm-6 col-md-4 col-lg-4 p-0">
+                        <div class="carousel-wrapper">
+                        <Carousel showThumbs={false} showStatus={false} useKeyboardArrows className="carousel-root presentation-mode " style={{height:"100%"}}>
+                          <div key="content-1" className="my-slide content" onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
+                            <img  className="row1" src={data.bedroom_image} />
+                            <div>
+                              <img className="img img-fluid profile legendInline" src={data.user_pic}/>
+                            </div>
+                            <div className=" legendInlinestar"><i className="fa fa-star p-2" style={{fontSize:"18px"}} aria-hidden="true"></i>
+                            </div>
+                          </div>
+                          <div key="content-2" className="my-slide content " onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
+                            <img className="row1" src={data.apartment_image} />
+                            <div style={{border:"4px solid white"}} className=" profile"><img className="img img-fluid profile legendInline" src={data.user_pic}/></div>
+                          </div>
+                      </Carousel>
+                    </div>                   
                     </div>
                     <div class="col-6 col-sm-6  col-md-8 col-lg-8">
-                    <div class="card-body text-left">
+                    <div class="card-body text-left"  onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
                         <h4 class="card-title title">{data.apartment_name}</h4>
                         <p style={{color:"#512B1A"}} className="homestay"><span className=" font-weight-bold"> {data.user_name}</span>  {data.location} </p>
                         <div style={{display:"block",maxWidth:"100%"}}><img src="https://www.homestay.com/assets/small-review-score-img-c68dbe08abd3620cb7ae9b367952c1caac5322eb67c4d65ecfcafd83fba88dda.svg"></img><span className="small text-muted">{data.reviews}</span></div>

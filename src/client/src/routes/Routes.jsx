@@ -10,8 +10,9 @@ export default function Routes() {
     return (
         <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/carosel" exact render={() => <NavBarAfterLogin />} />
+            <Route path="/carosel" exact render={(props) => <NavBarAfterLogin {...props}/>} />
             <Route path="/destination" exact render={(props) => <ListingMain {...props}/>} />
+            <Route path="/apartment/:id" exact render={(props) => <Carosel {...props}/>} />
             <Route path="/guest" component={HeroCard}/>
         </Switch>
     )

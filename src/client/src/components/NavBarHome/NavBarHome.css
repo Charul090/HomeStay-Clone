@@ -7,4 +7,17 @@
     width:100%;
   }
 
-  
+  .fonthomebar{
+    color: #512B1A;
+    padding: 15px;
+    border-bottom: none;
+    line-height: 65px;
+    display: inline-block;
+    position: relative;
+    font-size: .70em;
+    line-height: 1.625em;
+    letter-spacing: .03em;
+    font-family: Open sans;
+    font-weight: bolder;
+    justify-content: center;
+  }
