@@ -25,15 +25,10 @@ code {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index:1
 }
 
 /**********     Very important for entity page           **********/
-#main-content-row-margin {
-  margin-top: 120px;
-  position: absolute;
-  width: 100%;
-  z-index: 1000;
-}
 
 #main-content-row-margin div{
   max-height: none;

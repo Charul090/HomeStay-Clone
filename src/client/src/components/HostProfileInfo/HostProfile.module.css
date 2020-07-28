@@ -1,11 +1,20 @@
 .sideContainer{
     padding-top: 0px;
     padding-bottom: 1px;
-    position: static;
     transform: none;
     top: 0px;
-    left: 904px;
+    left: 892px;
+    margin-top: 120px;
+    position: absolute;
+    z-index: 1000;
+    margin-right: 40px;
+    width:24%;
 }
+
+.sideContainer div{
+    max-height: none;
+}
+
 
 .button{
     width: 100%;
