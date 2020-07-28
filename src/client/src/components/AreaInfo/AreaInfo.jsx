@@ -5,12 +5,14 @@ import { useSelector } from "react-redux"
 
 export default function AreaInfo() {
 
-    let { latitude, longitude, about_area, local_facilities } = useSelector(state => state.entity.area)
+    let { latitude, longitude, about_area, local_facilities, meals } = useSelector(state => state.entity.area)
     let local_facilities_keys = null
-    if(local_facilities !== undefined){
+    
+
+    if (local_facilities !== undefined) {
         local_facilities_keys = Object.keys(local_facilities)
     }
-
+    
     let point = `${latitude},${longitude}`
 
     if (about_area !== undefined) {
@@ -61,6 +63,7 @@ export default function AreaInfo() {
                             </div>
                         </div>
                         <div className={styles.spacer1}></div>
+
                     </div>
                 </div>
             </div>
