@@ -1,0 +1,67 @@
+.spacer1{
+    margin-top: 3.75em;
+}
+
+.spacer2{
+    margin-top: 1.25em;
+}
+
+.spacer3{
+    margin-top: 2.5em;
+}
+
+.main{
+    font-size: 16px;
+    line-height: 1.625em;
+    font-family: Open sans;
+    font-weight: 400;
+    color: #512B1A;
+    background-color: #ffffff;
+}
+
+.main,
+.main div{
+    max-height: none !important;
+}
+.main::before{
+    display:table;
+    content:" "
+}
+
+.main h2{
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+    text-align: left;
+}
+
+.about{
+    font-size: 1em;
+    margin: 0;
+    text-align: left;
+}
+
+.loc_fac{
+    font-size: .75em;
+    line-height: 1.625em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .03em;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.loc_fac_container{
+    width:80%;
+    text-align: left;
+}
+
+.loc_fac_container p{
+    margin: 0;
+}
+
+.loc_fac_container i{
+    color: #92C01F;
+}
