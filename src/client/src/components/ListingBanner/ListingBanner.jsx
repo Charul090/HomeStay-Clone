@@ -27,8 +27,8 @@ export default function ListingBanner() {
                         <div className={styles.price}>
                             <h5>
                                 <a className={styles.price}>
-                                    <span class="value">
-                                        From <strong><span class={styles.amount}>₹{price_starting}</span></strong> per night</span>
+                                    <span className="value">
+                                        From <strong><span className={styles.amount}>₹{price_starting}</span></strong> per night</span>
                                 </a>
                             </h5>
                         </div>

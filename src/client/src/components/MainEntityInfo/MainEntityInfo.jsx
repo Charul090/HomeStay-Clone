@@ -88,6 +88,7 @@ export default function MainEntityInfo() {
                         <EntityCarousel />
                     </div>
                 </div>
+                <div className={styles.spacer4}></div>
             </div>
         </div>
     )
