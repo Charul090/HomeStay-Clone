@@ -3,8 +3,11 @@ import "./NavBarAfterLogin.css"
 import {Link} from "react-router-dom"
 import { Dropdown} from 'react-bootstrap'
 import SecondNavBarLogin from "../SecondNavBarLogin/SecondNavBarLogin.jsx"
+import {useSelector} from "react-redux"
 
 const NavBarAfterLogin = () => {
+
+        let {username} = useSelector(state=>state.auth)
 
         return (
             <div>
@@ -22,7 +25,7 @@ const NavBarAfterLogin = () => {
                         <div className="col-4 border-left border-secondary pt-1">
                             <div className="row">
                                 <div className="col-4 pt-1"><img className="imge"src="https://www.homestay.com/assets/user/graphic-avatar-placeholder-0f9a1eaaaad293c274aadb54ef4776c60ecb1d178e712b69b2b81002862e81f6.svg"/></div>
-                                <div className="col-4 pt-3 ml-2"><span className="fontstyle1">LALITHA</span></div>
+                                <div className="col-4 pt-3 ml-2"><span className="fontstyle1">{username}</span></div>
                                 <div className="col-2 pt-2">
                                     <Dropdown >
                                     <Dropdown.Toggle split variant="light" id="dropdown-split" />
