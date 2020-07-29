@@ -1,0 +1,87 @@
+.modalHead{
+    padding: 1.2em; 
+    font-weight: 600;
+    letter-spacing: .03em;
+    font-size: 12px;
+    position: relative;
+    display: block;
+    transition: border 0.15s ease-in-out;
+    color:white;
+    background-color: #6D635F;
+    height:50px;
+    width:100%
+}
+
+ .check p{
+     color:#512B1A;
+    font-size: .75em;
+    line-height: 1.625em;
+    letter-spacing: .03em;  
+}
+
+.textColor{
+    color:#512B1A;
+    font-size: 1em;
+    margin: 0;
+    font-weight: 600;
+    margin:0;
+    padding:0;
+    line-height: 0.625em; 
+    justify-content: center;
+}
+
+.spanLabel{
+    color: #FFFFFF;
+    background-color: #92C01F;
+    border: 1px solid #92C01F;
+    border-radius: 20%;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    border-radius: 14px;
+    padding: .10em .6em .2em;
+    display: inline-block;
+    white-space: normal;
+    line-height: 1.2em;
+}
+
+.nation{
+    padding-top: 12px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    font-size: 12px;
+    display: block;
+    color:#512B1A;
+}
+
+.nation1{
+    padding-top: 12px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    font-size: 12px;
+    display: block;
+    color:transparent;
+}
+
+
+.textColr{
+    color:#512B1A;
+    font-size: small;
+}
+
+.selectStyle{
+    border-radius: 0px;
+    padding:5px;
+    background-color: #FFFFFF;
+}
+
+.imge{
+    border-radius: 50%;
+    border:5px solid white;
+    margin-right: 8px;
+    height:76px;
+    width:76px;
+}
+
+
