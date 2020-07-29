@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Modal,Button} from 'react-bootstrap'
 import styles from './ContactHostModal.module.css'
+import ForgotPassword from '../ForgotPassword/ForgotPassword.jsx'
 
 export class ContactHostModal extends Component {
         constructor(props){
@@ -31,6 +32,9 @@ export class ContactHostModal extends Component {
             <Button variant="success" onClick={this.handleShow}>
                 <span className="font-weight-bold">Contact Host</span>
             </Button>
+            
+            
+            
 
             <Modal show={this.state.show} onHide={this.handleClose} animation={false} >
                 
