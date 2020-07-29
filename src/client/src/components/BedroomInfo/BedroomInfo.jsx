@@ -3,7 +3,7 @@ import styles from "./BedroomInfo.module.css"
 import DatePicker from "react-datepicker"
 import CustomCalendar from "../CustomCalendar/CustomCalendar.jsx"
 import { useSelector, useDispatch } from "react-redux"
-import { SEND_CHECK_QUERY, QUERY_COMPLETE } from "../../redux/BookingRedux/action.js"
+import { SEND_CHECK_QUERY, QUERY_COMPLETE,BOOKING_GUEST } from "../../redux/BookingRedux/action.js"
 import { useParams } from "react-router-dom"
 
 
@@ -20,8 +20,17 @@ export default function BedroomInfo() {
     const [minDate2, setMinDate2] = useState(mindate2)
     const [date_diff, setDiff] = useState(1)
     const [booking_available, setAvailable] = useState(true)
+    const [flag, setFlag] = useState(false)
 
     let { name, guests, price_1_night, image } = useSelector(state => state.entity.bedroom)
+    let { booking_guest } = useSelector(state => state.booking)
+    let guest_options = []
+
+    for (let x = 0; x <= guests; x++) {
+        guest_options.push(
+            <option value={x}>{x} Guests</option>
+        )
+    }
 
     useEffect(() => {
         let time_diff = startDate2.getTime() - startDate1.getTime()
@@ -71,6 +80,10 @@ export default function BedroomInfo() {
         }
 
     }, [query, available])
+
+    const handleChange=(e)=>{
+        dispatch(BOOKING_GUEST(Number(e.target.value)))
+    }
 
     return (
         <div className={styles.main}>
@@ -152,13 +165,14 @@ export default function BedroomInfo() {
                                             </div>
                                             :
                                             <div
-                                            style={{
-                                                color: "#FFFFFF",
-                                                backgroundColor: "#ed6636",
-                                                border: "1px solid #DC4814",
-                                                textShadow: "none"}}
-                                             
-                                            class="alert alert-danger" role="alert">
+                                                style={{
+                                                    color: "#FFFFFF",
+                                                    backgroundColor: "#ed6636",
+                                                    border: "1px solid #DC4814",
+                                                    textShadow: "none"
+                                                }}
+
+                                                class="alert alert-danger" role="alert">
                                                 No rooms available. Change dates or choose another homestay
                                             </div>
                                     }
@@ -214,14 +228,28 @@ export default function BedroomInfo() {
                                                     </div>
                                                     <div className={styles.button_container}>
                                                         {
-                                                            booking_available ?
-                                                                <button className={styles.button}>
-                                                                    <i class="fa fa-plus" aria-hidden="true"></i> Select Room
-                                                            </button>
+                                                            flag ?
+                                                                <div className={styles.select}>
+                                                                    <i class="far fa-user"></i>
+                                                                    <select className={styles.guestInput} value={booking_guest} onChange={handleChange}>
+                                                                        {
+                                                                            guest_options
+                                                                        }
+                                                                    </select>
+                                                                    <div style={{width:"100%",display:"flex",flexDirection:"row-reverse"}}>
+                                                                        <a className={styles.unselect} onClick={() => { setFlag(!flag) }}>[unselect]</a>
+                                                                    </div>
+                                                                </div>
                                                                 :
-                                                                <button style={{ visibility: "hidden" }} className={styles.button}>
-                                                                    <i class="fa fa-plus" aria-hidden="true"></i> Select Room
-                                                            </button>
+                                                                booking_available ?
+                                                                    <button className={styles.button} onClick={() => { setFlag(!flag) }}>
+                                                                        <i class="fa fa-plus" aria-hidden="true"></i> Select Room
+                                                                    </button>
+                                                                    :
+                                                                    <button style={{ visibility: "hidden" }} className={styles.button}>
+                                                                        <i class="fa fa-plus" aria-hidden="true"></i> Select Room
+                                                                    </button>
+
                                                         }
                                                     </div>
                                                 </div>
