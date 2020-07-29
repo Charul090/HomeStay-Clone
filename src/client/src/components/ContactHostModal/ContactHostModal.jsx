@@ -82,15 +82,14 @@ export class ContactHostModal extends Component {
                         <div class="form-group col-md-6">
                             <label for="inputState" className={styles.nation}>REASON FOR TRAVEL</label>
                             <select id="inputState" style={{borderRadius:"unset"}} name="guests" onChange={this.handleChange} className="form-control p-2">
-                                                <option value ="0" selected>please select</option>
-                                                <option value="1"> 1</option>
-                                                <option value="2"> 2</option>
-                                                <option value="3"> 3</option>
-                                                <option value="4"> 4</option>
-                                                <option value="5"> 5</option>
-                                            </select>
+                                <option value ="0" selected>please select</option>
+                                <option value="1"> 1</option>
+                                <option value="2"> 2</option>
+                                <option value="3"> 3</option>
+                                <option value="4"> 4</option>
+                                <option value="5"> 5</option>
+                            </select>
                             </div>
-                        
                     </div>
                     </form>
                     <div>
@@ -117,49 +116,49 @@ export class ContactHostModal extends Component {
                         <div class="form-group col-md-6">
                         <label for="inputState" className={styles.nation}>GENDER</label>
                         <select id="inputState" style={{borderRadius:"unset"}} name="guests" onChange={this.handleChange} className="form-control p-2">
-                                                <option value ="0" selected>please select</option>
-                                                <option value="1"> 1</option>
-                                                <option value="2"> 2</option>
-                                                <option value="3"> 3</option>
-                                                <option value="4"> 4</option>
-                                                <option value="5"> 5</option>
-                                            </select>
+                            <option value ="0" selected>please select</option>
+                            <option value="1"> 1</option>
+                            <option value="2"> 2</option>
+                            <option value="3"> 3</option>
+                            <option value="4"> 4</option>
+                            <option value="5"> 5</option>
+                        </select>
                         </div>
 
                         <div class="form-group col-md-6">
                             <div class="row">
                                 <div class="col-3">
                                 <label for="inputState" className={styles.nation}>DAY</label>
-                                    <select className={styles.selectStyle}>
-                                                <option value ="0" selected>D</option>
-                                                <option value="1"> 1</option>
-                                                <option value="2"> 2</option>
-                                                <option value="3"> 3</option>
-                                                <option value="4"> 4</option>
-                                                <option value="5"> 5</option>
-                                            </select>
+                                <select className={styles.selectStyle}>
+                                    <option value ="0" selected>D</option>
+                                    <option value="1"> 1</option>
+                                    <option value="2"> 2</option>
+                                    <option value="3"> 3</option>
+                                    <option value="4"> 4</option>
+                                    <option value="5"> 5</option>
+                                </select>
                                 </div>
                                 <div class="col-6">
                                 <label for="inputState" className={styles.nation}>MONTH</label>
-                                    <select className={styles.selectStyle}>
-                                                <option value ="0" selected>Month</option>
-                                                <option value="1"> 1</option>
-                                                <option value="2"> 2</option>
-                                                <option value="3"> 3</option>
-                                                <option value="4"> 4</option>
-                                                <option value="5"> 5</option>
-                                            </select>
+                                <select className={styles.selectStyle}>
+                                            <option value ="0" selected>Month</option>
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                </select>
                                 </div>
                                 <div class="col-3">
                                 <label for="inputState" className={styles.nation}>YEAR</label>
                                     <select className={styles.selectStyle}>
-                                                <option value ="0" selected>Y</option>
-                                                <option value="1"> 1</option>
-                                                <option value="2"> 2</option>
-                                                <option value="3"> 3</option>
-                                                <option value="4"> 4</option>
-                                                <option value="5"> 5</option>
-                                            </select>
+                                        <option value ="0" selected>Y</option>
+                                        <option value="1"> 1</option>
+                                        <option value="2"> 2</option>
+                                        <option value="3"> 3</option>
+                                        <option value="4"> 4</option>
+                                        <option value="5"> 5</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -169,13 +168,13 @@ export class ContactHostModal extends Component {
                                 <div className="col-6">
                         <label for="inputState" className={styles.nation}>MOBILE</label>
                         <select id="inputState" className={styles.selectStyle}>
-                                                <option value ="0" selected>please select</option>
-                                                <option value="1"> 1</option>
-                                                <option value="2"> 2</option>
-                                                <option value="3"> 3</option>
-                                                <option value="4"> 4</option>
-                                                <option value="5"> 5</option>
-                                            </select>
+                                    <option value ="0" selected>please select</option>
+                                    <option value="1"> 1</option>
+                                    <option value="2"> 2</option>
+                                    <option value="3"> 3</option>
+                                    <option value="4"> 4</option>
+                                    <option value="5"> 5</option>
+                                </select>
                              </div>
                              <div className="col-6">
                              <label for="inputState1" className={styles.nation1}>NATIONALITY</label>
