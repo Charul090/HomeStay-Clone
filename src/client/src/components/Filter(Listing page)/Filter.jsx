@@ -229,7 +229,7 @@ export class Filter extends Component {
                   <div className="col-12 col-sm-12  col-md-12 col-lg-8 " style={{width:"100px"}}>
                   <Styles opacity={this.state.max_price > 10 ? (this.state.max_price / 255) : .1} color={this.props.color}>
                     <label className="font-weight-bold"><p className=" font-weight-bold pt-2 ">Price:0</p></label>
-                    <input type="range" min={0} max={100000} value={this.state.value} name="max_price" className="slider m-1 mb-3" onChange={this.handleFilter} />
+                    <input type="range" min={0} max={10000} value={this.state.value} name="max_price" className="slider m-1 mb-3" onChange={this.handleFilter} />
                     <p className="value">{this.state.max_price}</p>
                   </Styles>
                   </div>
