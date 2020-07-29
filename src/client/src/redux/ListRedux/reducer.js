@@ -1,7 +1,7 @@
 import {FETCH_REQUEST,FETCH_FAILURE,FETCH_SUCCESS,fetchRequest,fetchGetFailure,fetchGetSuccess,} from './actionTypes'
 
 const initState = {
-    data:["lalitha"],
+    data:[],
     error:"",
     total:5,
     page:1
