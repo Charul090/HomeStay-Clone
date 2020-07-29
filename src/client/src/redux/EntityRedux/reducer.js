@@ -1,4 +1,4 @@
-import {BASIC_QUERY,BASIC_QUERY_SUCCESS,BASIC_QUERY_FAIL,BOOKING_QUERY,BOOKING_QUERY_SUCCESS,BOOKING_QUERY_FAIL,AREA_QUERY,AREA_QUERY_SUCCESS,AREA_QUERY_FAIL} from "./actiontypes.js"
+import {BASIC_QUERY,BASIC_QUERY_SUCCESS,BASIC_QUERY_FAIL,BOOKING_QUERY,BOOKING_QUERY_SUCCESS,BOOKING_QUERY_FAIL,AREA_QUERY,AREA_QUERY_SUCCESS,AREA_QUERY_FAIL,RECOMMEND_QUERY,RECOMMEND_QUERY_SUCCESS,RECOMMEND_QUERY_FAIL} from "./actiontypes.js"
 
 
 const initialState = {
@@ -10,7 +10,8 @@ const initialState = {
     bedroom: {},
     booking: {},
     area:{},
-    reviews:{}
+    reviews:{},
+    recommend:{}
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -61,6 +62,22 @@ export default (state = initialState, { type, payload }) => {
                 reviews: { ...payload["reviews_data"] }
             }
         case AREA_QUERY_FAIL:
+            return {
+                ...state,
+                error: payload["error"],
+                message: payload["message"]
+            }
+        case RECOMMEND_QUERY:
+            return { ...state }
+
+        case RECOMMEND_QUERY_SUCCESS:
+            return {
+                ...state,
+                recommend:{
+                    ...payload["data"]
+                }
+            }
+        case RECOMMEND_QUERY_FAIL:
             return {
                 ...state,
                 error: payload["error"],
