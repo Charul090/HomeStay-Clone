@@ -66,7 +66,7 @@ const Start_Basic_Query = (id)=>{
         dispatch(SEND_BASIC_QUERY())
         return axios({
             method:"get",
-            baseURL:"http://0a4399bd8526.ngrok.io",
+            baseURL:"https://7e9638a87721.ngrok.io",
             url:`/apartment/info/${id}`
         })
         .then((res)=>res.data)
