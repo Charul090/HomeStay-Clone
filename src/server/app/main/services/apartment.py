@@ -175,8 +175,8 @@ def booking_info(apartment_id):
     for x in booking_query:
         if x.start_date >= datetime.datetime.utcnow():
             obj = {
-                "start_date": x.start_date,
-                "end_date": x.end_date
+                "start_date": x.start_date.strftime('%Y-%m-%dT%H:%M:%S.%f%z'),
+                "end_date": x.end_date.strftime('%Y-%m-%dT%H:%M:%S.%f%z')
             }
 
             booking_data.append(obj)
