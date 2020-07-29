@@ -5,7 +5,8 @@ const initialState = {
     host: false,
     logged_user: false,
     token: "",
-    message: ""
+    message: "",
+    username:""
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -21,6 +22,7 @@ export default (state = initialState, { type, payload }) => {
                 logged_user: true,
                 token: payload["token"],
                 message: payload["message"],
+                username:payload["name"],
                 error:false
             }
 
@@ -30,8 +32,10 @@ export default (state = initialState, { type, payload }) => {
                 host: false,
                 logged_user: false,
                 token: "",
+                username:"",
                 message: payload["message"],
-                error:true
+                error:true,
+                username:""
             }
 
         case SEND_GOOGLE_QUERY:
@@ -43,7 +47,8 @@ export default (state = initialState, { type, payload }) => {
                 host: payload["host"] || false,
                 logged_user: true,
                 token: payload["token"],
-                message: payload["message"]
+                message: payload["message"],
+                username:payload["name"]
             }
 
         case LOGIN_GOOGLE_FAIL:
@@ -52,7 +57,8 @@ export default (state = initialState, { type, payload }) => {
                 host: false,
                 logged_user: false,
                 token: "",
-                message: payload["message"]
+                message: payload["message"],
+                username:""
             }
 
         case SEND_FACEBOOK_QUERY:
@@ -64,7 +70,8 @@ export default (state = initialState, { type, payload }) => {
                 host: payload["host"] || false,
                 logged_user: true,
                 token: payload["token"],
-                message: payload["message"]
+                message: payload["message"],
+                username:payload["name"]
             }
 
         case LOGIN_FACEBOOK_FAIL:
@@ -73,7 +80,8 @@ export default (state = initialState, { type, payload }) => {
                 host: false,
                 logged_user: false,
                 token: "",
-                message: payload["message"]
+                message: payload["message"],
+                username:""
             }
 
         default:

@@ -1,0 +1,71 @@
+.nav-search-bar-wrapper {
+    position: relative; }
+    .nav-search-bar-wrapper .search-bar {
+      top: -69px;
+      position: absolute;
+      background-color: #6D635F;
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15); }
+      .nav-search-bar-wrapper .search-bar.slide {
+        top: 0px;
+        -webkit-transition: top .3s ease-in-out;
+        transition: top .3s ease-in-out; }
+      @media (max-width: 1179px) {
+        .nav-search-bar-wrapper .search-bar {
+          top: -275px; } }
+
+          .search-bar {
+            width: 100%;
+            position: relative;
+            margin: 0;
+            padding: 0 15px;
+            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+            background-color: #6D635F;
+            border-radius: 0;
+            min-height: 66px;
+            z-index: 998; }
+            .search-bar .search-fields {
+              margin-right: 5px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              display: inline-block; }
+              .search-bar .search-fields .form-group {
+                display: inline-block;
+                margin-bottom: 0;
+                vertical-align: middle;
+                margin-right: 10px; }
+              .search-bar .search-fields select, .search-bar .search-fields input[type=text] {
+                margin-right: 0;
+                border: 1px solid #DBD8D6;
+                padding-top: 9px;
+                padding-bottom: 8px;
+                min-height: 38px; }
+              .search-bar .search-fields .search_location {
+                width: 250px; }
+              .search-bar .search-fields .search_check_in, .search-bar .search-fields .search_check_out {
+                width: 150px; }
+              .search-bar .search-fields .search_guests {
+                width: 100px; }
+              .search-bar .search-fields .search_submit {
+                width: 45.5px; }
+              @media (max-width: 1179px) {
+                .search-bar .search-fields {
+                  display: block;
+                  padding-top: 1.25em;
+                  padding-bottom: 1.25em;
+                  margin-right: 0px; }
+                  .search-bar .search-fields .form-group {
+                    margin-bottom: 10px;
+                    margin-right: 0px; }
+                  .search-bar .search-fields .search_location {
+                    display: block;
+                    width: 100%; }
+                  .search-bar .search-fields .search_check_in {
+                    margin-right: 4%; }
+                  .search-bar .search-fields .search_check_in, .search-bar .search-fields .search_check_out {
+                    width: 48%; }
+                  .search-bar .search-fields .search_guests {
+                    display: block;
+                    width: 100%; }
+                  .search-bar .search-fields .search_submit {
+                    width: 100%;
+                    margin-bottom: 0; } }

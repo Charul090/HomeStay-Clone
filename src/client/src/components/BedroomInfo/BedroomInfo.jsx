@@ -1,25 +1,76 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "./BedroomInfo.module.css"
 import DatePicker from "react-datepicker"
 import CustomCalendar from "../CustomCalendar/CustomCalendar.jsx"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { SEND_CHECK_QUERY, QUERY_COMPLETE } from "../../redux/BookingRedux/action.js"
+import { useParams } from "react-router-dom"
 
 
 export default function BedroomInfo() {
-    let date = new Date()
-    date.setDate(date.getDate() + 1)
-    const [startDate1, setStartDate1] = useState(new Date());
-    const [startDate2, setStartDate2] = useState(date);
-    const [available, setAvailable] = useState(true)
+    let mindate2 = new Date()
+    let date1 = new Date()
 
-    let { name, guests, price_1_night,image } = useSelector(state => state.entity.bedroom)
+    let dispatch = useDispatch()
+    let params = useParams()
+    let { query, available } = useSelector(state => state.booking)
 
-    const subDays = (obj, day) => {
-        obj.setDate(obj.getDate() + 1)
-        return obj
-    }
+    const [startDate1, setStartDate1] = useState(date1);
+    const [startDate2, setStartDate2] = useState(mindate2);
+    const [minDate2, setMinDate2] = useState(mindate2)
+    const [date_diff, setDiff] = useState(1)
+    const [booking_available, setAvailable] = useState(true)
 
-    console.log(startDate1, startDate2)
+    let { name, guests, price_1_night, image } = useSelector(state => state.entity.bedroom)
+
+    useEffect(() => {
+        let time_diff = startDate2.getTime() - startDate1.getTime()
+        let day_diff = Math.floor(time_diff / (1000 * 3600 * 24))
+        setDiff(day_diff)
+    }, [startDate2, startDate1])
+
+    useEffect(() => {
+        let time_diff = startDate2.getTime() - startDate1.getTime()
+        let day_diff = Math.floor(time_diff / (1000 * 3600 * 24))
+        let day = 60 * 60 * 24 * 1000;
+        let date = new Date()
+        date.setTime(startDate1.getTime() + day)
+
+        if (day_diff <= 0) {
+            setStartDate2(date)
+        }
+
+        setMinDate2(date)
+
+    }, [startDate1])
+
+    useEffect(() => {
+        if (date_diff > 29) {
+
+            let last_day = 29 * 60 * 60 * 24 * 1000;
+            last_day = startDate1.getTime() + last_day
+            setStartDate2(new Date(last_day))
+        }
+
+        let { id } = params
+        let obj = {
+            id,
+            start: startDate1,
+            end: startDate2
+        }
+
+        if (date_diff <= 29 && date_diff > 0) {
+            dispatch(SEND_CHECK_QUERY(obj))
+        }
+    }, [date_diff])
+
+    useEffect(() => {
+        if (query) {
+            setAvailable(available)
+            dispatch(QUERY_COMPLETE())
+        }
+
+    }, [query, available])
 
     return (
         <div className={styles.main}>
@@ -37,7 +88,12 @@ export default function BedroomInfo() {
                                         selected={startDate1}
                                         onChange={date => setStartDate1(date)}
                                         dateFormat="MMMM d, yyyy"
-                                        customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />} />
+                                        minDate={new Date()}
+                                        selectsStart
+                                        customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />}
+                                        startDate={startDate1}
+                                        endDate={startDate2}
+                                    />
                                 </div>
                                 <div>
                                     <DatePicker
@@ -45,11 +101,15 @@ export default function BedroomInfo() {
                                         onChange={date => setStartDate2(date)}
                                         dateFormat="MMMM d, yyyy"
                                         customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />}
+                                        startDate={startDate1}
+                                        selectsEnd
+                                        endDate={startDate2}
+                                        minDate={minDate2}
                                     />
                                 </div>
                                 <div className={styles.badge}>
                                     <span class="badge badge-pill badge-primary">{
-                                        startDate2.getDate() - startDate1.getDate()
+                                        date_diff
                                     } Nights</span>
                                 </div>
                             </div>
@@ -69,7 +129,7 @@ export default function BedroomInfo() {
                                 <div className={styles.status}>
                                     <p className="small">
                                         {
-                                            available ?
+                                            booking_available ?
                                                 <>
                                                     <span className={styles.yay}>
                                                         <i className="fa fa-check mr-1" aria-hidden="true"></i>
@@ -86,12 +146,19 @@ export default function BedroomInfo() {
                                 </div>
                                 <div className={styles.alert}>
                                     {
-                                        available ?
+                                        booking_available ?
                                             <div class="alert alert-success" role="alert">
                                                 We found 1 bedroom available for these dates
                                             </div>
                                             :
-                                            <div class="alert alert-danger" role="alert">
+                                            <div
+                                            style={{
+                                                color: "#FFFFFF",
+                                                backgroundColor: "#ed6636",
+                                                border: "1px solid #DC4814",
+                                                textShadow: "none"}}
+                                             
+                                            class="alert alert-danger" role="alert">
                                                 No rooms available. Change dates or choose another homestay
                                             </div>
                                     }
@@ -105,7 +172,7 @@ export default function BedroomInfo() {
                                     </header>
                                     <div className="row">
                                         <div className="col-4">
-                                            <div className={styles.bedroom_image} style={{backgroundImage:`url(${image})`}}></div>
+                                            <div className={styles.bedroom_image} style={{ backgroundImage: `url(${image})` }}></div>
                                         </div>
                                         <div className="col-8">
                                             <div className={styles.bedroom_cont}>
@@ -115,30 +182,47 @@ export default function BedroomInfo() {
                                                         <h5>Sleeps {guests}</h5>
                                                         <div className={styles.spacer3}></div>
                                                     </div>
-                                                    <div className={styles.price_badge}>
-                                                        From <strong style={{ fontSize: "17px" }}>₹{price_1_night}</strong> per night
-                                                    </div>
+                                                    {
+                                                        booking_available ?
+                                                            <div className={styles.price_badge}>
+                                                                From <strong style={{ fontSize: "17px" }}>₹{price_1_night}</strong> per night
+                                                        </div>
+                                                            :
+                                                            <div style={{ visibility: "hidden" }} className={styles.price_badge}>
+                                                                From <strong style={{ fontSize: "17px" }}>₹{price_1_night}</strong> per night
+                                                        </div>
+                                                    }
                                                 </div>
                                                 <div className={styles.bedroom_info2}>
                                                     <div>
                                                         <p class="small">Bathroom&nbsp;shared (with family / other guests)<br />1 Single&nbsp;Bed</p>
                                                         <div className={styles.spacer3}></div>
                                                         <div className={styles.bedroom_status}>
-                                                            {available ?
+                                                            {booking_available ?
                                                                 <>
                                                                     <span className={styles.available}>Bedroom available</span>
                                                                 </>
                                                                 :
                                                                 <>
-                                                                    <span className={styles.unavailable}>Not available for dates</span>
+                                                                    <span className={styles.unavailable}>
+                                                                        Not available for dates
+                                                                    </span>
+
                                                                 </>
                                                             }
                                                         </div>
                                                     </div>
                                                     <div className={styles.button_container}>
-                                                        <button className={styles.button}>
-                                                            <i class="fa fa-plus" aria-hidden="true"></i> Select Room
-                                                        </button>
+                                                        {
+                                                            booking_available ?
+                                                                <button className={styles.button}>
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i> Select Room
+                                                            </button>
+                                                                :
+                                                                <button style={{ visibility: "hidden" }} className={styles.button}>
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i> Select Room
+                                                            </button>
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
@@ -157,6 +241,6 @@ export default function BedroomInfo() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

@@ -22,14 +22,11 @@
         display: inline-block;
     }
     
-     .row div{
-        max-height:300px;
-    }
     
     .inpt{
         width:40px;
         border-radius: 0px;
-    } */
+    } 
     
     div input{
         font-size: small;
@@ -83,8 +80,8 @@
     position: absolute;
     bottom: 40px;
     margin-left: 10%;
-    width: 12%;
-    height:12%;
+    width: 42px;
+    height:38px;
     font-size: 12px;
     text-align: center;
     opacity: 1;
