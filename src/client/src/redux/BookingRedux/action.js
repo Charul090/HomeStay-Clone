@@ -1,4 +1,4 @@
-import { CHECK_DATES_QUERY, CHECK_DATES_SUCCESS, CHECK_DATES_FAIL, SET_QUERY_FALSE,SET_BOOKING_GUEST } from "./actiontypes.js"
+import { CHECK_DATES_QUERY, CHECK_DATES_SUCCESS, CHECK_DATES_FAIL, SET_QUERY_FALSE,SET_BOOKING_GUEST ,SET_NIGHTS} from "./actiontypes.js"
 import axios from "axios"
 
 const DATES_QUERY=()=>{
@@ -34,6 +34,13 @@ const BOOKING_GUEST=(payload)=>{
     }
 }
 
+const SET_NIGHT_STAY = (payload)=>{
+    return {
+        type:SET_NIGHTS,
+        payload
+    }
+}
+
 const SEND_CHECK_QUERY=(obj)=>{
     let {id,start,end} = obj
     return dispatch=>{
@@ -59,4 +66,4 @@ const SEND_CHECK_QUERY=(obj)=>{
     }
 }
 
-export {SEND_CHECK_QUERY,QUERY_COMPLETE,BOOKING_GUEST}
+export {SEND_CHECK_QUERY,QUERY_COMPLETE,BOOKING_GUEST,SET_NIGHT_STAY}
