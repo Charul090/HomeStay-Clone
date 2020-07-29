@@ -1,6 +1,6 @@
 from . import apartment
 from flask import request
-from ..services.apartment import basic_info, area_info,booking_info
+from ..services.apartment import basic_info, area_info,booking_info,recommendation_info
 
 
 @apartment.route("/info/<id>")
@@ -18,4 +18,10 @@ def area(id):
 @apartment.route("/booking-info/<id>")
 def booking(id):
     response = booking_info(id)
+    return response
+
+
+@apartment.route("/recommend/<id>")
+def recommend(id):
+    response = recommendation_info(id)
     return response
