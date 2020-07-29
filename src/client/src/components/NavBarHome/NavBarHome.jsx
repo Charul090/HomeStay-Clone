@@ -62,7 +62,7 @@ const NavBarHome = () => {
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                       </NavDropdown>
-                      <button type="button" className="btn btn-outline-dark"  style={{fontSize:".90em",}}>LIST A ROOM</button>
+                      <button type="button" className="btn btn-outline-dark font-weight-bold"  style={{fontSize:".70em",}}>LIST A ROOM</button>
                     </Nav>
                   </Navbar.Collapse>
                 </Navbar>

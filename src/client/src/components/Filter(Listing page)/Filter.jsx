@@ -8,11 +8,11 @@ import styled from 'styled-components';
 
 const sliderThumbStyles = (props) => (`
 
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background: ${props.color};
   cursor: pointer;
-  outline: 2px solid #333;
+  outline: 1px solid #333;
   opacity: ${props.opacity};
   -webkit-transition: .2s;
   transition: opacity .1s;
@@ -20,7 +20,7 @@ const sliderThumbStyles = (props) => (`
 
 const Styles = styled.div`
   display: flex;
-  padding: 2px;
+  padding: 5px;
   align-items: center;
   color: white;
   .value {
@@ -32,8 +32,8 @@ const Styles = styled.div`
     flex: 6;
     -webkit-appearance:white;
     width: 100%;
-    height: 20px;
-    border-radius: 5px;
+    height: 3px;
+    border-radius: 1px;
     background: #efefef;
     outline: none;
     &::-webkit-slider-thumb {
@@ -172,12 +172,12 @@ export class Filter extends Component {
         
         return (
             <div className="  row">                                
-                <div className="col-12 col-sm-12 col-md-12 col-lg-4  ">
+                <div className="col-12 col-sm-12 col-md-3 col-lg-4  ">
                 <Dropdown className="null">
                 <Dropdown.Toggle variant="null">
                   {/* <span className="small  font-weight-bold text-light">FILTER 
                    ({this.state.count})</span> */}
-                <i className="fa fa-filter" style={{fontSize:"32px",color:"white"}}></i>
+                <i className="fa fa-filter pt-1" style={{fontSize:"26px",color:"white"}}></i>
                 </Dropdown.Toggle>                
                     
                     <Dropdown.Menu className="filterWidth" style={{background:"rgba(183, 177, 174, 0.3)"}}>
@@ -226,9 +226,9 @@ export class Filter extends Component {
                     </div>                        
 
                   {/* <Slider handleChange={this.handleFilter}/> */}
-                  <div className="col-12 col-sm-12  col-md-12 col-lg-8 " style={{width:"100px"}}>
+                  <div className="col-12 col-sm-12  col-md-9 col-lg-8 " style={{width:"200px"}}>
                   <Styles opacity={this.state.max_price > 10 ? (this.state.max_price / 255) : .1} color={this.props.color}>
-                    <label className="font-weight-bold"><p className=" font-weight-bold pt-2 ">Price:0</p></label>
+                    <label className="font-weight-bold"><p className=" small pt-2 ">$: 0</p></label>
                     <input type="range" min={0} max={10000} value={this.state.value} name="max_price" className="slider m-1 mb-3" onChange={this.handleFilter} />
                     <p className="value">{this.state.max_price}</p>
                   </Styles>
