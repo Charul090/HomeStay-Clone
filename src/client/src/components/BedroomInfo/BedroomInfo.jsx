@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import styles from "./BedroomInfo.module.css"
 import DatePicker from "react-datepicker"
 import CustomCalendar from "../CustomCalendar/CustomCalendar.jsx"
@@ -6,20 +6,46 @@ import { useSelector } from "react-redux"
 
 
 export default function BedroomInfo() {
-    let date = new Date()
-    date.setDate(date.getDate() + 1)
-    const [startDate1, setStartDate1] = useState(new Date());
-    const [startDate2, setStartDate2] = useState(date);
+    let mindate2 = new Date()
+    let date1 = new Date()
+
+    const [startDate1, setStartDate1] = useState(date1);
+    const [startDate2, setStartDate2] = useState(mindate2);
+    const [minDate2,setMinDate2] = useState(mindate2)
+    const [date_diff,setDiff] = useState(1)
     const [available, setAvailable] = useState(true)
 
     let { name, guests, price_1_night,image } = useSelector(state => state.entity.bedroom)
 
-    const subDays = (obj, day) => {
-        obj.setDate(obj.getDate() + 1)
-        return obj
-    }
+    useEffect(()=>{
+        let time_diff = startDate2.getTime() - startDate1.getTime()
+        let day_diff = Math.floor(time_diff / (1000 * 3600 * 24))
+        setDiff(day_diff)
+    },[startDate2,startDate1])
 
-    console.log(startDate1, startDate2)
+    useEffect(()=>{
+        let time_diff = startDate2.getTime() - startDate1.getTime()
+        let day_diff = Math.floor(time_diff / (1000 * 3600 * 24))
+        let day = 60 * 60 * 24 * 1000;
+        let date = new Date()
+        date.setTime(startDate1.getTime()+day)
+
+        if(day_diff <= 0){
+            setStartDate2(date)
+        }
+
+        setMinDate2(date)
+
+    },[startDate1])
+
+    useEffect(()=>{
+        if(date_diff > 29){
+            
+            let last_day = 29 * 60 * 60 * 24 * 1000;
+            last_day = startDate1.getTime()+last_day
+            setStartDate2(new Date(last_day))
+        }
+    },[date_diff])
 
     return (
         <div className={styles.main}>
@@ -37,7 +63,12 @@ export default function BedroomInfo() {
                                         selected={startDate1}
                                         onChange={date => setStartDate1(date)}
                                         dateFormat="MMMM d, yyyy"
-                                        customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />} />
+                                        minDate={new Date()}
+                                        selectsStart
+                                        customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />} 
+                                        startDate={startDate1}
+                                        endDate={startDate2}
+                                        />
                                 </div>
                                 <div>
                                     <DatePicker
@@ -45,11 +76,15 @@ export default function BedroomInfo() {
                                         onChange={date => setStartDate2(date)}
                                         dateFormat="MMMM d, yyyy"
                                         customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />}
+                                        startDate={startDate1}
+                                        selectsEnd
+                                        endDate={startDate2}
+                                        minDate={minDate2}
                                     />
                                 </div>
                                 <div className={styles.badge}>
                                     <span class="badge badge-pill badge-primary">{
-                                        startDate2.getDate() - startDate1.getDate()
+                                        date_diff
                                     } Nights</span>
                                 </div>
                             </div>
