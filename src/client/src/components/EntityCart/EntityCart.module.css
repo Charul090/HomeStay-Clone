@@ -1,0 +1,57 @@
+.button{
+    width:100%;
+    background: #92C01F;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    color: #FFFFFF;
+    font-size: 1.125em;
+    border-radius: 2px;
+    margin: 0;
+    border: 0;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1.6em;
+    padding: .52em 1em;
+    font-weight: 400;
+}
+
+.button_container{
+    padding:20px 0;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index:1500;
+    background-color: #443e3b;
+    color: #FFFFFF;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    padding:8px 0;
+}
+
+.table_container{
+    text-align: left;
+}
+
+.table_container > table{
+    margin-bottom: 0 !important;
+}
+
+.table_container th{
+    padding-bottom: 8px !important;
+    font-weight: 400;
+    color:#FFFFFF !important;
+}
+
+.table_container td{
+    color:#FFFFFF !important;
+    padding-top: 6px !important;
+    padding-bottom: 0px !important;
+    font-weight: 600;
+}
+
+.table_container > table > tr:nth-child(1){
+    border-bottom: 1px solid  rgba(0, 0, 0, 0.1);
+}

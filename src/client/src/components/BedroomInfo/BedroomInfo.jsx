@@ -3,7 +3,7 @@ import styles from "./BedroomInfo.module.css"
 import DatePicker from "react-datepicker"
 import CustomCalendar from "../CustomCalendar/CustomCalendar.jsx"
 import { useSelector, useDispatch } from "react-redux"
-import { SEND_CHECK_QUERY, QUERY_COMPLETE,BOOKING_GUEST } from "../../redux/BookingRedux/action.js"
+import { SEND_CHECK_QUERY, QUERY_COMPLETE,BOOKING_GUEST,SET_NIGHT_STAY} from "../../redux/BookingRedux/action.js"
 import { useParams } from "react-router-dom"
 
 
@@ -71,6 +71,8 @@ export default function BedroomInfo() {
         if (date_diff <= 29 && date_diff > 0) {
             dispatch(SEND_CHECK_QUERY(obj))
         }
+
+        dispatch(SET_NIGHT_STAY(date_diff))
     }, [date_diff])
 
     useEffect(() => {
@@ -237,7 +239,11 @@ export default function BedroomInfo() {
                                                                         }
                                                                     </select>
                                                                     <div style={{width:"100%",display:"flex",flexDirection:"row-reverse"}}>
-                                                                        <a className={styles.unselect} onClick={() => { setFlag(!flag) }}>[unselect]</a>
+                                                                        <a className={styles.unselect} 
+                                                                        onClick={() => { 
+                                                                            setFlag(!flag) 
+                                                                            dispatch(BOOKING_GUEST(0))
+                                                                        }}>[unselect]</a>
                                                                     </div>
                                                                 </div>
                                                                 :
