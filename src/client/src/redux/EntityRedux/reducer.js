@@ -71,6 +71,7 @@ export default (state = initialState, { type, payload }) => {
             return { ...state }
 
         case RECOMMEND_QUERY_SUCCESS:
+            console.log(payload["data"])
             return {
                 ...state,
                 recommend:{

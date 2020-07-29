@@ -1,0 +1,24 @@
+.mealmain{
+    text-align: left;
+}
+
+
+
+.spacer1{
+    margin-top: 3.75em;
+}
+
+.spacer2{
+    margin-top: 1.25em;
+}
+.title{
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+    color: #512B1A;
+}
+
+.title div{
+    align-items: center;
+}
