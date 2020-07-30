@@ -4,9 +4,18 @@ from ..models import db, VerificationModel, UsersModel
 import datetime
 from instance.config import SECRET_KEY
 import secrets
+import smtplib
+from instance.config import SMTP_USERNAME, SMTP_PASSWORD
 
 
 def password_recovery(info):
+    s = smtplib.SMTP(host="email-smtp.ap-south-1.amazonaws.com")
+
+    s.connect("email-smtp.ap-south-1.amazonaws.com", 587)
+
+    s.starttls()
+
+    s.login(SMTP_USERNAME, SMTP_PASSWORD)
 
     try:
         email = info["email"]
@@ -34,9 +43,13 @@ def password_recovery(info):
 
     # Need to send frontend link when deployed on aws
     string_email = "%40".join(email.split("@"))
-    link = "password/reset?a="+token+"&email="+string_email
+    link = "http://localhost:3000/password/reset?a="+token+"&email="+string_email
 
-    return json.dumps({"error": False, "link": link})
+    msg = "From:noreply@charul.co\nTo:"+str(email)+"\nSubject:Password Reset Notification\n\nHello,\nUse the following link to reset password.Happy Homestaying!\n"+str(link)
+    
+    s.sendmail("noreply@charul.co",email,msg)
+
+    return json.dumps({"error": False, "message": "Password reset link is sent to your email successfullyss"})
 
 
 def password_reset(info):
