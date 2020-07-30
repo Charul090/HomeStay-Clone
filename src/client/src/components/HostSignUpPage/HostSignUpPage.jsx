@@ -37,28 +37,16 @@ export class HostSignUpPage extends Component {
                                     
 
                                     <div class="input-group row m-3">
-                                    <div class="col-auto ">
+                                    <div >
                                     <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                     <div class="input-group mb-2 ml-4 ">
                                         <div class="input-group-prepend">
                                         <div class="input-group-text"><i class='fa fa-facebook' style={{fontSize:"25px",color:"darkblue"}}></i></div>
                                         </div>
-                                        <input type="text" style={{color:"darlblue",paddingLeft:"15px"}} id="inlineFormInputGroup" placeholder="Login with Facebook"/>
+                                        <input type="text" style={{color:"darlblue",paddingLeft:"15px"}} id="inlineFormInputGroup" placeholder="Login with Facebook"></input>
                                     </div>
                                     </div>
                                     </div>
-
-                                    {/* <div class="input-group row m-3">
-                                    <div class="col-auto ">
-                                    <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                                    <div class="input-group mb-2 ml-4 ">
-                                        <div class="input-group-prepend">
-                                        <div class="input-group-text"><i class='fa fa-google' style={{fontSize:"25px",color:"blue"}}></i></div>
-                                        </div>
-                                        <input type="text" style={{color:"darlblue",paddingLeft:"15px"}} id="inlineFormInputGroup" placeholder="Login with Facebook"/>
-                                    </div>
-                                    </div>
-                                    </div> */}
                             
                                 
                                         <GoogleLogin  style={{padding:"30px"}}/>
@@ -91,6 +79,28 @@ export class HostSignUpPage extends Component {
                         </div>
                     </div>
                 </section>
+
+                <div className={styles.secNav} >
+                    <div className="row">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span className="text-light"><i class="fa fa-home" style={{fontSize:"20px",color:"#CA005D"}} aria-hidden="true"></i> WHY HOMESTAY.COM?</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span className="text-light"><i class="fa fa-calendar-check-o" style={{fontSize:"20px"}} aria-hidden="true"></i> HOW DOES IT WORK</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" ><span className="text-light">BE IN CONTROL</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" ><span className="text-light">FAQ?</span></a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
             </div>
         )
     }
