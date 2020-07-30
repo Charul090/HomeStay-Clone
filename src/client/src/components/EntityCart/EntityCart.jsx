@@ -70,7 +70,7 @@ export default function EntityCart(props) {
             currency: data.currency,
             amount: data.amount.toString(),
             order_id: data.id,
-            name: 'Rent this room',
+            name: 'HomeStay',
             description: 'YAY!!',
             image: 'https://www.homestay.com/assets/logo-homestay-36a9388d17da279b965e5b0dc5153eab12f98ceef3e29332a720df00b71fa2ac.svg',
             handler: function (response) {
@@ -88,7 +88,7 @@ export default function EntityCart(props) {
             prefill: {
                 name,
                 email: 'sdfdsjfh2@ndsfdf.com',
-                phone_number: '9899999999'
+                phone_number: '9999999999'
             }
         }
 
