@@ -5,6 +5,7 @@ import CustomCalendar from "../CustomCalendar/CustomCalendar.jsx"
 import { useSelector, useDispatch } from "react-redux"
 import { SEND_CHECK_QUERY, QUERY_COMPLETE,BOOKING_GUEST,SET_NIGHT_STAY} from "../../redux/BookingRedux/action.js"
 import { useParams } from "react-router-dom"
+import EntityCart from "../EntityCart/EntityCart.jsx"
 
 
 export default function BedroomInfo() {
@@ -86,6 +87,8 @@ export default function BedroomInfo() {
     const handleChange=(e)=>{
         dispatch(BOOKING_GUEST(Number(e.target.value)))
     }
+
+    console.log(startDate1,startDate2)
 
     return (
         <div className={styles.main}>
@@ -275,6 +278,7 @@ export default function BedroomInfo() {
                     </div>
                 </div>
             </div>
+            <EntityCart start={startDate1} end={startDate2} />
         </div >
     )
 }

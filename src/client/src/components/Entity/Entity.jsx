@@ -6,7 +6,6 @@ import Footer from "../Footer/Footer.jsx"
 import BedroomInfo from '../BedroomInfo/BedroomInfo.jsx'
 import AreaInfo from '../AreaInfo/AreaInfo.jsx'
 import MealInfo from '../MealInfo/MealInfo.jsx'
-import EntityCart from '../EntityCart/EntityCart.jsx'
 
 export default function Entity() {
     return (
@@ -18,7 +17,6 @@ export default function Entity() {
             <BedroomInfo />
             <AreaInfo />
             <MealInfo />
-            <EntityCart />
             <Footer />
         </div>
     )
