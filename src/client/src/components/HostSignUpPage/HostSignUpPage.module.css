@@ -1,6 +1,9 @@
 .bgwhite{
     background-color: white;
 }
+.bgColor{
+    background-color: rgba(183, 177, 174, 0.3);
+}
 
 .sectionBackground{
     background-image: url(https://www.homestay.com/assets/landing/become_a_host/hero-6a59e5e3a4e87806a6255afc838a59219d758e71986e9858b28e9a06ac26c456.jpg);
@@ -62,22 +65,10 @@
     line-height: 1.4em;
     font-weight: 300;
     margin: 0;
+    color:#512B1A;
 
 }
 
-.my-facebook-button-class{
-    text-transform: uppercase;
-    font-size: 15px;
-    color:#3b5998;
-    border:1px solid black;
-    background-color: #ffffff;
-    position: relative;
-    padding-left: 4.5em;
-    text-align: center;
-    min-height: 42px;
-    cursor: pointer;
-    padding:4px;
-}
 
 .secNav{
     color: #FFFFFF;
@@ -98,4 +89,53 @@
         transition: border 0.15s ease-in-out;
     }
     
+
+   
+    .icon{
+        font-size: 20px;
+        color:darkblue;
+        position:absolute;
+        padding:9px
+    }
+
+    .bgImage {
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 80%;
+        height: 0;
+        background-image: url("https://homestay.com/assets/landing/become_a_host/become-a-host-family_ca-b1e4d37f7a44be2888573c99e1fa5e76e4fdddbccecec1b6be7fac5693ea0566.jpg");
+        padding-top: 60%;
+        margin-top:60px;
+        margin-bottom: 60px;
+    }
+
+    .roomRent{
+        margin-top:70px;
+    }
+
+    .subContet{
+        margin-left:15%;
+        padding:10px;
+        font-size: 40px;
+        line-height: 1.625em;
+        font-family: Open sans;
+        color: #512B1A;
+        font-weight: lighter;
+    }
     
+    .smallIcon{
+        line-height: 1.625em;
+        font-family: Open sans;
+        font-weight: 400;
+        color: #512B1A;
+    }
+
+    .subCont{
+        margin:5%;
+        padding:10px;
+        font-size: 40px;
+        line-height: 1.625em;
+        font-family: Open sans;
+        color: #512B1A;
+        font-weight: lighter;
+    }
