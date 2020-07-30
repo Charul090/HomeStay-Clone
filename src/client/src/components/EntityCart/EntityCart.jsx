@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import styles from "./EntityCart.module.css"
-import { useSelector ,useDispatch} from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import ContactHostModal from '../ContactHostModal/ContactHostModal'
 import { v4 as uuidv4 } from "uuid"
-import {Start_Payment_Query} from "../../redux/PaymentRedux/action.js"
+import { Start_Payment_Query } from "../../redux/PaymentRedux/action.js"
 
 export default function EntityCart(props) {
     let { booking_guest, nights, available } = useSelector(state => state.booking)
     let { name, price_1_night } = useSelector(state => state.entity.bedroom)
-    let {apartment_id} = useSelector(state=>state.entity)
+    let { apartment_id } = useSelector(state => state.entity)
 
     const [pay, setPay] = useState(false)
     const [cost, setCost] = useState()
@@ -16,7 +16,7 @@ export default function EntityCart(props) {
     const [totalcost, setTotalCost] = useState()
 
     let dispatch = useDispatch()
-    
+
 
     useEffect(() => {
         setCost(price_1_night * nights)
@@ -58,13 +58,13 @@ export default function EntityCart(props) {
 
         }
 
-        const data = await fetch("https://dacaf3626775.ngrok.io/payment/order",{
-            method:"POST",
-            body:JSON.stringify(order)
+        const data = await fetch("https://8431a7cdc386.ngrok.io/payment/order", {
+            method: "POST",
+            body: JSON.stringify(order)
         }).then((data) => {
-                return data.json()
-            })
-        
+            return data.json()
+        })
+
         const options = {
             key: "",
             currency: data.currency,
@@ -74,13 +74,13 @@ export default function EntityCart(props) {
             description: 'YAY!!',
             image: 'https://www.homestay.com/assets/logo-homestay-36a9388d17da279b965e5b0dc5153eab12f98ceef3e29332a720df00b71fa2ac.svg',
             handler: function (response) {
-                let obj ={
-                    payment:response,
-                    booking_info:{
-                        start:props.start,
-                        end:props.end,
-                        total_cost:totalcost,
-                        apartment_id:apartment_id
+                let obj = {
+                    payment: response,
+                    booking_info: {
+                        start: props.start,
+                        end: props.end,
+                        total_cost: totalcost,
+                        apartment_id: apartment_id
                     }
                 }
                 dispatch(Start_Payment_Query(obj))
@@ -91,7 +91,7 @@ export default function EntityCart(props) {
                 phone_number: '9899999999'
             }
         }
-        
+
         const paymentObject = new window.Razorpay(options)
         paymentObject.open()
     }
@@ -139,7 +139,7 @@ export default function EntityCart(props) {
                     </div>
                 </div>
             </div>
-            <ContactHostModal pay={pay} setPay={setPay} nights={nights} />
+            <ContactHostModal start_date={props.start} end_date={props.end} pay={pay} setPay={setPay} nights={nights} />
         </>
     )
 }
