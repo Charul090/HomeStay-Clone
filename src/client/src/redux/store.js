@@ -3,10 +3,11 @@ import RegisterReducer from "./RegisterRedux/reducer"
 import reducer from "./ListRedux/reducer";
 import EntityReducer from "./EntityRedux/reducer"
 import BookingReducer from "./BookingRedux/reducer"
+import PasswordReducer from "./PasswordRedux/reducer"
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
-const rootReducer = combineReducers({ auth:AuthReducer,regis:RegisterReducer,list:reducer,entity:EntityReducer,booking:BookingReducer});
+const rootReducer = combineReducers({ auth:AuthReducer,regis:RegisterReducer,list:reducer,entity:EntityReducer,booking:BookingReducer,password:PasswordReducer});
 
 
 let composeEnhancers = compose;
