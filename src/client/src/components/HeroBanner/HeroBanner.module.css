@@ -1,7 +1,7 @@
 .main{
     position: absolute;
     padding: 7em 0 1.5em;
-    z-index:1;
+    z-index:1500;
     font-family: Open sans;
 }
 
@@ -65,33 +65,6 @@
     background-color: #FFFFFF;
 }
 
-.row{
-    display: inline-flex;
-}
-
-.row > div:nth-child(1),
-.row > div:nth-child(2){
-    width: 37%;
-    margin-right: 2%;
-}
-
-.row > div:nth-child(3){
-    width: 22%;
-}
-
-.row > div:nth-child(1) input,
-.row > div:nth-child(2) input,
-.row > div:nth-child(3) input{
-    font-size: 15px;
-    padding:0;
-}
-
-.row > div:nth-child(1) span,
-.row > div:nth-child(2) span,
-.row > div:nth-child(3) span{
-    background-color: #FFFFFF;
-}
-
 .button{
     width:100%;
     background: #CA005D;
@@ -114,11 +87,91 @@
     font-size: 24px;
 }
 
-.calendar{
-    position:absolute;
-    z-index:10;
+.location{
+    margin-bottom: 10px;
 }
 
-.row input{
-    max-width: 100%;
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.date1,.date2{
+    width: 36%;
+}
+
+.date{
+    padding:5px;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    height: 2.924em;
+    border-radius: 2px;
+    border:1px solid #DBD8D6;
+    box-shadow: none;
+    padding-left: 40px;
+    width: 100%;
+    color: #512B1A !important;
+}
+
+.date:focus{
+    border-color: #8EC9E7 !important;
+    box-shadow: none;
+    outline: none;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.wrapper > i{
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    padding:14px 10px 0;
+    color: #B7B1AE;
+    font-size: 18px;
+}
+
+.select{
+    position: relative;
+    border-width: 2px;
+    border-color: #92C01F;
+    width:22%;
+}
+
+.select > i{
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    padding-top: 14px;
+    font-size: 18px;
+    margin:0 10px;
+    color: #B7B1AE;
+}
+
+.guestInput {
+    padding:8px 10px 10px;
+    padding-left: 42px;
+    width:100%;
+    border-width: 2px;
+    border-radius: 2px;
+    border-color: #DBD8D6;
+    box-shadow: none;
+    background-color: #fff;
+}
+
+.guestInput:focus,
+.guestInput:focus-within{
+    border-width: 2px;
+    border-color: #92C01F;
+}
+
+.unselect{
+    font-size: .75em;
+    line-height: 1.625em;
+    letter-spacing: .03em;
+    color: #337ab7 !important;
+    cursor: pointer;
 }

@@ -33,3 +33,7 @@ code {
 #main-content-row-margin div{
   max-height: none;
 }
+
+::placeholder{
+  color:#EEEEEE;
+}
