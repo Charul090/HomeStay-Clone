@@ -139,3 +139,27 @@
         color: #512B1A;
         font-weight: lighter;
     }
+
+    .subCon{
+        padding:10px;
+        font-size: 40px;
+        line-height: 1.625em;
+        font-family: Open sans;
+        color: #512B1A;
+        font-weight: lighter;
+    }
+
+    .fq{
+        font-size: 1.5em;
+        line-height: 1.4em;
+        font-weight: 300;
+        margin: 0;
+        color:#2B95CA;
+        padding:50px
+    
+    }
+
+    .subCon button{
+        background-color: red;
+        text-decoration: none;
+    }

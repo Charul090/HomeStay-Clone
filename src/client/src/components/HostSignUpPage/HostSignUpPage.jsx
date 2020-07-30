@@ -4,7 +4,8 @@ import NavBarHome from '../NavBarHome/NavBarHome'
 import styles from './HostSignUpPage.module.css';
 import { Facebook_Login_Query } from '../../redux/AuthRedux/action';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import FacebookLogin from "react-facebook-login"
+import FacebookLogin from "react-facebook-login";
+import Footer from '../Footer/Footer.jsx'
 
 export class HostSignUpPage extends Component {
     constructor(props){
@@ -105,10 +106,10 @@ export class HostSignUpPage extends Component {
                         <a class="nav-link" href="#work"><i class="fa fa-calendar-check-o" style={{fontSize:"20px",color:"silver"}} aria-hidden="true"></i><span className="text-light p-2"> HOW DOES IT WORK</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#earn" ><i class="far fa-calendar-check" style={{fontSize:"20px",color:"silver"}} aria-hidden="true"></i><span className="text-light p-2"> BE IN CONTROL</span></a>
+                        <a class="nav-link " href="#earn" ><i class="far fa-calendar-check" style={{fontSize:"20px",color:"silver"}} aria-hidden="true"></i><span className="text-light p-2"> BE IN CONTROL</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" ><i class="fa fa-question-circle" style={{fontSize:"20px",color:"silver"}} aria-hidden="true"></i> <span className="text-light p-2">FAQ?</span></a>
+                        <a class="nav-link " href="#faq" ><i class="fa fa-question-circle" style={{fontSize:"20px",color:"silver"}} aria-hidden="true"></i> <span className="text-light p-2">FAQ?</span></a>
                     </li>
                     </ul>
                 </div>
@@ -186,29 +187,135 @@ export class HostSignUpPage extends Component {
                 </div>
                 </div>
                 </section>
-            
+        
             <section className={styles.bgColor}>
-                <div class="container" id="earn">
-                    <div className="row">
-                        <div class="col-12">
+                <div class="container " style={{color:"#512B1A"}} id="earn">
+                    <div className="row ">
+                        <div class="col-12 ">
                         <h3 className={styles.subCont}>Earn Money Your Way</h3>
                             <div class="row">
                                 
-                                <div class="col-4 align-left">
+                                <div class="col-4 ">
+                                <span className="text-left p-2">
                                 <div className={styles.list}>Who stays</div>
-                                <p className={styles.smallIcon}>All guests are over 18 years old.<br/>
-                                 Advertise your room to holiday-goers, international<br/>
-                                  students/interns and professionals.</p>
+                                </span>
+                                <p className="small text-left">All guests are over 18 years old.<br/>
+                                 Advertise your room to holiday-goers, <br/>
+                                 international students/interns and professionals.</p>
 
                                 </div>
-                                <div class="col-4">2</div>
-                                <div class="col-4">3</div>
+                                <div class="col-4">
+                                <span className="text-left p-2">
+                                <div className={styles.list}>How long</div>
+                                </span>
+                                <p className="small text-left">Guests book homestays for nightly, weekly or monthly stays.<br/>
+                                 Set your preferred length of stay to ensure you receive you the most 
+                                 suitable guests.</p>
+
+                                </div>
+                                <div class="col-4">
+                                <span className="text-left p-2">
+                                <div className={styles.list}>Right price</div>
+                                </span>
+                                <p className="small text-left">You control and set your own prices. Remember long term <br/>
+                                guests will look for a competitive monthly rate..</p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
+            <section className={styles.bgColor}>
+                <div  style={{color:"#512B1A"}} id="faq">
+                    <div class="container">
+                <div className="row pb-5 pt-5">
+                        <div class="col-12 ">
+                        <div class="p-5">
+                        <h3 className={styles.subCon}>Frequently asked questions</h3>
+                        </div>
+                        <div class="accordion p-5" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <span className={styles.fq}>Who are the guests? <span className="float-right">+</span></span>
+                        </button>
+                    </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <span className={styles.fq}>How do I get paid?<span className="float-right">+</span></span>
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <span className={styles.fq}>What's expected of me when listing my room?<span className="float-right">+</span></span>
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed bg-light" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <span className={styles.fq}>Do I need insurance?<span className="float-right">+</span></span>
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                    </div>
+                </div>
+              
+
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+            </section>
+
+            <section >
+                <div  style={{color:"#512B1A"}} >
+                <div className="row pt-5 pb-5">
+                        <div class="col-12 ">
+                        <h3 className={styles.subCon}>Now not a good time?</h3>
+                        <p >We can email you more information to explain how it all works.</p>
+                        <button className="btn btn-lg text-light" style={{background:"#CA005D"}}>Send me more Information</button>
+                </div>
+                </div>
+                </div>
+                </section>
+
+            <Footer style={{marginTop:"0px"}} />
             </div>
         )
     }
