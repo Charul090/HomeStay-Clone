@@ -10,7 +10,7 @@ import EntityCart from "../EntityCart/EntityCart.jsx"
 
 export default function BedroomInfo() {
     let mindate2 = new Date()
-    let date1 = new Date()
+    let date1 = new Date(new Date().getTime()+(60 * 60 * 24 * 1000))
 
     let dispatch = useDispatch()
     let params = useParams()
@@ -106,7 +106,7 @@ export default function BedroomInfo() {
                                         selected={startDate1}
                                         onChange={date => setStartDate1(date)}
                                         dateFormat="MMMM d, yyyy"
-                                        minDate={new Date()}
+                                        minDate={startDate1}
                                         selectsStart
                                         customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />}
                                         startDate={startDate1}
