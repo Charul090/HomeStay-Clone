@@ -10,8 +10,8 @@ export default function Reviews() {
         data.push(reviews[key]);
     }
     return (
-        <div className={styles.main}>
-            <h2 className={styles.review}>Reviews</h2>
+        <div className={styles.main} data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+            <h2 className={styles.review} id="review">Reviews</h2>
             <div className={styles.spacer3}></div>
             {data && data.map((item) => (<div className="container-fluid">
                 <div className="row ">

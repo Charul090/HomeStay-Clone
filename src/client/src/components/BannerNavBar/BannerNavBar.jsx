@@ -28,7 +28,7 @@ export default function BannerNavBar() {
                             <a href="#meal">Meals & Rules</a>
                         </div>
                         <div className={styles.element}>
-                            <a>{number_reviews} Reviews</a>
+                            <a href="#review">{number_reviews} Reviews</a>
                         </div>
                         <div className={styles.element}>
                             <a>How to Book</a>
