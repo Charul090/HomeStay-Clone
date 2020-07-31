@@ -14,11 +14,19 @@ import HomePress from '../HomePress/HomePress';
 import HomeInsiderTip from '../HomeInsiderTip/HomeInsiderTip';
 import Footer from '../Footer/Footer';
 import HeroBanner from '../HeroBanner/HeroBanner';
+import NavBarAfterLogin from "../NavBarAfterLogin/NavBarAfterLogin.jsx"
+import {useSelector} from "react-redux"
 
 export default function Home() {
+    let {logged_user} = useSelector(state=>state.auth)
     return (
         <div className={styles.body}>
-            <TransparentNavBar />
+            {
+                logged_user?
+                <NavBarAfterLogin />
+                :
+                <TransparentNavBar />
+            }
             <LoginModal />
             <RegisterModal />
             <HeroBanner />
