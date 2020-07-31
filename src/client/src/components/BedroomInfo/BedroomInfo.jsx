@@ -9,16 +9,16 @@ import EntityCart from "../EntityCart/EntityCart.jsx"
 
 
 export default function BedroomInfo() {
-    let mindate2 = new Date()
     let date1 = new Date(new Date().getTime()+(60 * 60 * 24 * 1000))
+    let date2 = new Date(date1.getTime()+(60 * 60 * 24 * 1000))
 
     let dispatch = useDispatch()
     let params = useParams()
     let { query, available } = useSelector(state => state.booking)
 
     const [startDate1, setStartDate1] = useState(date1);
-    const [startDate2, setStartDate2] = useState(mindate2);
-    const [minDate2, setMinDate2] = useState(mindate2)
+    const [startDate2, setStartDate2] = useState(date2);
+    const [minDate2, setMinDate2] = useState(startDate1)
     const [date_diff, setDiff] = useState(1)
     const [booking_available, setAvailable] = useState(true)
     const [flag, setFlag] = useState(false)
@@ -91,8 +91,8 @@ export default function BedroomInfo() {
     console.log(startDate1,startDate2)
 
     return (
-        <div className={styles.main}>
-            <div className="container-fluid">
+        <div className={styles.main} data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+            <div className="container-fluid" id="bedroom-info">
                 <div className="row">
                     <div className="col-8">
                         <div className={styles.spacer1}></div>
@@ -106,7 +106,7 @@ export default function BedroomInfo() {
                                         selected={startDate1}
                                         onChange={date => setStartDate1(date)}
                                         dateFormat="MMMM d, yyyy"
-                                        minDate={startDate1}
+                                        minDate={date1}
                                         selectsStart
                                         customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />}
                                         startDate={startDate1}

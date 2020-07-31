@@ -23,8 +23,8 @@ export default function MainEntityInfo() {
     }
 
     return (
-        <div className={styles.main}>
-            <div className="container-fluid">
+        <div className={styles.main} data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+            <div className="container-fluid" id="about">
                 <div className="row">
                     <div className="col-8">
                         <div className={styles.spacer1}></div>
@@ -83,8 +83,8 @@ export default function MainEntityInfo() {
                         <div className={styles.spacer4}></div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-8" style={{maxHeight:"none"}}>
+                <div className="row" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+                    <div className="col-8" style={{maxHeight:"none"}} id="photo">
                         <EntityCarousel />
                     </div>
                 </div>

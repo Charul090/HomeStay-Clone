@@ -21,17 +21,6 @@ export default function LoginModal() {
     let history = useHistory()
 
     useEffect(()=>{
-        if(logged_user){
-            if(host){
-                history.push("/destination")
-            }
-            else{
-                history.push("/destination")
-            }
-        }
-    },[logged_user])
-
-    useEffect(()=>{
         setMessage(message)
     },[error])
 

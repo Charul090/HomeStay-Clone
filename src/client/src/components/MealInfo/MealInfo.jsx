@@ -14,8 +14,8 @@ export default function MealInfo() {
         rules = rules.split("\n")
     }
     return (
-        <div className={styles.mealmain}>
-            <div className={styles.spacer1}></div>
+        <div className={styles.mealmain} data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+            <div className={styles.spacer1} id="meal"></div>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-8">

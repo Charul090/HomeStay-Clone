@@ -1,0 +1,133 @@
+.main{
+    background-color: #ffffff;
+    z-index: 2000;
+    position: relative;
+}
+
+.himage img{
+    max-height: 33px;
+    max-width: 152px;
+    height: initial;
+    padding: 0;
+}
+
+.logo{
+    width:24%;
+    display: flex;
+    justify-content: left;
+    padding: 15px 15px;
+}
+
+
+.fontstyle{
+    color: #512B1A;
+    padding: 15px;
+    border-bottom: none;
+    line-height: 65px;
+    display: inline-block;
+    position: relative;
+    font-size: .70em;
+    line-height: 1.625em;
+    letter-spacing: .03em;
+    font-family: Open sans;
+    font-weight: bolder;
+    justify-content: center;
+}
+
+.fontstyle1{
+    color: #512B1A !important;
+    border-bottom: none;
+    line-height: 65px !important;
+    display: inline-block;
+    font-size: .75em;
+    letter-spacing: .03em;
+    font-family: Open sans;
+    font-weight: bolder;
+    background: none;
+}
+.bordr{
+    border:5px solid white;
+}
+
+.imge{
+    border-radius: 50%;
+    border:2px solid silver;
+    padding:5px;
+    margin-right: 4px;
+    height:85%;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.links{
+    width:30%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.links > div{
+    border-left: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    padding:0 15px;
+}
+
+.inspire{
+    border: 0 !important;
+}
+
+.profile{
+    width:33%;
+}
+
+.help{
+    width:20%;
+    display: flex;
+    padding:0 10px;
+}
+
+.contact{
+    width:30%;
+}
+
+.dropdownarrow{
+   padding-top: 15px;
+}
+
+.search{
+    width:17%;
+}
+
+.search > i{
+    line-height: 65px !important;
+    font-size: 1.6em;
+    padding: 0 20px;
+}
+
+.logout > a{
+    border: 0;
+    padding: 10px 15px;
+    text-transform: initial;
+    letter-spacing: .03em;
+    color: #512B1A;
+    font-size: .75em;
+}
+
+.logout > a:nth-child(8){
+    border-top: 1px solid #DBD8D6;
+}
+
+@media screen and (max-width:1465px){
+    .links{
+        width: 38%;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .links{
+        width: 40%;
+    }
+}

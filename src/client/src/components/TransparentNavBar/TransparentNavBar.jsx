@@ -26,7 +26,8 @@ export default function TransparentNavBar() {
                         </div>
                     </div>
                     <div>
-                        <a>Inspire Me</a>
+                        <a><i class="fas fa-heart text-danger pr-1"></i>
+                                        INSPIRE ME</a>
                     </div>
                     <div class="dropdown">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
