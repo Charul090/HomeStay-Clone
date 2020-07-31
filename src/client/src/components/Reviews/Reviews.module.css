@@ -1,17 +1,18 @@
-.imgheight{
-    width:96px;
-    height:96px;
+.imgheight {
     border-radius: 50%;
+    width: 76px;
+    height: 76px;
     border: 5px solid silver;
 }
 
-.imge{
+.imge {
     max-width: 100%;
     max-height: 100%;
 }
 
-.para{
-    font-size: 1.2em;
+.para {
+    font-size: 1em;
+    margin: 0;
     line-height: 1.625em;
     font-family: Open sans;
     font-weight: 400;
@@ -19,43 +20,106 @@
     text-align: left;
 }
 
-.arrowBox{
+.para_cont{
+    margin-top: .7em;
+    text-align: left;
+}
+
+.arrowBox {
     background-color: #F1EFEF;
 }
 
-
-.arrowBox:after{
+.arrowBox:after {
     content: ' ';
     width: 0px;
     height: 0px;
     border-top: 10px solid transparent;
     border-left: 10px solid transparent;
-    border-bottom:10px solid transparent;
-    border-right:10px solid #F1EFEF;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #F1EFEF;
     position: absolute;
     right: 100%;
     bottom: 70%;
     margin-left: -10px;
-    }
+}
 
-    .spacer1{
-        margin-top:50px;
-        padding-top:90px;
-        background-color: white;
-        padding-bottom:80px;
-    }
-    
-    .spacer2{
-        margin-top: 1.25em;
-    }
+.main {
+    background-color: white;
+    padding-bottom: 80px;
+    padding-top: 3.75em;
+}
 
-    .review{
-        font-size: 1.5em;
-        line-height: 1.4em;
-        font-weight: 300;
-        margin: 0;
-        color:#512B1A;
-        text-align: left;
-        padding-left:60px;
-    
-    }
+.spacer1{
+    margin-top: 60px;
+}
+
+.spacer2 {
+    margin-top: 1.25em;
+}
+
+.spacer3{
+    margin-top:40px;
+}
+
+.review {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+    margin: 0;
+    color: #512B1A;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.date {
+    font-size: .75em;
+    line-height: 1.625em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .03em;
+    color: #B7B1AE;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hearts > img{
+    width: 88px;
+    height: 16px;
+}
+
+.name{
+    margin-top: 0.625em;
+}
+
+.name > p{
+    font-weight: 600;
+    font-size: 1em;
+    margin: 0;
+    text-align: center;
+}
+
+.how > div > div > h4{
+    text-align: left;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+}
+
+.how > div > div >p{
+    margin-top: 1em;
+    font-size: 1em;
+    text-align: left;
+}
+
+.how > div > div > h4:nth-child(1){
+    margin:0;
+}
+
+.how > div > div > p:nth-child(1){
+    margin: 0;
+}
