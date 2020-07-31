@@ -172,7 +172,7 @@ export class Filter extends Component {
         
         return (
             <div className="  row">                                
-                <div className="col-12 col-sm-12 col-md-3 col-lg-4  ">
+                <div className="col-12 col-sm-12 col-md-2 col-lg-2  ">
                 <Dropdown className="null">
                 <Dropdown.Toggle variant="null">
                   {/* <span className="small  font-weight-bold text-light">FILTER 
@@ -226,7 +226,7 @@ export class Filter extends Component {
                     </div>                        
 
                   {/* <Slider handleChange={this.handleFilter}/> */}
-                  <div className="col-12 col-sm-12  col-md-9 col-lg-8 " style={{width:"200px"}}>
+                  <div className="col-12 col-sm-12  col-md-10 col-lg-10 " style={{width:"200px"}}>
                   <Styles opacity={this.state.max_price > 10 ? (this.state.max_price / 255) : .1} color={this.props.color}>
                     <label className="font-weight-bold"><p className=" small pt-2 ">$: 0</p></label>
                     <input type="range" min={0} max={10000} value={this.state.value} name="max_price" className="slider m-1 mb-3" onChange={this.handleFilter} />

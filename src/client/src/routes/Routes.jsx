@@ -15,8 +15,7 @@ export default function Routes() {
     return (
         <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/carosel" exact render={(props) => <ContactHostModal {...props}/>} />
-            <Route path="/check" exact render={(props) => <HostSignUpPage {...props}/>}/>
+            <Route path="/host" exact render={(props) => <HostSignUpPage {...props}/>}/>
             <Route path="/recovery" exact render={(props) => <ForgotPassword {...props}/>}/>
             <Route path="/reset" exact render={(props) => <ResetPassword {...props}/>}/>
             <Route path="/destination" exact render={(props) => <ListingMain {...props}/>} />
