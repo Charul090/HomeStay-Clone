@@ -1,122 +1,167 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { connect} from 'react-redux'
 import Filter from '../Filter(Listing page)/Filter.jsx'
 import Slider from './Slider.jsx'
 import './SearchBar.css'
+import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+import 'react-google-places-autocomplete/dist/index.min.css';
+import styles from "./SearchBar.module.css"
+import CustomCalendar from "../CustomCalendar/CustomCalendar.jsx";
+import DatePicker from "react-datepicker";
 
-export class SearchBar extends Component {
 
-    constructor(props){
-        super(props)
-        this.state = {
-            location:"",
-            check_in:"",
-            check_out:"",
-            guests:""
+export default function SearchBar(props) {
+    let date1 = new Date(new Date().getTime() + (60 * 60 * 24 * 1000))
+    let date2 = new Date(date1.getTime() + (60 * 60 * 24 * 1000))
+
+    const [location, setLocation] = useState("")
+    const [startDate1, setStartDate1] = useState(date1);
+    const [startDate2, setStartDate2] = useState(date2);
+    const [minDate2, setMinDate2] = useState(startDate1)
+    const [date_diff, setDiff] = useState(1)
+    const [flag, setFlag] = useState(false)
+    const [guests, setGuest] = useState(1)
+
+    let guest_options = []
+
+    for (let x = 1; x <= 8; x++) {
+        guest_options.push(
+            <option value={x}>{x}</option>
+        )
+    }
+
+    const handleChange = (e) => {
+        if (e.target.name === "guests") {
+            setGuest(e.target.value)
         }
     }
 
-    
-    handleSubmit = (e)=>{
-        e.preventDefault();
-        
-        var obj = this.state;
-        var myurl = new URL('http://localhost:3000/destination')
-        // console.log(obj);
-        for(var key in obj){
-          
-              myurl.searchParams.append(key,obj[key])
-              console.log(myurl.href);
-            
-          }
-        }
-
-    handleChange = (e)=>{
-        console.log(e.target.value);
-        this.setState({
-             [e.target.name]:e.target.value
-        })
-    }
-    _onFocus= (e)=>{
-        e.currentTarget.type = "date";
-    }
-    _onBlur =(e)=>{
-        e.currentTarget.type = "text";
-        
-    }
-    render() {
-        // console.log(this.props);
+    const customInput = (props) => {
         return (
-            <div className=" row  ">
-                <div className="col-12 col search-bar pt-2">
-                <div className="row ">
-                <div className=" col-12  col-sm-12 col-md-10 col-lg-10 ">
-                <form onSubmit={this.handleSubmit}>
-                       
-                    <div id="row" class="row mr-0 pt-2">
-                        
-                        <div class="pl-2 col-6 col-sm-6 form-group col-md-2 col-lg-2">
-                        <div class="input-group">
-                            <input type="text" onChange ={this.handleChange} name="location" class="form-control fontIcon" id="inlineFormInputGroupUsername" placeholder="&#xf041;  Location"/>
-                        </div>
-                        </div>
-
-                        <div class="col-6 col-sm-6 form-group col-md-2 col-lg-2 ">
-                        <div class="input-group">
-                            
-                            <input class="form-control fontIcon" style={{borderRadius:"unset"}} placeholder="&#xf271;  Check-in" name="check_in" onChange={this.handleChange} id="inlineFormInputGroupUsername" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
-                        </div>
-                        </div>
-
-                        <div class="col-6 col-sm-6 form-group col-md-2 col-lg-2 ">
-                        <div class="input-group">
-                            
-                            <input class="form-control fontIcon" placeholder="check-Out" name="check_out" placeholder="&#xf272;  Check-out" onChange={this.handleChange} id="inlineFormInputGroupUsername" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
-                        </div>
-                        </div>
-
-                        
-                        
-                        <div class="form-group col-6 col-sm-6 col-md-2 col-lg-1 "> 
-                                            <select id="inputState"  onChange={this.handleChange} className="form-control fontIcon">
-                                                <option value ="0" selected>0</option>
-                                                <option value="1"> 1</option>
-                                                <option value="2"> 2</option>
-                                                <option value="3"> 3</option>
-                                                <option value="4"> 4</option>
-                                                <option value="5"> 5</option>
-                                            </select>
-                                        </div>
-                                    
-                   
-                        <div className="  col-sm-3  col-md-1 col-lg-1">
-                        <button type="submit" className="btn" style={{background:"#CA005D",border:"#CA005D",borderRadius:"none"}}><i className="fa fa-search" style={{fontSize:"26px",color:"white"}}></i></button>
-                        </div>
-                    
-                    <div className="col-sm-12 col-md-3 col-lg-3 ">
-                        <Filter {...this.props}/>
-                    </div>
-                    </div>
-                    </form>
-                    </div>
-
+            <div className={styles.wrapper}>
+                <i class="fas fa-map-marker-alt"></i>
+                <input className={styles.date} type="text" {...props} />
             </div>
-            </div>
-            </div>
-       
-            )
+        )
     }
+
+    useEffect(() => {
+        let time_diff = startDate2.getTime() - startDate1.getTime()
+        let day_diff = Math.floor(time_diff / (1000 * 3600 * 24))
+        setDiff(day_diff)
+    }, [startDate2, startDate1])
+
+    useEffect(() => {
+        let time_diff = startDate2.getTime() - startDate1.getTime()
+        let day_diff = Math.floor(time_diff / (1000 * 3600 * 24))
+        let day = 60 * 60 * 24 * 1000;
+        let date = new Date()
+        date.setTime(startDate1.getTime() + day)
+
+        if (day_diff <= 0) {
+            setStartDate2(date)
+        }
+
+        setMinDate2(date)
+
+    }, [startDate1])
+
+    useEffect(() => {
+        if (date_diff > 29) {
+
+            let last_day = 29 * 60 * 60 * 24 * 1000;
+            last_day = startDate1.getTime() + last_day
+            setStartDate2(new Date(last_day))
+        }
+    }, [date_diff])
+
+    const handleClick = (e)=>{
+        e.preventDefault()        
+    }
+    // console.log(this.props);
+    return (
+        <div>
+            <div className="search-bar">
+                <div className="row ">
+                    <div className="col-12">
+                        <form onSubmit={handleClick}>
+                            <div id="row" class="row mr-0 pt-2">
+                                <div className="col-9">
+                                    <div className="form-row">
+                                        <div className="col-5">
+                                            <div className={styles.location}>
+                                                <GooglePlacesAutocomplete
+                                                    debounce="600"
+                                                    apiKey="AIzaSyCcS0j7hDpSs-F4xDi2q6AkTD_sWqECR9M"
+                                                    placeholder="Where do you want to go?"
+                                                    onSelect={setLocation}
+                                                    autocompletionRequest={{
+                                                        componentRestrictions: {
+                                                            country: ['in']
+                                                        }
+                                                    }}
+                                                    renderInput={(props) => customInput(props)}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="col-2">
+                                            <div className={styles.date1}>
+                                                <DatePicker
+                                                    selected={startDate1}
+                                                    onChange={date => setStartDate1(date)}
+                                                    dateFormat="dd MMM yyyy"
+                                                    minDate={date1}
+                                                    selectsStart
+                                                    customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />}
+                                                    startDate={startDate1}
+                                                    endDate={startDate2}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="col-2">
+                                            <div className={styles.date2}>
+                                                <DatePicker
+                                                    selected={startDate2}
+                                                    onChange={date => setStartDate2(date)}
+                                                    dateFormat="dd MMM yyyy"
+                                                    customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />}
+                                                    startDate={startDate1}
+                                                    selectsEnd
+                                                    endDate={startDate2}
+                                                    minDate={minDate2}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="col-2">
+                                            <div className={styles.select}>
+                                                <i class="far fa-user"></i>
+                                                <select className={styles.guestInput} name="guests" value={guests} onChange={handleChange}>
+                                                    {
+                                                        guest_options
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div className="col-1">
+                                            <button type="submit" className={styles.btn} style={{ background: "#CA005D", border: "#CA005D", borderRadius: "none" }}><i className="fa fa-search" style={{ fontSize: "26px", color: "white" }}></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-3">
+                                    <Filter {...props} />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    )
 }
 
-const mapStateToProps = (state) => ({
-    
-})
 
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
 
 
 
