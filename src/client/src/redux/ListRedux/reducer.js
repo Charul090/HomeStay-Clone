@@ -1,9 +1,9 @@
 import {FETCH_REQUEST,FETCH_FAILURE,FETCH_SUCCESS,fetchRequest,fetchGetFailure,fetchGetSuccess,} from './actionTypes'
 
 const initState = {
-    data:["lalitha"],
+    data:[],
     error:"",
-    total:5,
+    total:1,
     page:1
 }
 
@@ -22,7 +22,7 @@ const initState = {
                 ...state
             }
             case "FETCH_SUCCESS":
-             console.log(payload)
+            //  console.log(payload)
             return{
                 ...state,
                 data:payload,

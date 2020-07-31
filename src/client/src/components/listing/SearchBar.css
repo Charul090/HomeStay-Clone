@@ -13,14 +13,7 @@
         border-radius: unset;
     }
     
-    .nav li{
-        position: relative;
-    }
     
-    #hs-wrapper #homestay-listing .search-bar ul.nav li {
-        height: 100%;
-        display: inline-block;
-    }
     
     
     .inpt{
@@ -32,15 +25,7 @@
         font-size: small;
     }
     
-    /* .profile {
-        border: 7px solid white;
-        overflow: hidden;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-    } */
+    
     
     .legend{
         background-color: transparent;
@@ -72,7 +57,7 @@
     font-size: 12px;
     text-align: center;
     opacity: 1;
-    margin-bottom: 43%;
+    margin-bottom: 33%;
 
 }
 
@@ -96,9 +81,7 @@
     font-weight: 400;
 }
 
-.title::first-letter {
-    text-transform: capitalize;
-}
+
 
 .host {
     font-weight: 600;
@@ -128,6 +111,10 @@ i.fa-calendar { position: absolute; top: 12px; left: 30px; color:lightgrey;}
 
 .dateInput {
   padding:10px;
+}
+
+.fontIcon{
+    font-family: fontawesome;
 }
     
     

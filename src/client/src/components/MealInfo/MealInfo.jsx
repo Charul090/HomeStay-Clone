@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from "./MealInfo.module.css"
 import { useSelector } from "react-redux"
-import ListCard from '../listing/ListCard'
 
 export default function MealInfo() {
     let { meals,rules } = useSelector(state => state.entity.area)
@@ -56,9 +55,6 @@ export default function MealInfo() {
                             })
                         }
                     </div>
-                        <div>
-                            {/* <ListCard /> */}
-                        </div>
                 </div>
             </div>
         </div>
