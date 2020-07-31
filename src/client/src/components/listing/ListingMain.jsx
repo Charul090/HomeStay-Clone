@@ -8,7 +8,8 @@ import NavBarHome from '../NavBarHome/NavBarHome.jsx'
 import Filter from '../Filter(Listing page)/Filter.jsx'
 import Pagination from '../Pagination/Pagination.jsx'
 import NavBarAfterLogin from '../NavBarAfterLogin/NavBarAfterLogin.jsx'
-
+import LoginModal from "../LoginModal/LoginModal.jsx"
+import RegisterModal from "../RegisterModal/RegisterModal.jsx"
 
 const data = 
     
@@ -73,6 +74,8 @@ export class ListingMain extends Component {
     
         return (
             <div className="row">
+                <LoginModal />
+                <RegisterModal />
                 <div className="col-12">
                 <div  style={{background:"white"}}>
                 {logged_user?
