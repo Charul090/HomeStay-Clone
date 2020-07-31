@@ -55,9 +55,10 @@ export class Pagination extends Component {
         return (
             <div>
                 <div className="activepage_entries_info float-left ">
-                <p className="small text-left colr" >Homestays and room rental in Toronto, Canada
-                We have found 359 Toronto homestays for your stay. From Central Toronto to North York, Scarborough to the east and Etobicoke <br/>to the West, homestays in Toronto GTA offer host family accommodation – ideal whether you are a student, professional or on holidays.</p>
-            </div>
+                <p className="small text-left colr" >Homestays and room rental in Mumbai, India
+                    We have found 6 Toronto homestays for your stay. From Central Toronto to North York, Scarborough to the east and Etobicoke <br/>to the West, homestays in Toronto GTA offer host family accommodation – ideal whether you are a student, professional or on holidays.
+                </p>
+                </div>
                 <div id="pagination-panel" className="activepage_entries_info rightFloat ">
                     <div class="mobile-pagination">
                     <nav aria-label="Page navigation example">

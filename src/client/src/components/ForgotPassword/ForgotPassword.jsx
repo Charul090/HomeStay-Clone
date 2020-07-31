@@ -4,7 +4,8 @@ import { fetchRecovery } from "../../redux/PasswordRedux/action";
 import styles from './ForgotPassword.module.css';
 import NavBarHome from '../NavBarHome/NavBarHome'
 import Footer from '../Footer/Footer'
-
+import LoginModal from "../LoginModal/LoginModal.jsx"
+import RegisterModal from "../RegisterModal/RegisterModal.jsx"
 
 export class ForgotPassword extends Component {
         constructor(props){
@@ -42,6 +43,8 @@ export class ForgotPassword extends Component {
             <div>
                 <div className={styles.bgWhite}>
                 <NavBarHome />
+                <LoginModal />
+                <RegisterModal />
                 </div>
                 <div className={styles.bgSilver}>
                     <div className={styles.cardPadding}>
