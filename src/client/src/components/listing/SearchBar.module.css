@@ -11,6 +11,10 @@
     color: #512B1A !important;
 }
 
+.main{
+    width:100%;
+}
+
 .date:focus{
     border-color: #8EC9E7 !important;
     box-shadow: none;
