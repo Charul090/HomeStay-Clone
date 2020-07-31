@@ -35,7 +35,7 @@ const fetchRecoveryFailure = error => {
   return dispatch => {
       dispatch(fetchRecoveryRequest())
       return  axios.post(
-          "http://dacaf3626775.ngrok.io/password/recovery",
+          "https://1f709f3ba43e.ngrok.io/password/recovery",
             {
             "email": `${data}`
         }).then(res=>{
@@ -80,7 +80,7 @@ const fetchResetFailure = error => {
   return dispatch => {
       dispatch(fetchResetRequest())
       return  axios.post(
-          "http://dacaf3626775.ngrok.io/password/reset",
+          "https://1f709f3ba43e.ngrok.io/password/reset",
             {
             "token": `${data.token}`,
             "email": `${data.email}`,
