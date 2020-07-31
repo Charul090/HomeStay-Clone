@@ -1,19 +1,20 @@
-import { SEND_LOGIN_QUERY, LOGIN_SUCCESSFULL, LOGIN_FAIL, SEND_GOOGLE_QUERY, LOGIN_GOOGLE_SUCCESSFULL, LOGIN_GOOGLE_FAIL, SEND_FACEBOOK_QUERY, LOGIN_FACEBOOK_SUCCESSFULL, LOGIN_FACEBOOK_FAIL } from "./actiontypes.js"
+import { SEND_LOGIN_QUERY, LOGIN_SUCCESSFULL, LOGIN_FAIL, SEND_GOOGLE_QUERY, LOGIN_GOOGLE_SUCCESSFULL, LOGIN_GOOGLE_FAIL, SEND_FACEBOOK_QUERY, LOGIN_FACEBOOK_SUCCESSFULL, LOGIN_FACEBOOK_FAIL, LOGOUT } from "./actiontypes.js"
+import { deleteAuth } from "../localstorage.js"
 
 const initialState = {
-    error:false,
+    error: false,
     host: false,
     logged_user: false,
     token: "",
     message: "",
-    username:""
+    username: ""
 }
 
 export default (state = initialState, { type, payload }) => {
     switch (type) {
 
         case SEND_LOGIN_QUERY:
-            return { ...state,error:false}
+            return { ...state, error: false }
 
         case LOGIN_SUCCESSFULL:
             return {
@@ -22,8 +23,8 @@ export default (state = initialState, { type, payload }) => {
                 logged_user: true,
                 token: payload["token"],
                 message: payload["message"],
-                username:payload["name"],
-                error:false
+                username: payload["name"],
+                error: false
             }
 
         case LOGIN_FAIL:
@@ -32,10 +33,10 @@ export default (state = initialState, { type, payload }) => {
                 host: false,
                 logged_user: false,
                 token: "",
-                username:"",
+                username: "",
                 message: payload["message"],
-                error:true,
-                username:""
+                error: true,
+                username: ""
             }
 
         case SEND_GOOGLE_QUERY:
@@ -48,7 +49,7 @@ export default (state = initialState, { type, payload }) => {
                 logged_user: true,
                 token: payload["token"],
                 message: payload["message"],
-                username:payload["name"]
+                username: payload["name"]
             }
 
         case LOGIN_GOOGLE_FAIL:
@@ -58,7 +59,7 @@ export default (state = initialState, { type, payload }) => {
                 logged_user: false,
                 token: "",
                 message: payload["message"],
-                username:""
+                username: ""
             }
 
         case SEND_FACEBOOK_QUERY:
@@ -71,7 +72,7 @@ export default (state = initialState, { type, payload }) => {
                 logged_user: true,
                 token: payload["token"],
                 message: payload["message"],
-                username:payload["name"]
+                username: payload["name"]
             }
 
         case LOGIN_FACEBOOK_FAIL:
@@ -81,9 +82,18 @@ export default (state = initialState, { type, payload }) => {
                 logged_user: false,
                 token: "",
                 message: payload["message"],
-                username:""
+                username: ""
             }
-
+        case LOGOUT:
+            return {
+                ...state,
+                error: false,
+                host: false,
+                logged_user: false,
+                token: "",
+                message: "",
+                username: ""
+            }
         default:
             return { ...state }
     }

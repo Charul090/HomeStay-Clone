@@ -40,7 +40,6 @@
     line-height: 65px !important;
     display: inline-block;
     font-size: .75em;
-    line-height: 1.625em;
     letter-spacing: .03em;
     font-family: Open sans;
     font-weight: bolder;
@@ -96,6 +95,29 @@
 
 .dropdownarrow{
    padding-top: 15px;
+}
+
+.search{
+    width:17%;
+}
+
+.search > i{
+    line-height: 65px !important;
+    font-size: 1.6em;
+    padding: 0 20px;
+}
+
+.logout > a{
+    border: 0;
+    padding: 10px 15px;
+    text-transform: initial;
+    letter-spacing: .03em;
+    color: #512B1A;
+    font-size: .75em;
+}
+
+.logout > a:nth-child(8){
+    border-top: 1px solid #DBD8D6;
 }
 
 @media screen and (max-width:1465px){

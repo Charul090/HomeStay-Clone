@@ -1,9 +1,11 @@
 import React from 'react'
-import { Link, useParams, useLocation } from "react-router-dom"
+import { Link, useParams, useLocation, useRouteMatch } from "react-router-dom"
 import { Dropdown } from 'react-bootstrap'
 import SecondNavBarLogin from "../SecondNavBarLogin/SecondNavBarLogin.jsx"
-import { useSelector } from "react-redux"
+import { useSelector,useDispatch } from "react-redux"
 import styles from "./NavBarAfterLogin.module.css"
+import {LOGOUT_USER} from "../../redux/AuthRedux/action.js"
+import {deleteAuth} from "../../redux/localstorage.js"
 
 const NavBarAfterLogin = () => {
 
@@ -11,8 +13,16 @@ const NavBarAfterLogin = () => {
 
     let params = useParams()
     let location = useLocation()
+    let match = useRouteMatch()
+    let dispatch = useDispatch()
 
-    console.log(params, location)
+    console.log(params, location, match)
+
+    const handleLogout = (e)=>{
+        e.preventDefault()
+        dispatch(LOGOUT_USER())
+        deleteAuth()
+    }
 
     return (
         <header className={styles.main}>
@@ -20,16 +30,25 @@ const NavBarAfterLogin = () => {
                 <div className={styles.header}>
                     <div className={styles.logo}>
                         <div className={styles.himage}>
-                            <Link href="/"><img src="https://www.homestay.com/assets/logo-homestay-36a9388d17da279b965e5b0dc5153eab12f98ceef3e29332a720df00b71fa2ac.svg" /></Link>
+                            <Link to="/"><img src="https://www.homestay.com/assets/logo-homestay-36a9388d17da279b965e5b0dc5153eab12f98ceef3e29332a720df00b71fa2ac.svg" /></Link>
                         </div>
                     </div>
                     <div className={styles.links}>
+                        {
+                            match && match.path === "/apartment/:id" ?
+                                <div className={styles.search}>
+                                    <i className="fa fa-search">
+                                        </i>
+                                </div>
+                                :
+                                null
+                        }
                         <div className={styles.help} >
                             <div><span className={styles.fontstyle1}>HELP</span></div>
                             <div className="">
                                 <Dropdown className={styles.dropdownarrow}>
                                     <Dropdown.Toggle split variant="light" id="dropdown-split-basic" />
-                                    <Dropdown.Menu className="sec">
+                                    <Dropdown.Menu className={styles.logout}>
                                         <Dropdown.Item href="#/action-1">General</Dropdown.Item>
                                         <Dropdown.Item href="#/action-2">Host</Dropdown.Item>
                                         <Dropdown.Item href="#/action-3">Guests</Dropdown.Item>
@@ -46,13 +65,15 @@ const NavBarAfterLogin = () => {
                             <div>
                                 <Dropdown className={styles.dropdownarrow}>
                                     <Dropdown.Toggle split variant="light" />
-                                    <Dropdown.Menu className="sec">
+                                    <Dropdown.Menu className={styles.logout}>
                                         <Dropdown.Item href="#/action-1">Dashboard</Dropdown.Item>
                                         <Dropdown.Item href="#/action-2">Inbox</Dropdown.Item>
                                         <Dropdown.Item href="#/action-3">Trips</Dropdown.Item>
                                         <Dropdown.Item href="#/action-1">Find guest</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">verify</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-3">bookings</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Verify</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Bookings</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Acount</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3" onClick={handleLogout}>Logout</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                             </div>
