@@ -76,7 +76,7 @@ export class ListingMain extends Component {
             <div className="row">
                 <LoginModal />
                 <RegisterModal />
-                <div className="col-sm-12 col-lg-12 col-md-12">
+                <div className="col-12">
                 <div  style={{background:"white"}}>
                 {logged_user?
                 <NavBarAfterLogin />
@@ -86,16 +86,13 @@ export class ListingMain extends Component {
                 <div className="col-12 mb-2">
                     <SearchBar {...this.props}/>
                 </div>
-                <div className="col-12   pl-1 pb-3">
+                <div className="col-12  mt-5 pl-1 pb-3">
                     <div className="row">
-                    <div className="col-12 ">
-                        <div className="row ">
                             {cards&&cards.map(item =>(
                                     <ListCard data={item}/>
                                 )
                             )}
-                        </div>
-                        </div>
+                        
                     </div>
                 </div>
                 </div>

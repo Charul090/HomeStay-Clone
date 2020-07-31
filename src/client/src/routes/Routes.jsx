@@ -9,6 +9,7 @@ import SearchBarDummy from "../components/SearchBarDummy/SearchBarDummy"
 import ForgotPassword from '../components/ForgotPassword/ForgotPassword.jsx'
 import ResetPassword from '../components/ResetPassword/ResetPassword'
 import HostSignUpPage from '../components/HostSignUpPage/HostSignUpPage'
+import Reviews from '../components/Reviews/Reviews'
 
 
 export default function Routes() {
@@ -21,6 +22,7 @@ export default function Routes() {
             <Route path="/destination" exact render={(props) => <ListingMain {...props}/>} />
             <Route path="/apartment/:id" component={Entity} />
             <Route path="/guest" component={HeroCard}/>
+            <Route path="/review" component={Reviews}/>
         </Switch>
     )
 }

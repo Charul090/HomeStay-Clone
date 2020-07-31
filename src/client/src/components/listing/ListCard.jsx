@@ -18,21 +18,21 @@ export class ListCard extends Component {
         return (
             
             <div className="col-12 col-sm-12 col-md-6 col-lg-6  mb-3 ">
-                    <div className="row1 card row pl-1 ml-1 pr-1" >
-                        <div class="col-4 col-sm-6 col-md-4 col-lg-4 p-0">
+                    <div className="row1 card row  ml-1 mr-1 pr-1" >
+                        <div class="col-4 col-sm-6 col-md-5 col-lg-5 p-0">
                         <div class="carousel-wrapper">
                         <Carousel showThumbs={false} showStatus={false} useKeyboardArrows className="carousel-root presentation-mode " style={{height:"100%"}}>
-                          <div key="content-1" className="my-slide content" onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
-                            <img  className="row1" src={data.bedroom_image} />
-                            <div>
-                              <img className="img img-fluid profile legendInline" src={data.user_pic}/>
+                          <div key="content-1" className="my-slide content imgH" onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
+                            <img  className="row1" style={{maxHeight:"100%",maxWidth:"100%"}} src={data.bedroom_image} />
+                            <div class="">
+                              <img className=" legendInline" style={{maxHeight:"100%",maxWidth:"100%"}} src={data.user_pic}/>
                             </div>
                             <div className=" legendInlinestar"><i className="fa fa-star p-2" style={{fontSize:"18px"}} aria-hidden="true"></i>
                             </div>
                           </div>
-                          <div key="content-2" className="my-slide content " onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
-                            <img className="row1" src={data.apartment_image} />
-                            <div style={{border:"4px solid white"}} className=" profile"><img className="img img-fluid profile legendInline" src={data.user_pic}/></div>
+                          <div key="content-2" className="my-slide content imgH" onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
+                            <img className="row1" style={{maxHeight:"100%",maxWidth:"100%"}} src={data.apartment_image} />
+                            <div style={{border:"4px solid white"}}  class=""><img className=" legendInline" src={data.user_pic}/></div>
                           </div>
                       </Carousel>
                     </div>                   
@@ -44,7 +44,9 @@ export class ListCard extends Component {
                         <div style={{display:"block",maxWidth:"100%"}}><img src="https://www.homestay.com/assets/small-review-score-img-c68dbe08abd3620cb7ae9b367952c1caac5322eb67c4d65ecfcafd83fba88dda.svg"></img><span className="small text-muted">{data.reviews}</span></div>
                           <div style={{color:"#512B1A"}}>{data.city}</div>
                           <div class="card-text  small italic" style={{color:"lightgrey"}}>{this.props.data.description}</div>
-                          <p style={{color:"#512B1A"}} className="  small">FROM <span className="price h5 font-weight-bold" style={{color:"#92C01F"}}> ${this.props.data.price_per_night} </span>PER NIGHT</p>
+                          <p style={{color:"#512B1A"}} className="  small">FROM <span className="price h5 font-weight-bold" style={{color:"#92C01F"}}>
+                             <i class="fa fa-inr" aria-hidden="true"></i>
+                             {this.props.data.price_per_night} </span>PER NIGHT</p>
                         <p class="card-text"><span class="text-muted"></span></p>
                     </div>
                     </div>
