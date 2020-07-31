@@ -103,3 +103,9 @@
         width: 38%;
     }
 }
+
+@media screen and (max-width:1200px){
+    .links{
+        width: 40%;
+    }
+}

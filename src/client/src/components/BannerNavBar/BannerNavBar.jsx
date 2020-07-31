@@ -8,9 +8,9 @@ export default function BannerNavBar() {
     let {number_reviews,price_starting} = useSelector(state=>state.entity.apartment_data)
 
     return (
-        <div id="banner-nav">
+        <div className={styles.banner_nav}>
             <nav className="navbar navbar-zero sticky-top">
-                <div className="container-fluid d-flex justify-content-between">
+                <div className="container-fluid d-flex">
                     <div className={styles.main}>
                         <div className={styles.element}>
                             <a>HOMESTAY</a>
@@ -36,11 +36,6 @@ export default function BannerNavBar() {
                         <div className={styles.element}>
                             <a></a>
                         </div>
-                    </div>
-                    <div className={styles.button_container}>
-                        <button className={styles.button}>
-                        From <strong><span className={styles.amount}>₹{price_starting}</span></strong> per night
-                        </button>
                     </div>
                 </div>
             </nav>

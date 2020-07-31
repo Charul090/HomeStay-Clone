@@ -1,7 +1,7 @@
 .main{
     display:flex;
     align-items: center;
-    width:75%;
+    width:100%;
     letter-spacing: 0.03em;
     font-size: 18px;
     line-height: 30px;
@@ -10,7 +10,22 @@
     min-height: 30px;
     font-family: "Open sans",sans-serif;
     color:#f3f3f3;
+    margin-right: 9%;
 }
+
+.banner_nav{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:1
+}
+
+.banner_nav > nav > div{
+    max-width: 1200px;
+    margin:0 auto;
+}
+
 .element{
     border-left: 1px solid #524a47;
     height: 55px;
@@ -36,6 +51,7 @@
     overflow: hidden;
     height: 55px;
     margin:0;
+    width:24%;
 }
 
 .button{
