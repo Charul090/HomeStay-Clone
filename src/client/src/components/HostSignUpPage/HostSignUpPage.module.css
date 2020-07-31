@@ -163,3 +163,26 @@
         background-color: red;
         text-decoration: none;
     }
+
+   
+          
+      .arrow {
+        -webkit-transform: skewX(-20deg) skewY(0deg);
+        bottom: 0;
+        top: 50%;
+        position:absolute;
+        left: -15px;
+        right: -14px;
+        background-color: #ffffff;
+        border-top-color: #92C01F;
+        -webkit-transform: skewX(20deg) skewY(0deg);
+        top: 0;
+        bottom: 50%;
+        border-top: 5px solid #DBD8D6;
+        min-height: 180px;
+        font-size: 16px;
+        line-height: 1.625em;
+        font-family: Open sans;
+        font-weight: 400;
+        color: #512B1A;
+      }
