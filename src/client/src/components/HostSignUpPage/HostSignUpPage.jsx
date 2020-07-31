@@ -35,22 +35,8 @@ export class HostSignUpPage extends Component {
                                 <div>
                                     <div className={styles.list}>List your room</div>
                                     <hr/>
-                                    
 
-                                    {/* <div class="input-group row m-3">
-                                    <div class="ml-2">
-                                    <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                                    <div class="input-group mb-1 ml-5 w-50">
-                                        {/* <div class="input-group-prepend">
-                                        <div class="input-group-text"><i class='fa fa-facebook' style={{fontSize:"25px",color:"darkblue"}}></i></div>
-                                        </div> */}
-                                        {/* <div className={styles.icon}><i class='fa fa-facebook ' ></i></div>
-                                        <input type="text" style={{background:"#f8f9fa",paddingLeft:"30px"}} id="inlineFormInputGroup" placeholder="Login with Facebook"></input>
-                                    </div>
-                                    </div>
-                                    </div> */}
-
-                                        <GoogleLogin />
+                                    <GoogleLogin />
                                     <div id="login-separator">
                                         or with your email
                                     </div>
@@ -66,7 +52,7 @@ export class HostSignUpPage extends Component {
                                             </div>
                                         </div>
                                         <div className="mb-2">
-                                            <input type="email" class="w-100 pl-4"  placeholder="Email" />
+                                            <input type="email" class="w-100 pl-4 text-dark"  placeholder="Email" />
                                         </div>
                                         <div className="mb-2">
                                             <input type="password"  class="w-100 pl-4" placeholder="Password" />
@@ -89,9 +75,9 @@ export class HostSignUpPage extends Component {
                         </div>
                     </div>
                 </section>
-
-                <div className={styles.secNav} >
-                    <div className="row sticky-top">
+                <div className="sticky-top">
+                <div className={styles.secNav}  >
+                    <div className="row">
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link active" href="#"></a>
@@ -106,12 +92,13 @@ export class HostSignUpPage extends Component {
                         <a class="nav-link" href="#work"><i class="fa fa-calendar-check-o" style={{fontSize:"20px",color:"silver"}} aria-hidden="true"></i><span className="text-light p-2"> HOW DOES IT WORK</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#earn" ><i class="far fa-calendar-check" style={{fontSize:"20px",color:"silver"}} aria-hidden="true"></i><span className="text-light p-2"> BE IN CONTROL</span></a>
+                        <a class="nav-link " href="#earn" ><i class="far fa-calendar-check" style={{fontSize:"20px",color:"#CA005D"}} aria-hidden="true"></i><span className="text-light p-2"> BE IN CONTROL</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="#faq" ><i class="fa fa-question-circle" style={{fontSize:"20px",color:"silver"}} aria-hidden="true"></i> <span className="text-light p-2">FAQ?</span></a>
                     </li>
                     </ul>
+                </div>
                 </div>
                 </div>
                 <div className="container">
@@ -243,7 +230,7 @@ export class HostSignUpPage extends Component {
 
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    Our homestays are booked by tourists, professionals, university students, language students, interns, gap-year travellers and volunteers. You decide who stays with you and when, as guests must request to stay with you first. You can get to know them before accepting them to stay using our messaging system and video call feature to ask more questions.
                     </div>
                     </div>
                 </div>
