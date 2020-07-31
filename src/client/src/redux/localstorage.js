@@ -22,7 +22,7 @@ const saveAuth = (state)=>{
     }
 }
 
-const deleteAuth = (state)=>{
+const deleteAuth = ()=>{
     try{
         localStorage.removeItem("auth")
     }

@@ -1,4 +1,4 @@
-import { SEND_LOGIN_QUERY, LOGIN_SUCCESSFULL, LOGIN_FAIL, SEND_GOOGLE_QUERY, LOGIN_GOOGLE_SUCCESSFULL, LOGIN_GOOGLE_FAIL, SEND_FACEBOOK_QUERY, LOGIN_FACEBOOK_SUCCESSFULL, LOGIN_FACEBOOK_FAIL } from "./actiontypes.js"
+import { SEND_LOGIN_QUERY, LOGIN_SUCCESSFULL, LOGIN_FAIL, SEND_GOOGLE_QUERY, LOGIN_GOOGLE_SUCCESSFULL, LOGIN_GOOGLE_FAIL, SEND_FACEBOOK_QUERY, LOGIN_FACEBOOK_SUCCESSFULL, LOGIN_FACEBOOK_FAIL, LOGOUT } from "./actiontypes.js"
 import axios from "axios"
 
 const LOGIN_QUERY = () => {
@@ -21,35 +21,41 @@ const LOGIN_FAILURE = (payload) => {
     }
 }
 
-const Start_Login_Query = (data)=>{
-    return dispatch=>{
-        dispatch(LOGIN_QUERY())
-        return axios({
-            method:"post",
-            baseURL:"https://1f709f3ba43e.ngrok.io",
-            url:"/guest/login",
-            data:data
-        })
-        .then((payload)=>payload.data)
-        .then((data)=>{
-            if(data["error"]){
-                dispatch(LOGIN_FAILURE(data))
-            }
-            else{
-                window.$("#loginmodal").modal("toggle");
-                dispatch(LOGIN_SUCCESS(data))
-            }
-
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
+const LOGOUT_USER=()=>{
+    return {
+        type:LOGOUT
     }
 }
 
-const FACEBOOK_QUERY = ()=>{
+const Start_Login_Query = (data) => {
+    return dispatch => {
+        dispatch(LOGIN_QUERY())
+        return axios({
+            method: "post",
+            baseURL: "https://1f709f3ba43e.ngrok.io",
+            url: "/guest/login",
+            data: data
+        })
+            .then((payload) => payload.data)
+            .then((data) => {
+                if (data["error"]) {
+                    dispatch(LOGIN_FAILURE(data))
+                }
+                else {
+                    window.$("#loginmodal").modal("toggle");
+                    dispatch(LOGIN_SUCCESS(data))
+                }
+
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+}
+
+const FACEBOOK_QUERY = () => {
     return {
-        type:SEND_FACEBOOK_QUERY
+        type: SEND_FACEBOOK_QUERY
     }
 }
 
@@ -67,35 +73,35 @@ const FACEBOOK_FAILURE = (payload) => {
     }
 }
 
-const Facebook_Login_Query=(data)=>{
-    return dispatch=>{
+const Facebook_Login_Query = (data) => {
+    return dispatch => {
         dispatch(FACEBOOK_QUERY())
         return axios({
             method: "post",
-            baseURL:"https://1f709f3ba43e.ngrok.io",
+            baseURL: "https://1f709f3ba43e.ngrok.io",
             url: "/oauth/facebook",
             data: data
         })
-        .then((payload)=>payload.data)
-        .then((data)=>{
-            if(data["error"]){
-                dispatch(FACEBOOK_FAILURE(data))
-            }
-            else{
-                dispatch(FACEBOOK_SUCCESS(data))
-                
-            }
+            .then((payload) => payload.data)
+            .then((data) => {
+                if (data["error"]) {
+                    dispatch(FACEBOOK_FAILURE(data))
+                }
+                else {
+                    dispatch(FACEBOOK_SUCCESS(data))
 
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
+                }
+
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 }
 
-const GOOGLE_QUERY = ()=>{
+const GOOGLE_QUERY = () => {
     return {
-        type:SEND_GOOGLE_QUERY
+        type: SEND_GOOGLE_QUERY
     }
 }
 
@@ -113,30 +119,30 @@ const GOOGLE_FAILURE = (payload) => {
     }
 }
 
-const Google_Login_Query=(data)=>{
-    return dispatch=>{
+const Google_Login_Query = (data) => {
+    return dispatch => {
         dispatch(GOOGLE_QUERY())
         return axios({
             method: "post",
-            baseURL:"https://1f709f3ba43e.ngrok.io",
+            baseURL: "https://1f709f3ba43e.ngrok.io",
             url: "/oauth/google",
             data: data
         })
-        .then((payload)=>payload.data)
-        .then((data)=>{
-            if(data["error"]){
-                dispatch(GOOGLE_FAILURE(data))
-            }
-            else{
-                console.log(data)
-                dispatch(GOOGLE_SUCCESS(data))
-            }
+            .then((payload) => payload.data)
+            .then((data) => {
+                if (data["error"]) {
+                    dispatch(GOOGLE_FAILURE(data))
+                }
+                else {
+                    console.log(data)
+                    dispatch(GOOGLE_SUCCESS(data))
+                }
 
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 }
 
-export {Start_Login_Query,Google_Login_Query,Facebook_Login_Query}
+export { Start_Login_Query, Google_Login_Query, Facebook_Login_Query,LOGOUT_USER }
