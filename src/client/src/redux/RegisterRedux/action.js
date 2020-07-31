@@ -26,7 +26,7 @@ const Start_Register_Query = (data)=>{
         dispatch(REGISTER_QUERY())
         return axios({
             method:"post",
-            baseURL:"https://7e9638a87721.ngrok.io",
+            baseURL:"https://1f709f3ba43e.ngrok.io",
             url:"/guest/register",
             data:data
         })
