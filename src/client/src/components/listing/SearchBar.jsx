@@ -57,7 +57,7 @@ export class SearchBar extends Component {
                         
                         <div class="pl-2 col-6 col-sm-6 form-group col-md-2 col-lg-2">
                         <div class="input-group">
-                            <input type="text" onChange ={this.handleChange} name="location" class="form-control fontIcon" id="inlineFormInputGroupUsername" placeholder="&#xf271;  Location"/>
+                            <input type="text" onChange ={this.handleChange} name="location" class="form-control fontIcon" id="inlineFormInputGroupUsername" placeholder="&#xf041;  Location"/>
                         </div>
                         </div>
 
@@ -71,7 +71,7 @@ export class SearchBar extends Component {
                         <div class="col-6 col-sm-6 form-group col-md-2 col-lg-2 ">
                         <div class="input-group">
                             
-                            <input class="form-control fontIcon" placeholder="check-Out" name="check_out" placeholder="&#xf271;  Check-out" onChange={this.handleChange} id="inlineFormInputGroupUsername" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
+                            <input class="form-control fontIcon" placeholder="check-Out" name="check_out" placeholder="&#xf272;  Check-out" onChange={this.handleChange} id="inlineFormInputGroupUsername" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
                         </div>
                         </div>
 

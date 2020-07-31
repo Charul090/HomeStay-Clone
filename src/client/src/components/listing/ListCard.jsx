@@ -18,21 +18,23 @@ export class ListCard extends Component {
         return (
             
             <div className="col-12 col-sm-12 col-md-6 col-lg-6  mb-3 ">
-                    <div className="row1 card row pl-1 ml-1 pr-1" >
-                        <div class="col-4 col-sm-6 col-md-4 col-lg-4 p-0">
+                    <div className="row1 card row  ml-1 pr-1" >
+                        <div class="col-4 col-sm-6 col-md-5 col-lg-5 p-0">
                         <div class="carousel-wrapper">
                         <Carousel showThumbs={false} showStatus={false} useKeyboardArrows className="carousel-root presentation-mode " style={{height:"100%"}}>
-                          <div key="content-1" className="my-slide content" onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
-                            <img  className="row1" src={data.bedroom_image} />
-                            <div>
-                              <img className="img img-fluid profile legendInline" src={data.user_pic}/>
+                          <div key="content-1" className="my-slide content imgH" onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
+                            <img  className="row1" style={{maxHeight:"100%",maxWidth:"100%"}} src={data.bedroom_image} />
+                            <div class="">
+                              <img className=" legendInline" style={{maxHeight:"100%",maxWidth:"100%"}} src={data.user_pic}/>
                             </div>
                             <div className=" legendInlinestar"><i className="fa fa-star p-2" style={{fontSize:"18px"}} aria-hidden="true"></i>
                             </div>
                           </div>
-                          <div key="content-2" className="my-slide content " onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
-                            <img className="row1" src={data.apartment_image} />
-                            <div style={{border:"4px solid white"}} className=" profile"><img className="img img-fluid profile legendInline" src={data.user_pic}/></div>
+                          <div key="content-2" className="my-slide content imgH" onClick={()=> window.open(`/apartment/${data.apartment_id}`, "_blank")}>
+                            <img className="row1" style={{maxHeight:"100%",maxWidth:"100%"}} src={data.apartment_image} />
+                            <div style={{border:"4px solid white"}}  class=""><img className=" legendInline" src={data.user_pic}/></div>
+                            <div className=" legendInlinestar"><i className="fa fa-star p-2" style={{fontSize:"18px"}} aria-hidden="true"></i>
+                            </div>
                           </div>
                       </Carousel>
                     </div>                   
