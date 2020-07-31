@@ -47,7 +47,7 @@ const SEND_CHECK_QUERY=(obj)=>{
         dispatch(DATES_QUERY())
         axios({
             method:"get",
-            baseURL:"http://7e9638a87721.ngrok.io",
+            baseURL:"https://1f709f3ba43e.ngrok.io",
             url:`/booking/check/${id}`,
             params:{
                 start,

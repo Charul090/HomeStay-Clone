@@ -40,7 +40,7 @@ const fetchData = (query = null) => {
     // console.log("dispatching post request action...");
     dispatch(fetchRequest());
     return axios
-      .get(`http://dacaf3626775.ngrok.io/stays/listing${query}`)
+      .get(`https://1f709f3ba43e.ngrok.io/stays/listing${query}`)
       .then(res => {
         // console.log("response success", res.data);
         return dispatch(fetchSuccess(res.data));

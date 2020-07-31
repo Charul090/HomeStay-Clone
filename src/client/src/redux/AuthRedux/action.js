@@ -26,7 +26,7 @@ const Start_Login_Query = (data)=>{
         dispatch(LOGIN_QUERY())
         return axios({
             method:"post",
-            baseURL:"https://7e9638a87721.ngrok.io",
+            baseURL:"https://1f709f3ba43e.ngrok.io",
             url:"/guest/login",
             data:data
         })
@@ -72,7 +72,7 @@ const Facebook_Login_Query=(data)=>{
         dispatch(FACEBOOK_QUERY())
         return axios({
             method: "post",
-            baseURL:"https://7e9638a87721.ngrok.io",
+            baseURL:"https://1f709f3ba43e.ngrok.io",
             url: "/oauth/facebook",
             data: data
         })
@@ -118,7 +118,7 @@ const Google_Login_Query=(data)=>{
         dispatch(GOOGLE_QUERY())
         return axios({
             method: "post",
-            baseURL:"https://7e9638a87721.ngrok.io",
+            baseURL:"https://1f709f3ba43e.ngrok.io",
             url: "/oauth/google",
             data: data
         })
