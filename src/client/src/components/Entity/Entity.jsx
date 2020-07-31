@@ -9,6 +9,8 @@ import MealInfo from '../MealInfo/MealInfo.jsx'
 import  RecommendationRef  from '../RecommendationRef/RecommendationRef.jsx'
 import NavBarAfterLogin from "../NavBarAfterLogin/NavBarAfterLogin.jsx"
 import {useSelector} from "react-redux"
+import LoginModal from '../LoginModal/LoginModal.jsx'
+import RegisterModal from '../RegisterModal/RegisterModal.jsx'
 
 export default function Entity() {
     let {logged_user} = useSelector(state=>state.auth)
@@ -23,6 +25,8 @@ export default function Entity() {
                     <NavBarHome />
                 }
             </div>
+            <LoginModal />
+            <RegisterModal />
             <ApartmentInfo />
             <BedroomInfo />
             <AreaInfo />
