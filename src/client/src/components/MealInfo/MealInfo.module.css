@@ -34,12 +34,19 @@
     line-height: 1.4em;
     font-weight: 300;
     text-align: left;
+    margin-bottom: 1em;
 }
 
-.para{
+.para,
+.para1:nth-child(1){
+    margin: 0;
     margin-top: 1em;
     font-size: 1em;
+}
+
+.para1{
     margin: 0;
+    font-size: 1em;
 }
 
 .wel_yay{

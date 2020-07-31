@@ -50,13 +50,14 @@ export default function MealInfo() {
                         {
                             rules && rules.map((elem)=>{
                                 return(
-                                    <p className={styles.para}>{elem}</p>
+                                    <p className={styles.para1}>{elem}</p>
                                 )
                             })
                         }
                     </div>
                 </div>
             </div>
+            <div className={styles.spacer1}></div>
         </div>
     )
 }
