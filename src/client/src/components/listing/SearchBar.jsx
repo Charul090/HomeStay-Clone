@@ -80,12 +80,12 @@ export default function SearchBar(props) {
     }
     // console.log(this.props);
     return (
-        <div>
+        <div className={styles.main}>
             <div className="search-bar">
-                <div className="row ">
-                    <div className="col-12">
+                <div className="">
+                    <div className="container-fluid">
                         <form onSubmit={handleClick}>
-                            <div id="row" class="row mr-0 pt-2">
+                            <div id="row" class="row no-gutters mr-0 pt-2">
                                 <div className="col-9">
                                     <div className="form-row">
                                         <div className="col-5">
