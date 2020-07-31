@@ -7,6 +7,7 @@ import BedroomInfo from '../BedroomInfo/BedroomInfo.jsx'
 import AreaInfo from '../AreaInfo/AreaInfo.jsx'
 import MealInfo from '../MealInfo/MealInfo.jsx'
 import  RecommendationRef  from '../RecommendationRef/RecommendationRef.jsx'
+import Reviews from '../Reviews/Reviews'
 import NavBarAfterLogin from "../NavBarAfterLogin/NavBarAfterLogin.jsx"
 import {useSelector} from "react-redux"
 import LoginModal from '../LoginModal/LoginModal.jsx'
@@ -31,6 +32,7 @@ export default function Entity() {
             <BedroomInfo />
             <AreaInfo />
             <MealInfo />
+            <Reviews />
             <RecommendationRef  />
             <Footer />
         </div>

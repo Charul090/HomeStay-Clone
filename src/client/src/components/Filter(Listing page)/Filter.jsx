@@ -228,7 +228,7 @@ export class Filter extends Component {
                   {/* <Slider handleChange={this.handleFilter}/> */}
                   <div className="col-12 col-sm-12  col-md-10 col-lg-10 " style={{width:"200px"}}>
                   <Styles opacity={this.state.max_price > 10 ? (this.state.max_price / 255) : .1} color={this.props.color}>
-                    <label className="font-weight-bold"><p className=" small pt-2 ">$: 0</p></label>
+                    <label className="font-weight-bold"><p className=" small pt-2 "><i class="fa fa-inr" aria-hidden="true"></i>: 0</p></label>
                     <input type="range" min={0} max={10000} value={this.state.value} name="max_price" className="slider m-1 mb-3" onChange={this.handleFilter} />
                     <p className="value">{this.state.max_price}</p>
                   </Styles>
