@@ -11,8 +11,8 @@ export default function Reviews() {
     }
     return (
         <div className={styles.spacer1}>
+            <h3 className={styles.review}>Reviews</h3>
             {data&& data.map((item)=>(<div className="container ">
-                <h3 className="text-left">Reviews</h3>
                 <div className="row ">
                     <div className="col-8">
                         <div className="row mt-2 p-2">
@@ -26,7 +26,7 @@ export default function Reviews() {
                             </div>
                             <div className="col-10 pl-5" style={{background:"#F1EFEF",borderRadius: "15px"}}>
                                 <div className={styles.arrowBox}>
-                                <div class="row pt-3">
+                                <div class="row pt-3 ">
                                 <div className="text-left text-muted col-6">August 2020</div>
                                 <div className="float-right col-6"><img src="https://www.homestay.com/assets/small-review-score-img-c68dbe08abd3620cb7ae9b367952c1caac5322eb67c4d65ecfcafd83fba88dda.svg"/></div>
                                 <span className="pt-3">

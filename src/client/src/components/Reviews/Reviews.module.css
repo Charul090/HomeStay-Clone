@@ -48,3 +48,14 @@
     .spacer2{
         margin-top: 1.25em;
     }
+
+    .review{
+        font-size: 1.5em;
+        line-height: 1.4em;
+        font-weight: 300;
+        margin: 0;
+        color:#512B1A;
+        text-align: left;
+        padding-left:60px;
+    
+    }
