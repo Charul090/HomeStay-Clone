@@ -9,23 +9,23 @@ export default function BannerNavBar() {
 
     return (
         <div className={styles.banner_nav}>
-            <nav className="navbar navbar-zero sticky-top">
+            <nav className="navbar navbar-zero sticky-top" id="#navbar-example2">
                 <div className="container-fluid d-flex">
                     <div className={styles.main}>
                         <div className={styles.element}>
-                            <a>HOMESTAY</a>
+                            <a href="#about">HOMESTAY</a>
                         </div>
                         <div className={styles.element}>
-                            <a>PHOTOS</a>
+                            <a href="#photo">PHOTOS</a>
                         </div>
                         <div className={styles.element}>
-                            <a>Rooms</a>
+                            <a href="#bedroom-info">Rooms</a>
                         </div>
                         <div className={styles.element}>
-                            <a>Location</a>
+                            <a href="#location">Location</a>
                         </div>
                         <div className={styles.element}>
-                            <a>Meals & Rules</a>
+                            <a href="#meal">Meals & Rules</a>
                         </div>
                         <div className={styles.element}>
                             <a>{number_reviews} Reviews</a>

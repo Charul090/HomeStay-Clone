@@ -91,8 +91,8 @@ export default function BedroomInfo() {
     console.log(startDate1,startDate2)
 
     return (
-        <div className={styles.main}>
-            <div className="container-fluid">
+        <div className={styles.main} data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+            <div className="container-fluid" id="bedroom-info">
                 <div className="row">
                     <div className="col-8">
                         <div className={styles.spacer1}></div>

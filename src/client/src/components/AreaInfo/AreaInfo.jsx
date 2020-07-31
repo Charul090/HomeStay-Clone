@@ -20,9 +20,9 @@ export default function AreaInfo() {
     }
 
     return (
-        <div className={styles.main}>
-            <div className={styles.spacer1}></div>
-            <div className="container-fluid">
+        <div className={styles.main} data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+            <div className={styles.spacer1} ></div>
+            <div className="container-fluid" id="location">
                 <div className="row">
                     <div className="col-8">
                         <h2>About Area</h2>
