@@ -43,7 +43,7 @@ def password_recovery(info):
 
     # Need to send frontend link when deployed on aws
     string_email = "%40".join(email.split("@"))
-    link = "http://localhost:3000/password/reset?a="+token+"&email="+string_email
+    link = "http://localhost:3000/reset?a="+token+"&email="+string_email
 
     msg = "From:noreply@charul.co\nTo:"+str(email)+"\nSubject:Password Reset Notification\n\nHello,\nUse the following link to reset password.Happy Homestaying!\n"+str(link)
     
