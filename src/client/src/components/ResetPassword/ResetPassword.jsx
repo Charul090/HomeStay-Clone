@@ -4,6 +4,8 @@ import Footer from '../Footer/Footer'
 import styles from './ResetPassword.module.css'
 import NavBarHome from '../NavBarHome/NavBarHome'
 import { fetchReset } from "../../redux/PasswordRedux/action";
+import LoginModal from '../LoginModal/LoginModal'
+import RegisterModal from '../RegisterModal/RegisterModal'
 
 export class ResetPassword extends Component {
     constructor(props){
@@ -59,6 +61,8 @@ export class ResetPassword extends Component {
             <div>
                 <div className={styles.bgWhite}>
                 <NavBarHome />
+                <LoginModal />
+                <RegisterModal />
                 </div>
                 <div className={styles.bgSilver}>
                     <div className={styles.cardPadding}>

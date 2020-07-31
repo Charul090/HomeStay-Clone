@@ -1,6 +1,6 @@
 import React, { useState ,useEffect} from 'react'
 import { useDispatch,useSelector } from "react-redux"
-import {useHistory} from "react-router-dom"
+import {useHistory,Link} from "react-router-dom"
 import "./LoginModal.css"
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import FacebookLogin from "react-facebook-login"
@@ -48,6 +48,11 @@ export default function LoginModal() {
         }
         
 
+    }
+
+    const handleRoute=()=>{
+        window.$("#loginmodal").modal("toggle");
+        history.push("/recovery")
     }
 
     const responseGoogle = (response) => {
@@ -103,7 +108,9 @@ export default function LoginModal() {
                         </form>
                     </div>
                     <div className="modal-footer">
-
+                        <p className="small text-primary text-left" style={{cursor:"pointer"}} onClick={handleRoute}>
+                            I forgot my password
+                        </p>
                     </div>
                 </div>
             </div>
