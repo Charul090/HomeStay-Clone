@@ -8,12 +8,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function RecommendationRef() {
     let { recommend } = useSelector(state => state.entity);
-    // console.log(recommend[0]);
     const data = []
     for(var key in recommend){
         data.push(recommend[key]);
     }
-    console.log(data);
+    // console.log(data);
     
     return (
         <div className={styles.mealmain}>

@@ -7,6 +7,7 @@ import BedroomInfo from '../BedroomInfo/BedroomInfo.jsx'
 import AreaInfo from '../AreaInfo/AreaInfo.jsx'
 import MealInfo from '../MealInfo/MealInfo.jsx'
 import  RecommendationRef  from '../RecommendationRef/RecommendationRef.jsx'
+import Reviews from '../Reviews/Reviews'
 
 export default function Entity() {
     return (
@@ -18,6 +19,7 @@ export default function Entity() {
             <BedroomInfo />
             <AreaInfo />
             <MealInfo />
+            <Reviews />
             <RecommendationRef  />
             <Footer />
         </div>
