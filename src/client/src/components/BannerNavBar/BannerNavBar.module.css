@@ -35,6 +35,7 @@
 
 .element:hover{
     background-color:#524a47;
+    cursor: pointer;
 }
 
 .element a{
@@ -45,6 +46,11 @@
     font-weight: 600;
     font-size: 12px;
     line-height: 55px;
+}
+
+.element a:hover{
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .button_container{
