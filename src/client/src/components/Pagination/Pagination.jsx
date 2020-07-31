@@ -16,7 +16,6 @@ export class Pagination extends Component {
 
             handlePage = (e)=>{
                 
-                console.log(this.props.pagenum)
                 var num = this.props.pagenum
                 
                 if(e.target.id==="previous"){
@@ -29,7 +28,6 @@ export class Pagination extends Component {
                 else if(e.target.id==="next"){
                     if(num<this.props.total){
                         num = num+1;
-                        console.log("inside 0"+num)
                         this.props.pageChange(Number(num));
                         this.props.fetch(this.props.history.location.search+`page=${num}`)
                     }
@@ -42,7 +40,6 @@ export class Pagination extends Component {
                     this.props.pageChange(Number(e.target.id));
                     this.props.fetch(this.props.history.location.search+`page=${num}`)
                 }
-                console.log("num"+num);
                 
             }
 
@@ -50,7 +47,7 @@ export class Pagination extends Component {
     render() {
         // console.log(this.state);
         var {total,pagenum} = this.props
-        console.log(pagenum)
+        // console.log(pagenum)
         var list = [];
         for(var  i=0; i<total; i++){
             list.push(i+1);
