@@ -70,7 +70,7 @@ export class ListingMain extends Component {
         // console.log(this.props)
         var cards = this.props.data.data
         let {logged_user} = this.props
-        console.log(cards)
+    
         return (
             <div className="row">
                 <div className="col-sm-12 col-lg-12 col-md-12">
@@ -87,7 +87,7 @@ export class ListingMain extends Component {
                     <div className="row">
                     <div className="col-12 ">
                         <div className="row ">
-                            {cards&& cards.map(item =>(
+                            {data.subdata.map(item =>(
                                     <ListCard data={item}/>
                                 )
                             )}

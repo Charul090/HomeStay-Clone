@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { RESET } from "../../redux/PaymentRedux/action.js"
 import { useHistory } from "react-router-dom"
 
+
 export default function ContactHostModal(props) {
 
     let { start,
