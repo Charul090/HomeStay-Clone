@@ -1,6 +1,7 @@
 #loginmodal{
     font-family: 'Open Sans', sans-serif;
     color:#512B1A;
+    z-index:40000;
 }
 
 .modal-header > .close{
