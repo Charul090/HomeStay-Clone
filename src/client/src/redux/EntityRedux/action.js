@@ -86,7 +86,7 @@ const Start_Basic_Query = (id)=>{
         dispatch(SEND_BASIC_QUERY())
         return axios({
             method:"get",
-            baseURL:"https://7e9638a87721.ngrok.io",
+            baseURL:"https://1f709f3ba43e.ngrok.io",
             url:`/apartment/info/${id}`
         })
         .then((res)=>res.data)
@@ -110,7 +110,7 @@ const Start_Booking_Query = (id)=>{
         dispatch(SEND_BOOKING_QUERY())
         return axios({
             method:"get",
-            baseURL:"https://7e9638a87721.ngrok.io",
+            baseURL:"https://1f709f3ba43e.ngrok.io",
             url:`/apartment/booking-info/${id}`
         })
         .then((res)=>res.data)
@@ -134,7 +134,7 @@ const Start_Area_Query = (id)=>{
         dispatch(SEND_AREA_QUERY())
         return axios({
             method:"get",
-            baseURL:"https://7e9638a87721.ngrok.io",
+            baseURL:"https://1f709f3ba43e.ngrok.io",
             url:`/apartment/area-info/${id}`
         })
         .then((res)=>res.data)
@@ -158,7 +158,7 @@ const Start_Recommend_Query = (id)=>{
         dispatch(SEND_RECOMMEND_QUERY())
         return axios({
             method:"get",
-            baseURL:"https://7e9638a87721.ngrok.io",
+            baseURL:"https://1f709f3ba43e.ngrok.io",
             url:`/apartment/recommend/${id}`
         })
         .then((res)=>res.data)
