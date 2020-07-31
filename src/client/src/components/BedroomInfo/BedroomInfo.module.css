@@ -256,3 +256,43 @@
 .footer > a:hover{
     text-decoration: none;
 }
+
+.select{
+    position: relative;
+    border-width: 2px;
+    border-color: #92C01F;
+}
+
+.select > i{
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    padding-top: 14px;
+    font-size: 20px;
+    margin:0 10px;
+    color: #B7B1AE;
+}
+
+.guestInput {
+    padding:10px;
+    padding-left: 42px;
+    width:100%;
+    border-width: 2px;
+    border-color: #DBD8D6;
+    box-shadow: none;
+    background-color: #fff;
+}
+
+.guestInput:focus,
+.guestInput:focus-within{
+    border-width: 2px;
+    border-color: #92C01F;
+}
+
+.unselect{
+    font-size: .75em;
+    line-height: 1.625em;
+    letter-spacing: .03em;
+    color: #337ab7 !important;
+    cursor: pointer;
+}

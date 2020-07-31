@@ -84,4 +84,6 @@
     width:76px;
 }
 
-
+.main{
+    z-index: 1800 !important;
+}
