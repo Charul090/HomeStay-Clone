@@ -91,7 +91,7 @@ export class HostSignUpPage extends Component {
                 </section>
 
                 <div className={styles.secNav} >
-                    <div className="row">
+                    <div className="row sticky-top">
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link active" href="#"></a>
@@ -168,8 +168,6 @@ export class HostSignUpPage extends Component {
                             pays a booking fee to Homestay.com</p>
                             </div>
                         </div>
-                     
-
                         <div class="row">
                             <div className="col-2 offset-2"><i class="fa fa-money" style={{fontSize:"40px",color:"#CA005D",padding:"15px"}} aria-hidden="true"></i></div>
                             <div className="col-8 text-left  p-2">
@@ -179,8 +177,6 @@ export class HostSignUpPage extends Component {
                              Some hosts (depending on country and currency) can avail of a 25% Deposit payment option to cover cancellations and no shows.</p>
                             </div>
                         </div>
-                     
-
                         </div>
                     </div>
                     </div>
@@ -193,18 +189,18 @@ export class HostSignUpPage extends Component {
                     <div className="row ">
                         <div class="col-12 ">
                         <h3 className={styles.subCont}>Earn Money Your Way</h3>
-                            <div class="row">
-                                
-                                <div class="col-4 ">
+                            <div class="row"> 
+                                <div class="col-4 bg-light border-right" >
+                                <div >
                                 <span className="text-left p-2">
                                 <div className={styles.list}>Who stays</div>
                                 </span>
                                 <p className="small text-left">All guests are over 18 years old.<br/>
                                  Advertise your room to holiday-goers, <br/>
                                  international students/interns and professionals.</p>
-
+                                 </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-4 bg-light border-right">
                                 <span className="text-left p-2">
                                 <div className={styles.list}>How long</div>
                                 </span>
@@ -213,7 +209,7 @@ export class HostSignUpPage extends Component {
                                  suitable guests.</p>
 
                                 </div>
-                                <div class="col-4">
+                                <div class="col-4 bg-light">
                                 <span className="text-left p-2">
                                 <div className={styles.list}>Right price</div>
                                 </span>
@@ -236,7 +232,7 @@ export class HostSignUpPage extends Component {
                         <h3 className={styles.subCon}>Frequently asked questions</h3>
                         </div>
                         <div class="accordion p-5" id="accordionExample">
-                <div class="card">
+                    <div class="card">
                     <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -294,8 +290,6 @@ export class HostSignUpPage extends Component {
                     </div>
                     </div>
                 </div>
-              
-
                 </div>
                 </div>
                 </div>
@@ -314,6 +308,7 @@ export class HostSignUpPage extends Component {
                 </div>
                 </div>
                 </section>
+                
 
             <Footer style={{marginTop:"0px"}} />
             </div>
