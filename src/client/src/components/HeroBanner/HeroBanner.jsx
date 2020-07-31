@@ -1,27 +1,74 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "./HeroBanner.module.css"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import CustomCalendar from "../CustomCalendar/CustomCalendar.jsx"
+import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+import 'react-google-places-autocomplete/dist/index.min.css';
+import {useHistory} from "react-router-dom"
 
 export default function HeroBanner() {
+    let mindate2 = new Date()
+    let date1 = new Date(new Date().getTime() + (60 * 60 * 24 * 1000))
+
+    let history = useHistory()
 
     const [location, setLocation] = useState("")
     const [check_in, setCheckIn] = useState("")
     const [check_out, setCheckOut] = useState("")
-    const [guests, setGuest] = useState("")
+    const [guests, setGuest] = useState(1)
+    const [startDate1, setStartDate1] = useState(date1);
+    const [startDate2, setStartDate2] = useState(mindate2);
+    const [minDate2, setMinDate2] = useState(mindate2)
+    const [date_diff, setDiff] = useState(1)
+    const [flag, setFlag] = useState(false)
 
+    let guest_options = []
 
-    const [startDate, setStartDate] = useState(new Date());
-    const ExampleCustomInput1 = ({ value, onClick }) => (
-        <input style={{zIndex:"10400",width:"60px"}} className="form-control form-control-sm pt-4 pb-3" style={{ borderRadius: "unset" }} onClick={onClick} placeholder="Check-In" name="check_in" type="text" value={value} />
+    for (let x = 1; x <= 8; x++) {
+        guest_options.push(
+            <option value={x}>{x}</option>
+        )
+    }
 
-    );
+    useEffect(() => {
+        let time_diff = startDate2.getTime() - startDate1.getTime()
+        let day_diff = Math.floor(time_diff / (1000 * 3600 * 24))
+        setDiff(day_diff)
+    }, [startDate2, startDate1])
 
-    const ExampleCustomInput2 = ({ value, onClick }) => (
-        <input style={{zIndex:"10400",width:"60px"}} className="form-control form-control-sm pt-4 pb-3" style={{ borderRadius: "unset" }} onClick={onClick} placeholder="Check-Out" name="check_out" type="text" value={value} />
+    useEffect(() => {
+        let time_diff = startDate2.getTime() - startDate1.getTime()
+        let day_diff = Math.floor(time_diff / (1000 * 3600 * 24))
+        let day = 60 * 60 * 24 * 1000;
+        let date = new Date()
+        date.setTime(startDate1.getTime() + day)
 
-    );
+        if (day_diff <= 0) {
+            setStartDate2(date)
+        }
+
+        setMinDate2(date)
+
+    }, [startDate1])
+
+    useEffect(() => {
+        if (date_diff > 29) {
+
+            let last_day = 29 * 60 * 60 * 24 * 1000;
+            last_day = startDate1.getTime() + last_day
+            setStartDate2(new Date(last_day))
+        }
+    }, [date_diff])
+
+    const customInput = (props)=>{
+        return (
+            <div className={styles.wrapper}>
+                <i class="fas fa-map-marker-alt"></i>
+            <input className={styles.date} type="text" {...props}/>
+        </div>
+        )
+    }
 
     const handleChange = (e) => {
         if (e.target.name === "location") {
@@ -38,6 +85,25 @@ export default function HeroBanner() {
                 setGuest(e.target.value)
             }
         }
+    }
+
+    const handleClick = (e)=>{
+        e.preventDefault()
+
+        let current_location = location.description.split(",")[0]
+        let start = startDate1
+        let end = startDate2
+
+        let params = new URLSearchParams()
+        params.set("location",current_location)
+        params.set("start",JSON.stringify(start))
+        params.set("end",JSON.stringify(end))
+        params.set("guest",guests)
+        
+        history.push({
+            pathname:"/destination",
+            search:params.toString()
+        })
     }
 
     return (
@@ -57,49 +123,54 @@ export default function HeroBanner() {
                             <h4>
                                 Book a room in a home
                             </h4>
-                            <form className={styles.form}>
-                                <div className="input-group mb-2">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text text-black-50">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
-                                    <input type="text" readOnly className="form-control form-control-lg" placeholder="Where do you want to go?" />
+                            <form className={styles.form} onSubmit={handleClick}>
+                                <div className={styles.location}>
+                                    <GooglePlacesAutocomplete
+                                    debounce="600"
+                                    apiKey="AIzaSyCcS0j7hDpSs-F4xDi2q6AkTD_sWqECR9M"
+                                    placeholder="Where do you want to go?"
+                                    onSelect={setLocation}
+                                    autocompletionRequest={{
+                                        componentRestrictions: {
+                                        country: ['in']
+                                        }
+                                    }}
+                                    renderInput={(props)=>customInput(props)}
+                                    />
                                 </div>
                                 <div className={styles.row}>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" style={{ borderRadius: "unset" }}>
-                                                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                </span>
-                                                <DatePicker value={check_out} selected={startDate} customInput={<ExampleCustomInput1 />} />
-                                            </div>
-                                        </div>
+                                    <div className={styles.date1}>
+                                        <DatePicker
+                                            selected={startDate1}
+                                            onChange={date => setStartDate1(date)}
+                                            dateFormat="d MMM yyyy"
+                                            minDate={startDate1}
+                                            selectsStart
+                                            customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />}
+                                            startDate={startDate1}
+                                            endDate={startDate2}
+                                            placeholderText="Check In"
+                                        />
                                     </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" style={{ borderRadius: "unset" }}>
-                                                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                </span>
-                                                <DatePicker value={check_in} selected={startDate} customInput={<ExampleCustomInput2 />} />
-                                            </div>
-                                        </div>
+                                    <div className={styles.date2}>
+                                        <DatePicker
+                                            selected={startDate2}
+                                            onChange={date => setStartDate2(date)}
+                                            dateFormat="d MMM yyyy"
+                                            customInput={<CustomCalendar checkout={false} wrapper={styles.wrapper} className={styles.date} />}
+                                            startDate={startDate1}
+                                            selectsEnd
+                                            endDate={startDate2}
+                                            minDate={minDate2}
+                                        />
                                     </div>
-                                    <div class="form-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" style={{ borderRadius: "unset" }}>
-                                                <i class="fa fa-user" aria-hidden="true"></i>
-                                            </span>
-                                            <select id="inputState" style={{ borderRadius: "unset" }} name="guests" onChange={handleChange} className="form-control">
-                                                <option value="1" selected> 1</option>
-                                                <option value="2"> 2</option>
-                                                <option value="3"> 3</option>
-                                                <option value="4"> 4</option>
-                                                <option value="5"> 5</option>
-                                            </select>
-                                        </div>
+                                    <div className={styles.select}>
+                                        <i class="far fa-user"></i>
+                                        <select className={styles.guestInput} name="guests" value={guests} onChange={handleChange}>
+                                            {
+                                                guest_options
+                                            }
+                                        </select>
                                     </div>
                                 </div>
                                 <button className={styles.button}>
