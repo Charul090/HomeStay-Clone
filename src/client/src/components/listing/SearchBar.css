@@ -112,6 +112,10 @@ i.fa-calendar { position: absolute; top: 12px; left: 30px; color:lightgrey;}
 .dateInput {
   padding:10px;
 }
+
+.fontIcon{
+    font-family: fontawesome;
+}
     
     
     
