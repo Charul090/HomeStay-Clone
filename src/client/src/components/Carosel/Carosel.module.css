@@ -8,6 +8,6 @@
 }
 
 .main > a{
-    z-index: 6;
+    z-index: 2000;
     height:0;
 }

@@ -7,12 +7,21 @@ import BedroomInfo from '../BedroomInfo/BedroomInfo.jsx'
 import AreaInfo from '../AreaInfo/AreaInfo.jsx'
 import MealInfo from '../MealInfo/MealInfo.jsx'
 import  RecommendationRef  from '../RecommendationRef/RecommendationRef.jsx'
+import NavBarAfterLogin from "../NavBarAfterLogin/NavBarAfterLogin.jsx"
+import {useSelector} from "react-redux"
 
 export default function Entity() {
+    let {logged_user} = useSelector(state=>state.auth)
+
     return (
         <div className={styles.main}>
             <div className={styles.header}>
-                <NavBarHome />
+                {
+                    logged_user?
+                    <NavBarAfterLogin />
+                    :
+                    <NavBarHome />
+                }
             </div>
             <ApartmentInfo />
             <BedroomInfo />
