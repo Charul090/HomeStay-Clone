@@ -1,0 +1,11 @@
+.imgheight{
+    width:76px;
+    height:76px;
+    border-radius: 50%;
+    border: 4px solid silver;
+}
+
+imge{
+    max-width: 100%;
+    max-height: 100%;
+}
