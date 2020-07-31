@@ -87,7 +87,7 @@ export class ListingMain extends Component {
                     <div className="row">
                     <div className="col-12 ">
                         <div className="row ">
-                            {data.subdata.map(item =>(
+                            {cards&&cards.map(item =>(
                                     <ListCard data={item}/>
                                 )
                             )}
