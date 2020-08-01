@@ -29,7 +29,7 @@ export default function Reviews() {
                                 <div className={styles.arrowBox}>
                                     <div class="pt-3 ">
                                         <div className={styles.top}>
-                                            <h5 className={styles.date}>August 2020</h5>
+                                            <h5 className={styles.date}>July 2020</h5>
                                             <div className={styles.hearts}>
                                                 <img src="https://www.homestay.com/assets/small-review-score-img-c68dbe08abd3620cb7ae9b367952c1caac5322eb67c4d65ecfcafd83fba88dda.svg" />
                                             </div>
