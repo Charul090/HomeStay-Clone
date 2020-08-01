@@ -35,7 +35,7 @@ export default function TransparentNavBar() {
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="#registermodal" data-toggle="modal">Guest Signup</a>
-                            <a class="dropdown-item" href="#">Host Signup</a>
+                            <Link class="dropdown-item" to="/host">Host Signup</Link>
                         </div>
                     </div>
                     <div class="dropdown">

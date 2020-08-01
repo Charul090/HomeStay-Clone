@@ -68,7 +68,7 @@ export default function EntityCart(props) {
 
         }
 
-        const data = await fetch("https://1f709f3ba43e.ngrok.io/payment/order", {
+        const data = await fetch("https://a9405ab030e4.ngrok.io/payment/order", {
             method: "POST",
             body: JSON.stringify(order)
         }).then((data) => {
