@@ -1,0 +1,50 @@
+.container{
+    background-image: url("https://www.homestay.com/assets/homepage/homestay-video-placeholder-50d2dc7618bb9888679b2c46830d68284d5668c8dba28adb930ef125427b6c0c.jpg");
+    display: block;
+    margin: 0px auto;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 4px;
+    background-color: #DBD8D6;
+}
+
+.player{
+    height:365px;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    display: block;
+}
+
+.play_button{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.play_button > i{
+    display: inline-block;
+    color: #FFFFFF;
+    font-size: 6em;
+    width: 1em;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3em;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    margin-top: -.5em;
+}
+
+.player_container > div > iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

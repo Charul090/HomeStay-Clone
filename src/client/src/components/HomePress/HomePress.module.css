@@ -1,0 +1,63 @@
+.section{
+    background-color: #F1EFEF;
+}
+
+.section > div::after{
+    display: table;
+    content: " ";
+}
+
+.hr{
+    margin: 0 !important;
+    border: 0;
+    border-top: 1px solid #DBD8D6;
+}
+
+.spacer1{
+    margin-top: 2.5em;
+}
+
+.row{
+    display: flex;
+}
+
+.row > a{
+    width:16%;
+    margin-right: 5%;
+    padding: 1.875em 0;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s ease-in-out;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    opacity: .5;
+}
+
+.row > a:nth-child(1){
+    background-image: url("https://www.homestay.com/assets/homepage/press/logo-press-tnyt-ff0c20fdc90592e0a3af55595f3ad5837554936418f9d56c038d7fd43cefcea9.svg");
+}
+
+.row > a:nth-child(2){
+    background-image: url("https://www.homestay.com/assets/homepage/press/logo-press-usa-today-f8c1cb5afd83df3a4bd6ce7689b9906e9eb1f74e0230a19777bb889e3a1110e6.svg");
+}
+
+.row > a:nth-child(3){
+    background-image: url("https://www.homestay.com/assets/homepage/press/logo-press-conde-nast-be8c7b6a623d2e113e7da03d20b420e6b523608460c9c049c3c38253357d0eb2.svg");
+}
+
+.row > a:nth-child(4){
+    background-image: url("https://www.homestay.com/assets/homepage/press/logo-press-mashable-b62179565e6be20ab38d57c56cde77ad71a124b4b10f78f66a272c42c9d735bd.svg");
+}
+
+.row > a:nth-child(5){
+    background-image: url("https://www.homestay.com/assets/homepage/press/logo-press-natgeo-85441b8dd8a0776be2a8f14c283d5addbfec06cf0bd397590f41935ab0bc71e6.svg");
+}
+
+.row > a:hover{
+    color: #23527c;
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    opacity: 1;
+    cursor: pointer;
+}
