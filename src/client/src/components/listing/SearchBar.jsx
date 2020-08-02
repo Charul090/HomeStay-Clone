@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect} from 'react-redux'
+import {useHistory} from "react-router-dom"
 import Filter from '../Filter(Listing page)/Filter.jsx'
 import Slider from './Slider.jsx'
 import './SearchBar.css'
@@ -11,8 +12,12 @@ import DatePicker from "react-datepicker";
 
 
 export default function SearchBar(props) {
-    let date1 = new Date(new Date().getTime() + (60 * 60 * 24 * 1000))
-    let date2 = new Date(date1.getTime() + (60 * 60 * 24 * 1000))
+    let history = useHistory()
+    let url = new URLSearchParams(history.location.search.slice(1,-1))
+    
+    let date1 = new Date(JSON.parse(url.get("start")))
+    let date2 = new Date(JSON.parse(url.get("end")))
+
 
     const [location, setLocation] = useState("")
     const [startDate1, setStartDate1] = useState(date1);

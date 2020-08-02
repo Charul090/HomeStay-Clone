@@ -76,7 +76,7 @@ export default function EntityCart(props) {
         })
 
         const options = {
-            key: "",
+            key: "rzp_test_VrRuDtzvF0WAPM",
             currency: data.currency,
             amount: data.amount.toString(),
             order_id: data.id,
@@ -91,13 +91,14 @@ export default function EntityCart(props) {
                         end: props.end,
                         total_cost: totalcost,
                         apartment_id: apartment_id,
-                        token
+                        token,
+                        response:response
                     }
                 }
                 dispatch(Start_Payment_Query(obj))
             },
             prefill: {
-                name,
+                name:"Charul",
                 email: 'sdfdsjfh2@ndsfdf.com',
                 phone_number: '9999999999'
             }
