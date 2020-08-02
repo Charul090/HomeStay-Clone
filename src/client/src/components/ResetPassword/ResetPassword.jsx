@@ -77,7 +77,7 @@ export class ResetPassword extends Component {
                     <span style={{background:"rgba(183, 177, 174, 0.3)"}}>
                     <div class="card-body">
                         <p class="card-text ">Please choose a new password, make sure it's at least 6 characters long..</p>
-                        <input type="text" name="firstPassword" value ={this.state.firstPassword}placeholder="Password" onChange={this.handleChange} className=" p-2 w-100"></input><br/><br/>
+                        <input type="password" name="firstPassword" value ={this.state.firstPassword}placeholder="Password" onChange={this.handleChange} className=" p-2 w-100"></input><br/><br/>
                         <input type="password" name="confirmPassword" value = {this.state.confirmPassword} placeholder="Confirm Password" onChange={this.handleChange} className=" p-2 w-100"></input><br/>
                         <button className={styles.btnCss} onClick={this.handleReset}>Reset Password</button>
                     </div>

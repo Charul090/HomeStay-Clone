@@ -17,7 +17,7 @@ export class ListCard extends Component {
         const {data} = this.props
         return (
             
-            <div className="col-12 col-sm-12 col-md-6 col-lg-6  mb-3 ">
+            <div className="col-12 col-sm-12 col-md-6 col-lg-6  mb-3 " style={{cursor:"pointer"}}>
                     <div className="row1 card row  ml-1 mr-1 pr-1" >
                         <div class="col-4 col-sm-6 col-md-5 col-lg-5 p-0">
                         <div class="carousel-wrapper">
