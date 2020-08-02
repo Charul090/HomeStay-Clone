@@ -12,3 +12,5 @@ class HostProfileModel(db.Model):
     difference = db.Column(db.String(2000))
     home_is = db.Column(db.String(2000))
     area_is = db.Column(db.String(2000))
+    hobbies = db.Column(db.JSON)
+

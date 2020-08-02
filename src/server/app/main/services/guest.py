@@ -1,6 +1,6 @@
 import json
 import jwt
-from ..models import db, UsersModel,ApartmentModel
+from ..models import db, UsersModel, ApartmentModel
 import datetime
 from instance.config import SECRET_KEY
 
@@ -60,7 +60,8 @@ def guest_login(info):
         return json.dumps({"error": True, "message": "Email doesn't exist"})
     else:
         if status.email == email and status.password == password:
-            host = ApartmentModel.query.filter(ApartmentModel.user_id == status.id).first()
+            host = ApartmentModel.query.filter(
+                ApartmentModel.user_id == status.id).first()
 
             if host is None:
                 host = False
@@ -68,6 +69,8 @@ def guest_login(info):
                 host = True
 
             data = {
+                "host": host,
+                "name": status.firstname,
                 "email": status.email,
                 "created_at": str(datetime.datetime.utcnow()),
                 "expiry_at": str(datetime.datetime.utcnow() + datetime.timedelta(days=1))
@@ -75,6 +78,7 @@ def guest_login(info):
 
             encoded_data = jwt.encode(data, SECRET_KEY)
 
-            return json.dumps({"error": False, "message": "Logged in successfully", "token": encoded_data.decode(),"host":host})
+            return json.dumps({"name": status.firstname,
+                               "host": host, "error": False, "message": "Logged in successfully", "token": encoded_data.decode(), "host": host})
 
         return json.dumps({"error": True, "message": "Incorrect Password!"})

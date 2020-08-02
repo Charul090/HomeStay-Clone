@@ -20,6 +20,7 @@ class ApartmentModel(db.Model):
     meals = db.Column(db.JSON)
     rules = db.Column(db.String(1000))
     image = db.Column(db.String(2000))
+    current_rating = db.Column(db.Integer)
     deleted = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)

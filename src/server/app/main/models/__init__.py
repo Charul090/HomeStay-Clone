@@ -9,3 +9,6 @@ from .ApartmentModel import ApartmentModel
 from .BedroomModel import BedroomModel
 from .HostProfileModel import HostProfileModel
 from .ReviewsModel import ReviewsModel
+from .BookingModel import BookingModel
+from .LocationModel import LocationModel
+from .PaymentModel import PaymentModel
