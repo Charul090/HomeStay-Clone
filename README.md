@@ -86,7 +86,7 @@ Refer the detailed [documentation](https://reacttraining.com/react-router/web/ap
 
 ## Using oAuth
 
-Refer the detailed [documentation](docs/authentication.md)
+Refer the detailed [documentation](src/client/docs/authentication.md)
 
 ## General Guidelines
 
