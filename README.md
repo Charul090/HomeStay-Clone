@@ -2,24 +2,43 @@ React Project Template
 Folder structure:
 
 ├── /build/                    # compiled output
+
 ├── /docs/                     # Documentation files
+
 ├── /node_modules/             # 3rd party lib
+
 ├── /public/                   # Static files 
+
 ├── /src/                      # The source code of the application
+
 ├───── /components/            # React components
+
 ├──────├──────/Login           # Login
+
 ├──────├──────/listing         # search components
+
 ├──────├──────/Entity          # Specific component
+
 ├──────├──────/news            # news specific components
+
 ├────── redux/                 # redux (Seperate into sub folders based on functions as well as complexity rises)
+
 ├──────├──────/actions         # action types, action creators
+
 ├──────├──────/reducers        # reducers
+
 ├──────├──────store.js         # store.js
+
 ├────── /routes/               # Routes/Page files
+
 ├────── /clientScript.js       # Client-side startup script
+
 ├────── /config.js             # application settings
+
 ├──────  ...                   
-├── package.json                         
+
+├── package.json       
+
 
 Instructions
 
