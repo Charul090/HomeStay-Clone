@@ -9,7 +9,7 @@
 ├── /public/                    # Static files 
 ├── /src/                       # The source code of the application
 ├───── /components/            # React components
-├──────├──────/Login           # Login
+├──────├──────/LoginModal      # Login
 ├──────├──────/listing         # search bar/filters 
 ├──────├──────/entity          # Entity page
 ├────── redux/                 # redux (Seperate into sub folders based on functions as well as complexity rises)
