@@ -40,7 +40,7 @@ Folder structure:
 ├── package.json       
 
 
-Instructions
+Instruction
 
     Install the necessary dependencies.
 
