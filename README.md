@@ -1,4 +1,4 @@
-# React Project Template
+# Home Stay Clone
 
 ## Folder structure:
 
