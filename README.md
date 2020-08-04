@@ -35,13 +35,7 @@ npm install
 npm start
 ```
 
-3. To start the cypress test, execute the following command.
-
-```
-npm test
-```
-
-4. To start the production build, execute the following command.
+3. To start the production build, execute the following command.
 
 ```
 npm run build
