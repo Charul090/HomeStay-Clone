@@ -98,5 +98,5 @@ Refer the detailed [documentation](src/client/docs/authentication.md)
 
 4. Individual components should be styled using `css modules`. Refer to [CRA Docs](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) for reference.
 
-5. [Naming Conventions](https://github.com/masai-oss/frontend-template/blob/master/docs/naming.md)
+5. [Naming Conventions](src/client/docs/naming.md)
 
