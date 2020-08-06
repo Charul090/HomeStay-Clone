@@ -1,7 +1,11 @@
 
 
-<br/>
-<h2 align="center">Homestay Clone</h2>
+<p>
+  <h1 align="center">Homestay Clone</h1>
+</p>
+  
+![alt text](https://raw.githubusercontent.com/Charul090/HomeStay-Clone/master/project_guide/homestay.png "Home Screenshot")
+
 
 ## Table of Contents
 
@@ -15,7 +19,7 @@
 
 
 ## About The Project
-![alt text](https://raw.githubusercontent.com/Charul090/HomeStay-Clone/master/project_guide/homestay.png "Home Screenshot")
+
 
 A Clone of Homestay.com. Key Features
   - User can book apartments.
