@@ -1,96 +1,68 @@
-# Home Stay Clone
 
-## Folder structure:
 
+<br/>
+<h2 align="center">Homestay Clone</h2>
+
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+
+
+
+
+## About The Project
+![alt text](https://raw.githubusercontent.com/Charul090/HomeStay-Clone/master/project_guide/homestay.png "Home Screenshot")
+
+A Clone of Homestay.com. Key Features
+  - User can book apartments.
+  - OAuth login and registration.
+  - User can filter listing of apartments according to services provided.
+  - Recommendation logic based on similarity of services provided and location.
+  - Check the availability of apartments.
+
+### Built With
+- Frontend
+    - [React](https://reactjs.org/)
+    - [Redux](https://redux.js.org/)
+    - [Bootstrap](https://getbootstrap.com/)
+- Backend
+    - [Python](https://www.python.org/)
+    - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    - [MySQL](https://www.mysql.com/)
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+* npm
+```sh
+npm install npm@latest -g
 ```
-├── /build/                     # compiled output
-├── /docs/                      # Documentation files
-├── /node_modules/              # 3rd party lib
-├── /public/                    # Static files 
-├── /src/                       # The source code of the application
-├───── /components/            # React components
-├──────├──────/LoginModal      # Login
-├──────├──────/listing         # search bar/filters 
-├──────├──────/entity          # Entity page
-├────── redux/                 # redux (Seperate into sub folders based on functions as well as complexity rises)
-├──────├──────/actions         # action types, action creators
-├──────├──────/reducers        # reducers
-├──────├──────store.js         # store.js
-├────── /routes/               # Routes/Page files
-├──────  ...                   
-├── package.json                         
+* pip
+```sh
+sudo apt install python-pip
+sudo pip install virtualenv 
 ```
 
-## Instructions
-
-1. Install the necessary dependencies.
-
+### Installation
+ 
+1. Clone the repo
+```sh
+git clone https://github.com/github_username/repo.git
 ```
+2. For Frontend,install NPM packages
+```sh
 npm install
 ```
 
-2. To start the development server, execute the following command.
-
+3. For Backend,create virtual environment and install pip packages from requirements.txt
 ```
-npm start
+virtualenv venv
+pip install -r requirements.txt
 ```
-
-3. To start the production build, execute the following command.
-
-```
-npm run build
-```
-
-## Dependencies
-
-- [Axios](https://github.com/axios/axios)
-- [React Redux](https://github.com/reduxjs/react-redux)
-- [React Router DOM](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
-- [Redux](https://github.com/reduxjs/redux)
-- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
-
-
-
-## Using Redux
-
-A typical redux setup should have the following files in their respective folder.
-
-1. `actionsTypes.js`, to declare your different actions in redux. Like [this](src/redux/authentication/actionTypes.js).
-
-2. `actions.js`, to write your actions. Like [this](src/redux/authentication/actions.js).
-
-3. `reducer.js`, to manage your reducer's state. Like [this](src/redux/authentication/reducer.js).
-
-Once it's done, you've to import the reducer to `store.js` and use it in the `combineReducers`.
-
-Note: `Redux DevTools` is already setup for development and production. You can download the extension for your browser.
-
-## Using React Hooks
-
-Refer the detailed [documentation](https://reactjs.org/docs/hooks-intro.html).
-
-### React Router DOM with Hooks
-
-Refer the detailed [documentation](https://reacttraining.com/react-router/web/api/Hooks).
-
-
-## Useful Visual Studio Code Extensions
-
-- [ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
-
-## Using oAuth
-
-Refer the detailed [documentation](src/client/docs/authentication.md)
-
-## General Guidelines
-
-1. All the files having JSX should have an extension of `.jsx`
-
-2. Always de-structure your state & props before using them. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) for reference.
-
-3. Async updates to redux must be handled through redux-thunk.
-
-4. Individual components should be styled using `css modules`. Refer to [CRA Docs](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) for reference.
-
-5. [Naming Conventions](src/client/docs/naming.md)
-
