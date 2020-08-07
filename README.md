@@ -58,7 +58,7 @@ sudo pip install virtualenv
  
 1. Clone the repo
 ```sh
-git clone https://github.com/github_username/repo.git
+git clone https://github.com/Charul090/HomeStay-Clone.git
 ```
 2. For Frontend,install NPM packages
 ```sh
